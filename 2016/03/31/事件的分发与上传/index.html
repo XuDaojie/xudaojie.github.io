@@ -119,7 +119,7 @@ Activity
 
 dispatchTouchEvent">
 <meta property="og:image" content="https://www.processon.com/chart_image/580db641e4b0111d9dc52700.png">
-<meta property="og:updated_time" content="2016-10-24T10:02:51.000Z">
+<meta property="og:updated_time" content="2016-10-24T10:19:11.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="利用面向对象来讲解事件分发与上传">
 <meta name="twitter:description" content="首先先来看下基本的套路，第一次看完事件分发后通常是懵逼，但我觉得还是应该先看下。
@@ -442,19 +442,19 @@ dispatchTouchEvent">
 </ul>
 <h3 id="明确功能"><a href="#明确功能" class="headerlink" title="明确功能"></a>明确功能</h3><ul>
 <li>dispatchTouchEvent<ol>
-<li>return true 对应角色自己就将任务完成了</li>
-<li>return false 对应角色自己无法下决定，于是请求上级出面解决</li>
-<li>return dispatchTouchEvent 任务正常派发</li>
+<li><code>return true</code> 对应角色自己就将任务完成了</li>
+<li><code>return false</code> 对应角色自己无法下决定，于是请求上级出面解决</li>
+<li><code>return dispatchTouchEvent</code> 任务正常派发</li>
 </ol>
 </li>
 <li>onInterceptTouchEvent<ol>
-<li>return true/onInterceptTouchEvent 对应角色认为任务不合理，将其驳回</li>
-<li>return false 任务合理，不驳回</li>
+<li><code>return true/onInterceptTouchEvent</code> 对应角色认为任务不合理，将其驳回</li>
+<li><code>return false</code> 任务合理，不驳回</li>
 </ol>
 </li>
 <li>onTouchEvent <ol>
-<li>return true 任务执行完成，但没必要汇报上级</li>
-<li>return false/super.onTouchEvent 本职工作已完成，但你自己并不能决定任务是否已经完成，需要上级验收通过才算真正完成</li>
+<li><code>return true</code> 任务执行完成，但没必要汇报上级</li>
+<li><code>return false/super.onTouchEvent</code> 本职工作已完成，但你自己并不能决定任务是否已经完成，需要上级验收通过才算真正完成</li>
 </ol>
 </li>
 </ul>
