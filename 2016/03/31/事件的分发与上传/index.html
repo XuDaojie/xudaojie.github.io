@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Android," />
 
 
 
@@ -84,15 +84,60 @@
 
 
 
-<meta name="description" content="呆呆的初行者">
-<meta property="og:type" content="website">
-<meta property="og:title" content="XuDaojie的博客">
-<meta property="og:url" content="http://xudaojie.github.io/index.html">
+<meta name="description" content="首先先来看下基本的套路，第一次看完事件分发后通常是懵逼，但我觉得还是应该先看下。
+Android 中当系统捕获事件时，都是由最外层的View依次向下传递，当然，事件不能总是传递到最后一子View才结束，我们在每一级消息传递时都会对消息做出响应以决定继续分发或者拦截。
+
+
+
+Touch事件相关方法
+方法功能
+View
+ViewGroup
+Activity
+
+
+
+
+dispatchTouchEvent">
+<meta property="og:type" content="article">
+<meta property="og:title" content="利用面向对象来讲解事件分发与上传">
+<meta property="og:url" content="http://xudaojie.github.io/2016/03/31/事件的分发与上传/index.html">
 <meta property="og:site_name" content="XuDaojie的博客">
-<meta property="og:description" content="呆呆的初行者">
+<meta property="og:description" content="首先先来看下基本的套路，第一次看完事件分发后通常是懵逼，但我觉得还是应该先看下。
+Android 中当系统捕获事件时，都是由最外层的View依次向下传递，当然，事件不能总是传递到最后一子View才结束，我们在每一级消息传递时都会对消息做出响应以决定继续分发或者拦截。
+
+
+
+Touch事件相关方法
+方法功能
+View
+ViewGroup
+Activity
+
+
+
+
+dispatchTouchEvent">
+<meta property="og:image" content="https://www.processon.com/chart_image/580db641e4b0111d9dc52700.png">
+<meta property="og:updated_time" content="2016-10-24T10:02:51.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="XuDaojie的博客">
-<meta name="twitter:description" content="呆呆的初行者">
+<meta name="twitter:title" content="利用面向对象来讲解事件分发与上传">
+<meta name="twitter:description" content="首先先来看下基本的套路，第一次看完事件分发后通常是懵逼，但我觉得还是应该先看下。
+Android 中当系统捕获事件时，都是由最外层的View依次向下传递，当然，事件不能总是传递到最后一子View才结束，我们在每一级消息传递时都会对消息做出响应以决定继续分发或者拦截。
+
+
+
+Touch事件相关方法
+方法功能
+View
+ViewGroup
+Activity
+
+
+
+
+dispatchTouchEvent">
+<meta name="twitter:image" content="https://www.processon.com/chart_image/580db641e4b0111d9dc52700.png">
 
 
 
@@ -113,10 +158,10 @@
 
 
 
-  <link rel="canonical" href="http://xudaojie.github.io/"/>
+  <link rel="canonical" href="http://xudaojie.github.io/2016/03/31/事件的分发与上传/"/>
 
 
-  <title> XuDaojie的博客 </title>
+  <title> 利用面向对象来讲解事件分发与上传 | XuDaojie的博客 </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -156,9 +201,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
@@ -235,9 +278,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -257,10 +300,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/03/31/事件的分发与上传/" itemprop="url">
-                  利用面向对象来讲解事件分发与上传
-                </a>
+                利用面向对象来讲解事件分发与上传
               
             
           </h1>
@@ -305,6 +345,11 @@
           
 
           
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-file-o"></i>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+              </span>
+          
         </div>
       </header>
     
@@ -316,9 +361,7 @@
       
 
       
-        
-          
-            <p>首先先来看下基本的套路，第一次看完事件分发后通常是懵逼，但我觉得还是应该先看下。</p>
+        <p>首先先来看下基本的套路，第一次看完事件分发后通常是懵逼，但我觉得还是应该先看下。</p>
 <p>Android 中当系统捕获事件时，都是由最外层的<code>View</code>依次向下传递，当然，事件不能总是传递到最后一子View才结束，我们在每一级消息传递时都会对消息做出响应以决定继续分发或者拦截。<br><br></p>
 <table>
 <thead>
@@ -435,154 +478,59 @@
 </ol>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Activity/老板 dispatchTouchEvent <span class="keyword">return</span> dispatchTouchEvent.</span><br><span class="line">ViewGroup/项目经理 dispatchTouchEvent <span class="keyword">return</span> dispatchTouchEvent.</span><br><span class="line">ViewGroup/部门经理 onInterceptTouchEvent <span class="keyword">return</span> <span class="keyword">true</span>/onInterceptTouchEvent.</span><br><span class="line">Activity/老板秘书 onTouchEvent</span><br></pre></td></tr></table></figure>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/06/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-06T16:44:13+08:00" content="2016-03-06">
-              2016-03-06
-            </time>
-          </span>
-
+        <div class="post-tags">
           
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/03/06/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/06/hello-world/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/03/06/hello-world/" class="leancloud_visitors" data-flag-title="Hello World">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
+            <a href="/tags/Android/" rel="tag">#Android</a>
           
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/03/06/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
 
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -590,6 +538,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/03/31/事件的分发与上传/"
+           data-title="利用面向对象来讲解事件分发与上传" data-url="http://xudaojie.github.io/2016/03/31/事件的分发与上传/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -609,8 +565,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.png"
@@ -673,6 +638,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#事件调度-dispatchTouchEvent"><span class="nav-number">1.</span> <span class="nav-text">事件调度 dispatchTouchEvent</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件拦截-onInterceptTouchEvent"><span class="nav-number">2.</span> <span class="nav-text">事件拦截 onInterceptTouchEvent</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件响应-onTouchEvent"><span class="nav-number">3.</span> <span class="nav-text">事件响应 onTouchEvent</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ViewGroup-事件流程图"><span class="nav-number">4.</span> <span class="nav-text">ViewGroup 事件流程图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number"></span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建对象"><span class="nav-number">1.</span> <span class="nav-text">创建对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#明确功能"><span class="nav-number">2.</span> <span class="nav-text">明确功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例1"><span class="nav-number">3.</span> <span class="nav-text">案例1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例2"><span class="nav-number">4.</span> <span class="nav-text">案例2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例3"><span class="nav-number">5.</span> <span class="nav-text">案例3</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -785,6 +761,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
 
   
 
