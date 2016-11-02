@@ -375,10 +375,8 @@
 </blockquote>
 <p>===</p>
 <blockquote>
-<p>Note<br>测试中发现<code>Activity</code> 默认只会将<strong>Down</strong>向下传递,而<strong>Move</strong>、<strong>Up</strong>会在<code>onTouchEvent</code>中消费</p>
+<p>Note<br>中发现<code>Activity</code> 默认只会将<strong>Down</strong>向下传递,而<strong>Move</strong>、<strong>Up</strong>会在<code>onTouchEvent</code>中消费，必须要将<strong>Down</strong>消费后，<strong>Move</strong>、<strong>Up</strong>才会向下传递</p>
 </blockquote>
-<p>以下是<code>Activity</code>的<code>dispatchTouchEvent</code>源码</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">dispatchTouchEvent</span><span class="params">(MotionEvent ev)</span> </span>&#123;</span><br><span class="line">   <span class="keyword">if</span> (ev.getAction() == MotionEvent.ACTION_DOWN) &#123;</span><br><span class="line">       <span class="comment">// 将事件向下传递 </span></span><br><span class="line">       onUserInteraction();</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="comment">// 最终调用了DecorView(ViewGroup)的`dispatchTouchEvent`</span></span><br><span class="line">   <span class="keyword">if</span> (getWindow().superDispatchTouchEvent(ev)) &#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">return</span> onTouchEvent(ev);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h3><ul>
 <li>老板 Activity<ol>
 <li>主要是派发任务，也就是<code>dispatchTouchEvent</code></li>
