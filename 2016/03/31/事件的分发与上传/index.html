@@ -118,8 +118,8 @@ Activity
 
 
 dispatchTouchEvent">
-<meta property="og:image" content="https://www.processon.com/chart_image/580db641e4b0111d9dc52700.png">
-<meta property="og:updated_time" content="2016-11-02T05:34:17.000Z">
+<meta property="og:image" content="https://www.processon.com/chart_image/581bf20ce4b0c6fe570ca35e.png">
+<meta property="og:updated_time" content="2016-11-04T02:40:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="利用面向对象来讲解事件分发与上传">
 <meta name="twitter:description" content="首先先来看下基本的套路，第一次看完事件分发后通常是懵逼，但我觉得还是应该先看下。
@@ -137,7 +137,7 @@ Activity
 
 
 dispatchTouchEvent">
-<meta name="twitter:image" content="https://www.processon.com/chart_image/580db641e4b0111d9dc52700.png">
+<meta name="twitter:image" content="https://www.processon.com/chart_image/581bf20ce4b0c6fe570ca35e.png">
 
 
 
@@ -412,9 +412,9 @@ dispatchTouchEvent">
 </blockquote>
 <h3 id="事件拦截-onInterceptTouchEvent"><a href="#事件拦截-onInterceptTouchEvent" class="headerlink" title="事件拦截 onInterceptTouchEvent"></a>事件拦截 onInterceptTouchEvent</h3><p>此方法只在ViewGroup中存在<br><code>return true;</code> 对事件进行拦截，并交由本层控件的<code>onTouchEvent</code>对事件进行处理<br><code>retrun false;</code> 不对事件进行拦截，向下分发，传递给子<code>View</code>的<code>dispatchTouchEvent</code>处理<br><code>return super.onInterceptTouchEvent(ev);</code> 默认等同于 <code>return true;</code> （既然是拦截器，默认功能当然是拦截啦）</p>
 <h3 id="事件响应-onTouchEvent"><a href="#事件响应-onTouchEvent" class="headerlink" title="事件响应 onTouchEvent"></a>事件响应 onTouchEvent</h3><p><code>return true;</code> 事件已被消费，事件终结<br><code>return false;</code> 事件处理后又<strong>上传</strong>到上层<code>View</code>,交由上层的<code>View</code>的<code>onTouchEvent</code>进行处理<br><code>return super.onTouchEvent(ev);</code> 默认等同于 <code>return false;</code></p>
-<h3 id="ViewGroup-事件流程图"><a href="#ViewGroup-事件流程图" class="headerlink" title="ViewGroup 事件流程图"></a>ViewGroup 事件流程图</h3><p>由于ViewGroup的事件是最全面的，所以图中只画了ViewGroup<br><img src="https://www.processon.com/chart_image/580db641e4b0111d9dc52700.png" alt="Flow"></p>
+<h3 id="ViewGroup-事件流程图"><a href="#ViewGroup-事件流程图" class="headerlink" title="ViewGroup 事件流程图"></a>ViewGroup 事件流程图</h3><p>由于ViewGroup的事件是最全面的，所以图中只画了ViewGroup<br><img src="https://www.processon.com/chart_image/581bf20ce4b0c6fe570ca35e.png" alt="Flow"></p>
 <blockquote>
-<p>Tips<br><a href="http://stackvoid.com/details-dispatch-onTouch-Event-in-Android/" target="_blank" rel="external">Android 事件分发机制详解</a> (这网址现在已经不能用了，心好累)</p>
+<p>Thanks<br><a href="http://stackvoid.com/details-dispatch-onTouch-Event-in-Android/" target="_blank" rel="external">Android 事件分发机制详解</a> (这网址现在已经不能用了，心好累)<br><a href="https://www.processon.com" target="_blank" rel="external">Processon 免费在线绘图</a></p>
 </blockquote>
 <p>===</p>
 <blockquote>
