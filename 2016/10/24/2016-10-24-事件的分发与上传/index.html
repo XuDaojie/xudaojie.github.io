@@ -86,19 +86,60 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="description" content="首先先来看下基本的套路，第一次看完事件分发后通常是懵逼，但我觉得还是应该先看下。
+Android 中当系统捕获事件时，都是由最外层的View依次向下传递，当然，事件不能总是传递到最后一子View才结束，我们在每一级消息传递时都会对消息做出响应以决定继续分发或者拦截。
+
+
+
+Touch事件相关方法
+方法功能
+View
+ViewGroup
+Activity
+
+
+
+
+dispatchTouchEvent">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://xudaojie.github.io/2016/03/06/hello-world/index.html">
+<meta property="og:title" content="利用面向对象来讲解事件分发与上传">
+<meta property="og:url" content="http://xudaojie.github.io/2016/10/24/2016-10-24-事件的分发与上传/index.html">
 <meta property="og:site_name" content="XuDaojie的博客">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2016-03-28T15:03:34.000Z">
+<meta property="og:description" content="首先先来看下基本的套路，第一次看完事件分发后通常是懵逼，但我觉得还是应该先看下。
+Android 中当系统捕获事件时，都是由最外层的View依次向下传递，当然，事件不能总是传递到最后一子View才结束，我们在每一级消息传递时都会对消息做出响应以决定继续分发或者拦截。
+
+
+
+Touch事件相关方法
+方法功能
+View
+ViewGroup
+Activity
+
+
+
+
+dispatchTouchEvent">
+<meta property="og:image" content="https://www.processon.com/chart_image/581bf20ce4b0c6fe570ca35e.png">
+<meta property="og:updated_time" content="2017-01-06T01:54:49.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="利用面向对象来讲解事件分发与上传">
+<meta name="twitter:description" content="首先先来看下基本的套路，第一次看完事件分发后通常是懵逼，但我觉得还是应该先看下。
+Android 中当系统捕获事件时，都是由最外层的View依次向下传递，当然，事件不能总是传递到最后一子View才结束，我们在每一级消息传递时都会对消息做出响应以决定继续分发或者拦截。
+
+
+
+Touch事件相关方法
+方法功能
+View
+ViewGroup
+Activity
+
+
+
+
+dispatchTouchEvent">
+<meta name="twitter:image" content="https://www.processon.com/chart_image/581bf20ce4b0c6fe570ca35e.png">
 
 
 
@@ -119,10 +160,10 @@ Quick">
 
 
 
-  <link rel="canonical" href="http://xudaojie.github.io/2016/03/06/hello-world/"/>
+  <link rel="canonical" href="http://xudaojie.github.io/2016/10/24/2016-10-24-事件的分发与上传/"/>
 
 
-  <title> Hello World | XuDaojie的博客 </title>
+  <title> 利用面向对象来讲解事件分发与上传 | XuDaojie的博客 </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -261,7 +302,7 @@ Quick">
             
             
               
-                Hello World
+                利用面向对象来讲解事件分发与上传
               
             
           </h1>
@@ -273,19 +314,38 @@ Quick">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-06T16:44:13+08:00" content="2016-03-06">
-              2016-03-06
+            <time itemprop="dateCreated" datetime="2016-10-24T18:36:30+08:00" content="2016-10-24">
+              2016-10-24
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/06/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/06/hello-world/" itemprop="commentsCount"></span>
+                <a href="/2016/10/24/2016-10-24-事件的分发与上传/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/24/2016-10-24-事件的分发与上传/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -295,7 +355,7 @@ Quick">
 
           
           
-             <span id="/2016/03/06/hello-world/" class="leancloud_visitors" data-flag-title="Hello World">
+             <span id="/2016/10/24/2016-10-24-事件的分发与上传/" class="leancloud_visitors" data-flag-title="利用面向对象来讲解事件分发与上传">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -322,15 +382,120 @@ Quick">
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p>首先先来看下基本的套路，第一次看完事件分发后通常是懵逼，但我觉得还是应该先看下。</p>
+<p>Android 中当系统捕获事件时，都是由最外层的<code>View</code>依次向下传递，当然，事件不能总是传递到最后一子View才结束，我们在每一级消息传递时都会对消息做出响应以决定继续分发或者拦截。<br><br></p>
+<table>
+<thead>
+<tr>
+<th>Touch事件相关方法</th>
+<th style="text-align:center">方法功能</th>
+<th style="text-align:center">View</th>
+<th style="text-align:center">ViewGroup</th>
+<th style="text-align:center">Activity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dispatchTouchEvent</td>
+<td style="text-align:center">事件调度</td>
+<td style="text-align:center">o</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td>onInterceptTouchEvent</td>
+<td style="text-align:center">事件拦截</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">×</td>
+</tr>
+<tr>
+<td>onTouchEvent</td>
+<td style="text-align:center">事件响应</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<blockquote>
+<p>Tips</p>
+<ol>
+<li>表格中的<code>View</code>指的是<strong>不包含</strong>任何子<code>View</code>的<code>View</code>，例如<code>TextView</code>、<code>Button</code></li>
+<li><code>View</code>本身是有<code>dispatchTouchEvent</code>方法的，但是由于没有子<code>View</code>,也就没有可分发的目标了</li>
+<li>下文中提到的事件消费，均表示事件终结，及在这之后，既不会发送分发，也不会上传</li>
+</ol>
+</blockquote>
+<h3 id="事件调度-dispatchTouchEvent"><a href="#事件调度-dispatchTouchEvent" class="headerlink" title="事件调度 dispatchTouchEvent"></a>事件调度 dispatchTouchEvent</h3><p><code>return true;</code> 事件已被消费，事件结束。<br><code>retrun false;</code> 事件不再继续分发，呼叫上层控件对其进行消费。<br><code>return super.dispatchTouchEvent(ev);</code> 事件分发，将被传递到<code>onInterceptTouchEvent</code>进行处理，（如果是<code>Activity</code>，则直接向下传递）</p>
+<blockquote>
+<p>Tips<br>事件分发本身也对事件进行消费</p>
+</blockquote>
+<h3 id="事件拦截-onInterceptTouchEvent"><a href="#事件拦截-onInterceptTouchEvent" class="headerlink" title="事件拦截 onInterceptTouchEvent"></a>事件拦截 onInterceptTouchEvent</h3><p>此方法只在ViewGroup中存在<br><code>return true;</code> 对事件进行拦截，并交由本层控件的<code>onTouchEvent</code>对事件进行处理<br><code>retrun false;</code> 不对事件进行拦截，向下分发，传递给子<code>View</code>的<code>dispatchTouchEvent</code>处理<br><code>return super.onInterceptTouchEvent(ev);</code> 默认等同于 <code>return true;</code> （既然是拦截器，默认功能当然是拦截啦）</p>
+<h3 id="事件响应-onTouchEvent"><a href="#事件响应-onTouchEvent" class="headerlink" title="事件响应 onTouchEvent"></a>事件响应 onTouchEvent</h3><p><code>return true;</code> 事件已被消费，事件终结<br><code>return false;</code> 事件处理后又<strong>上传</strong>到上层<code>View</code>,交由上层的<code>View</code>的<code>onTouchEvent</code>进行处理<br><code>return super.onTouchEvent(ev);</code> 默认等同于 <code>return false;</code></p>
+<h3 id="ViewGroup-事件流程图"><a href="#ViewGroup-事件流程图" class="headerlink" title="ViewGroup 事件流程图"></a>ViewGroup 事件流程图</h3><p>由于ViewGroup的事件是最全面的，所以图中只画了ViewGroup<br><img src="https://www.processon.com/chart_image/581bf20ce4b0c6fe570ca35e.png" alt="Flow"></p>
+<blockquote>
+<p>Thanks<br><a href="http://stackvoid.com/details-dispatch-onTouch-Event-in-Android/" target="_blank" rel="external">Android 事件分发机制详解</a> (这网址现在已经不能用了，心好累)<br><a href="https://www.processon.com" target="_blank" rel="external">Processon 免费在线绘图</a></p>
+</blockquote>
+<p>===</p>
+<blockquote>
+<p>Note<br>中发现<code>Activity</code> 默认只会将<strong>Down</strong>向下传递,而<strong>Move</strong>、<strong>Up</strong>会在<code>onTouchEvent</code>中消费，必须要将<strong>Down</strong>消费后，<strong>Move</strong>、<strong>Up</strong>才会向下传递</p>
+</blockquote>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h3><ul>
+<li>老板 Activity<ol>
+<li>主要是派发任务，也就是<code>dispatchTouchEvent</code></li>
+<li><strong>秘书</strong> <code>onTouchEvent</code>(老板总不能所有事都亲历亲为，所以我们还得有个<strong>秘书</strong>)    </li>
+</ol>
+</li>
+<li>管理 ViewGroup<ol>
+<li>项目经理 <code>dispatchTouchEvent</code> 也是派发任务</li>
+<li>部门经理 <code>onInterceptTouchEvent</code> 用于评估项目经理提出的功能可行性及工时</li>
+<li>技术经理 <code>onTouchEvent</code> 公司技术骨干，有难度的活找他们。</li>
+</ol>
+</li>
+<li>码农 View<ol>
+<li>onTouchEvent 由于码农是在公司的最低层，所以咱们没得选</li>
+<li>dispatchTouchEvent 虽然这方法咱现在没用，但咱也总不能当一辈子码农啊</li>
+</ol>
+</li>
+</ul>
+<h3 id="明确功能"><a href="#明确功能" class="headerlink" title="明确功能"></a>明确功能</h3><ul>
+<li>dispatchTouchEvent<ol>
+<li><code>return true</code> 对应角色自己就将任务完成了</li>
+<li><code>return false</code> 对应角色自己无法下决定，于是请求上级出面解决</li>
+<li><code>return dispatchTouchEvent</code> 任务正常派发</li>
+</ol>
+</li>
+<li>onInterceptTouchEvent<ol>
+<li><code>return true/onInterceptTouchEvent</code> 对应角色认为任务不合理，将其驳回</li>
+<li><code>return false</code> 任务合理，不驳回</li>
+</ol>
+</li>
+<li>onTouchEvent <ol>
+<li><code>return true</code> 任务执行完成，但没必要汇报上级</li>
+<li><code>return false/super.onTouchEvent</code> 本职工作已完成，但你自己并不能决定任务是否已经完成，需要上级验收通过才算真正完成</li>
+</ol>
+</li>
+</ul>
+<h3 id="案例1"><a href="#案例1" class="headerlink" title="案例1"></a>案例1</h3><p>某天一位潜在客户来找到老板，说希望实现一个淘宝，预算<strong>5W</strong>，老板一听，虎躯一震，直接回绝客户,然后就没有下文了。</p>
+<p>在这个案例中，老板自己就事情给处理了。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Activity/老板 dispatchTouchEvent <span class="keyword">return</span> <span class="keyword">true</span>.</div></pre></td></tr></table></figure>
+<h3 id="案例2"><a href="#案例2" class="headerlink" title="案例2"></a>案例2</h3><ol>
+<li>某天一位潜在客户来找到老板，说希望实现一个淘宝，预算<strong>5000W</strong>，但是要1个月必须上线第一版，老板一听，时间紧了点，但加加班还是可以搞定的，很快便签好了合同，并将任务派发给了项目经理并特别要求这个项目一定要做好，</li>
+<li>项目经理立马就将老板的指示传递给了部门经理</li>
+<li>部分经理并没有提出异议，于是便将任务细化，派发给码农</li>
+<li>码农表示自己一个月时间肯定做不完啊，于是便向技术经理需求帮助</li>
+<li>一个月后，技术经理将第一版交到了老板的秘书手里</li>
+<li>秘书将第一版拿给了老板，并且最终通过了客户验收</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Activity/老板 dispatchTouchEvent <span class="keyword">return</span> dispatchTouchEvent.</div><div class="line">ViewGroup/项目经理 dispatchTouchEvent <span class="keyword">return</span> dispatchTouchEvent.</div><div class="line">ViewGroup/部门经理 onInterceptTouchEvent <span class="keyword">return</span> <span class="keyword">false</span>.</div><div class="line">View/码农 onTouchEvent <span class="keyword">return</span> <span class="keyword">false</span>.</div><div class="line">ViewGroup/技术经理 onTouchEvent <span class="keyword">return</span> <span class="keyword">false</span></div><div class="line">Activity/老板秘书 onTouchEvent</div></pre></td></tr></table></figure>
+<h3 id="案例3"><a href="#案例3" class="headerlink" title="案例3"></a>案例3</h3><ol>
+<li>案例2中的客户想老板反映，希望网站的平均并发量可以达到100000/s,老板变将这个任务交给了项目项目经理</li>
+<li>项目经理由于对技术不是很熟悉，于是便直接将任务交给部门经理评估</li>
+<li>部门经理收到任务后，认为此需求不合理，找到老板秘书后表示阿里双11的峰值瞬时并发量也不过50000/s</li>
+<li>老板秘书向老板传到了部门经理的意见</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Activity/老板 dispatchTouchEvent <span class="keyword">return</span> dispatchTouchEvent.</div><div class="line">ViewGroup/项目经理 dispatchTouchEvent <span class="keyword">return</span> dispatchTouchEvent.</div><div class="line">ViewGroup/部门经理 onInterceptTouchEvent <span class="keyword">return</span> <span class="keyword">true</span>/onInterceptTouchEvent.</div><div class="line">Activity/老板秘书 onTouchEvent</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -356,17 +521,13 @@ Quick">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/12/20/2015-12-20-Gradle-常用配置/" rel="next" title="Gradle-常用配置">
-                <i class="fa fa-chevron-left"></i> Gradle-常用配置
+              <a href="/2016/09/18/2016-09-18-TextInputEditText样式设置/" rel="next" title="TextInputEditText样式设置">
+                <i class="fa fa-chevron-left"></i> TextInputEditText样式设置
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/09/18/2016-09-18-TextInputEditText样式设置/" rel="prev" title="TextInputEditText样式设置">
-                TextInputEditText样式设置 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -392,8 +553,8 @@ Quick">
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/03/06/hello-world/"
-           data-title="Hello World" data-url="http://xudaojie.github.io/2016/03/06/hello-world/">
+      <div class="ds-thread" data-thread-key="2016/10/24/2016-10-24-事件的分发与上传/"
+           data-title="利用面向对象来讲解事件分发与上传" data-url="http://xudaojie.github.io/2016/10/24/2016-10-24-事件的分发与上传/">
       </div>
     
   </div>
@@ -522,7 +683,7 @@ Quick">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#事件调度-dispatchTouchEvent"><span class="nav-number">1.</span> <span class="nav-text">事件调度 dispatchTouchEvent</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件拦截-onInterceptTouchEvent"><span class="nav-number">2.</span> <span class="nav-text">事件拦截 onInterceptTouchEvent</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件响应-onTouchEvent"><span class="nav-number">3.</span> <span class="nav-text">事件响应 onTouchEvent</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ViewGroup-事件流程图"><span class="nav-number">4.</span> <span class="nav-text">ViewGroup 事件流程图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number"></span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建对象"><span class="nav-number">1.</span> <span class="nav-text">创建对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#明确功能"><span class="nav-number">2.</span> <span class="nav-text">明确功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例1"><span class="nav-number">3.</span> <span class="nav-text">案例1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例2"><span class="nav-number">4.</span> <span class="nav-text">案例2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例3"><span class="nav-number">5.</span> <span class="nav-text">案例3</span></a></li></ol></div>
             
           </div>
         </section>
