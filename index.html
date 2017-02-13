@@ -203,6 +203,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
@@ -722,7 +732,7 @@
 </ul>
 <figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 在 Android &#123;&#125; 节点下增加</span></div><div class="line">signingConfigs &#123;</div><div class="line">    signConfig &#123;</div><div class="line">        storeFile <span class="keyword">file</span> (<span class="string">'../key.jks'</span>)</div><div class="line">        storePassword <span class="string">'123456'</span></div><div class="line">        keyAlias <span class="string">'xdj'</span></div><div class="line">        keyPassword <span class="string">'123456'</span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">buildTypes &#123;</div><div class="line">    release &#123;</div><div class="line">        signingConfig signingConfigs.signConfig</div><div class="line">    &#125;</div><div class="line">    debug &#123;</div><div class="line">        signingConfig signingConfigs.signConfig <span class="comment">// 配置debug包的签名</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <ul>
-<li>获得签名文件信息<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 终端命令</div><div class="line">keytool -list -v -keystore ./key.jks</div></pre></td></tr></table></figure>
+<li>获得签名文件信息<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 终端命令</span></div><div class="line">$ keytool -list -v -keystore ./key.jks</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>输出结果<br><img src="http://ww4.sinaimg.cn/large/9da81145gw1ez65rnuqydj20mf0a140k.jpg" alt="返回"></p>
@@ -730,7 +740,7 @@
 <p>Tips<br>还可通过在<strong>AndroidStudio</strong>自带<strong>终端</strong>中运行 <code>./gradlew signingReport</code>命令获取</p>
 </blockquote>
 <ul>
-<li>获得<strong>APK</strong>签名信息<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 终端命令</span></div><div class="line">jarsigner -verify -certs -verbose ./app/build/outputs/apk/app-googleplay-debug.apk</div></pre></td></tr></table></figure>
+<li>获得<strong>APK</strong>签名信息<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 终端命令</span></div><div class="line">$ jarsigner -verify -certs -verbose ./app/build/outputs/apk/app-googleplay-debug.apk</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>输出结果<br><img src="http://ww2.sinaimg.cn/large/9da81145gw1ez65ymnbp1j20fp02oq3f.jpg" alt="返回结果"></p>
