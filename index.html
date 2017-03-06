@@ -271,6 +271,128 @@
             
               
                 
+                <a class="post-title-link" href="/2017/03/06/ubuntu修复引导/" itemprop="url">
+                  ubuntu修复引导
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-03-06T10:54:02+08:00" content="2017-03-06">
+              2017-03-06
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/03/06/ubuntu修复引导/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/06/ubuntu修复引导/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/03/06/ubuntu修复引导/" class="leancloud_visitors" data-flag-title="ubuntu修复引导">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>首次以U盘方式安装Ubuntu16.04时，系统在开机时会让你选择进入Ubuntu还是Windows，后重新安装Ubuntu14.04的时候，就都是直接进入Ubuntu而没有选择项了。</p>
+<h2 id="修复引导"><a href="#修复引导" class="headerlink" title="修复引导"></a>修复引导</h2><p>执行此命令后便会修复引导</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo update-grub</div></pre></td></tr></table></figure>
+<h2 id="修改默认系统"><a href="#修改默认系统" class="headerlink" title="修改默认系统"></a>修改默认系统</h2><ol>
+<li><p>打开/etc/default/grub</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo vim /etc/default/grub</div></pre></td></tr></table></figure>
+</li>
+<li><p>修改默认系统<br>GRUB_DEFAULT=4<br>我的Windows是第五个选择，所以值设置4默认便是选择Windows</p>
+</li>
+<li><p>执行更新</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo update-grub</div></pre></td></tr></table></figure>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/10/24/事件的分发与上传/" itemprop="url">
                   利用面向对象来讲解事件分发与上传
                 </a>
@@ -845,7 +967,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -862,7 +984,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
