@@ -6,15 +6,15 @@
 
 
 <html class="theme-next mist use-motion">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -29,7 +29,7 @@
 
   
   
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -65,80 +65,39 @@
 
   
 
-<link href="https://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="https://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Hexo, NexT" />
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/xbox.png?v=5.0.2" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/xbox.png?v=5.0.2">
 
 
 
 
 
 
-<meta name="description" content="首先先来看下基本的套路，第一次看完事件分发后通常是懵逼，但我觉得还是应该先看下。
-Android 中当系统捕获事件时，都是由最外层的View依次向下传递，当然，事件不能总是传递到最后一子View才结束，我们在每一级消息传递时都会对消息做出响应以决定继续分发或者拦截。
-
-
-
-Touch事件相关方法
-方法功能
-View
-ViewGroup
-Activity
-
-
-
-
-dispatchTouchEvent">
+<meta name="description" content="首先先来看下基本的套路，第一次看完事件分发后通常是懵逼，但我觉得还是应该先看下。 Android 中当系统捕获事件时，都是由最外层的View依次向下传递，当然，事件不能总是传递到最后一子View才结束，我们在每一级消息传递时都会对消息做出响应以决定继续分发或者拦截。    Touch事件相关方法 方法功能 View ViewGroup Activity     dispatchTouchEvent">
 <meta property="og:type" content="article">
 <meta property="og:title" content="利用面向对象来讲解事件分发与上传">
 <meta property="og:url" content="http://xudaojie.github.io/2016/10/24/事件的分发与上传/index.html">
 <meta property="og:site_name" content="XuDaojie的博客">
-<meta property="og:description" content="首先先来看下基本的套路，第一次看完事件分发后通常是懵逼，但我觉得还是应该先看下。
-Android 中当系统捕获事件时，都是由最外层的View依次向下传递，当然，事件不能总是传递到最后一子View才结束，我们在每一级消息传递时都会对消息做出响应以决定继续分发或者拦截。
-
-
-
-Touch事件相关方法
-方法功能
-View
-ViewGroup
-Activity
-
-
-
-
-dispatchTouchEvent">
+<meta property="og:description" content="首先先来看下基本的套路，第一次看完事件分发后通常是懵逼，但我觉得还是应该先看下。 Android 中当系统捕获事件时，都是由最外层的View依次向下传递，当然，事件不能总是传递到最后一子View才结束，我们在每一级消息传递时都会对消息做出响应以决定继续分发或者拦截。    Touch事件相关方法 方法功能 View ViewGroup Activity     dispatchTouchEvent">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://www.processon.com/chart_image/581bf20ce4b0c6fe570ca35e.png">
 <meta property="og:updated_time" content="2017-01-06T03:58:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="利用面向对象来讲解事件分发与上传">
-<meta name="twitter:description" content="首先先来看下基本的套路，第一次看完事件分发后通常是懵逼，但我觉得还是应该先看下。
-Android 中当系统捕获事件时，都是由最外层的View依次向下传递，当然，事件不能总是传递到最后一子View才结束，我们在每一级消息传递时都会对消息做出响应以决定继续分发或者拦截。
-
-
-
-Touch事件相关方法
-方法功能
-View
-ViewGroup
-Activity
-
-
-
-
-dispatchTouchEvent">
+<meta name="twitter:description" content="首先先来看下基本的套路，第一次看完事件分发后通常是懵逼，但我觉得还是应该先看下。 Android 中当系统捕获事件时，都是由最外层的View依次向下传递，当然，事件不能总是传递到最后一子View才结束，我们在每一级消息传递时都会对消息做出响应以决定继续分发或者拦截。    Touch事件相关方法 方法功能 View ViewGroup Activity     dispatchTouchEvent">
 <meta name="twitter:image" content="https://www.processon.com/chart_image/581bf20ce4b0c6fe570ca35e.png">
 
 
@@ -160,7 +119,7 @@ dispatchTouchEvent">
 
 
 
-  <link rel="canonical" href="http://xudaojie.github.io/2016/10/24/事件的分发与上传/"/>
+  <link rel="canonical" href="http://xudaojie.github.io/2016/10/24/事件的分发与上传/">
 
 
   <title> 利用面向对象来讲解事件分发与上传 | XuDaojie的博客 </title>
@@ -202,7 +161,7 @@ dispatchTouchEvent">
   
 
   <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
+    <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
       <span class="site-title">XuDaojie的博客</span>
       <span class="logo-line-after"><i></i></span>
@@ -229,7 +188,7 @@ dispatchTouchEvent">
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -239,7 +198,7 @@ dispatchTouchEvent">
         <li class="menu-item menu-item-categories">
           <a href="/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -249,7 +208,7 @@ dispatchTouchEvent">
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -259,7 +218,7 @@ dispatchTouchEvent">
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
           </a>
@@ -321,7 +280,7 @@ dispatchTouchEvent">
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
               &nbsp; | &nbsp;
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -369,7 +328,7 @@ dispatchTouchEvent">
           
               &nbsp; | &nbsp;
               <span class="page-pv"><i class="fa fa-file-o"></i>
-              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
               </span>
           
         </div>
@@ -436,7 +395,7 @@ dispatchTouchEvent">
 <h3 id="事件响应-onTouchEvent"><a href="#事件响应-onTouchEvent" class="headerlink" title="事件响应 onTouchEvent"></a>事件响应 onTouchEvent</h3><p><code>return true;</code> 事件已被消费，事件终结<br><code>return false;</code> 事件处理后又<strong>上传</strong>到上层<code>View</code>,交由上层的<code>View</code>的<code>onTouchEvent</code>进行处理<br><code>return super.onTouchEvent(ev);</code> 默认等同于 <code>return false;</code></p>
 <h3 id="ViewGroup-事件流程图"><a href="#ViewGroup-事件流程图" class="headerlink" title="ViewGroup 事件流程图"></a>ViewGroup 事件流程图</h3><p>由于ViewGroup的事件是最全面的，所以图中只画了ViewGroup<br><img src="https://www.processon.com/chart_image/581bf20ce4b0c6fe570ca35e.png" alt="Flow"></p>
 <blockquote>
-<p>Thanks<br><a href="http://stackvoid.com/details-dispatch-onTouch-Event-in-Android/" target="_blank" rel="external">Android 事件分发机制详解</a> (这网址现在已经不能用了，心好累)<br><a href="https://www.processon.com" target="_blank" rel="external">Processon 免费在线绘图</a></p>
+<p>Thanks<br><a href="http://stackvoid.com/details-dispatch-onTouch-Event-in-Android/" target="_blank" rel="noopener">Android 事件分发机制详解</a> (这网址现在已经不能用了，心好累)<br><a href="https://www.processon.com" target="_blank" rel="noopener">Processon 免费在线绘图</a></p>
 </blockquote>
 <p>===</p>
 <blockquote>
@@ -480,7 +439,7 @@ dispatchTouchEvent">
 </ul>
 <h3 id="案例1"><a href="#案例1" class="headerlink" title="案例1"></a>案例1</h3><p>某天一位潜在客户来找到老板，说希望实现一个淘宝，预算<strong>5W</strong>，老板一听，虎躯一震，直接回绝客户,然后就没有下文了。</p>
 <p>在这个案例中，老板自己就事情给处理了。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Activity/老板 dispatchTouchEvent <span class="keyword">return</span> <span class="keyword">true</span>.</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Activity/老板 dispatchTouchEvent <span class="keyword">return</span> <span class="keyword">true</span>.</span><br></pre></td></tr></table></figure>
 <h3 id="案例2"><a href="#案例2" class="headerlink" title="案例2"></a>案例2</h3><ol>
 <li>某天一位潜在客户来找到老板，说希望实现一个淘宝，预算<strong>5000W</strong>，但是要1个月必须上线第一版，老板一听，时间紧了点，但加加班还是可以搞定的，很快便签好了合同，并将任务派发给了项目经理并特别要求这个项目一定要做好，</li>
 <li>项目经理立马就将老板的指示传递给了部门经理</li>
@@ -489,14 +448,14 @@ dispatchTouchEvent">
 <li>一个月后，技术经理将第一版交到了老板的秘书手里</li>
 <li>秘书将第一版拿给了老板，并且最终通过了客户验收</li>
 </ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Activity/老板 dispatchTouchEvent <span class="keyword">return</span> dispatchTouchEvent.</div><div class="line">ViewGroup/项目经理 dispatchTouchEvent <span class="keyword">return</span> dispatchTouchEvent.</div><div class="line">ViewGroup/部门经理 onInterceptTouchEvent <span class="keyword">return</span> <span class="keyword">false</span>.</div><div class="line">View/码农 onTouchEvent <span class="keyword">return</span> <span class="keyword">false</span>.</div><div class="line">ViewGroup/技术经理 onTouchEvent <span class="keyword">return</span> <span class="keyword">false</span></div><div class="line">Activity/老板秘书 onTouchEvent</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Activity/老板 dispatchTouchEvent <span class="keyword">return</span> dispatchTouchEvent.</span><br><span class="line">ViewGroup/项目经理 dispatchTouchEvent <span class="keyword">return</span> dispatchTouchEvent.</span><br><span class="line">ViewGroup/部门经理 onInterceptTouchEvent <span class="keyword">return</span> <span class="keyword">false</span>.</span><br><span class="line">View/码农 onTouchEvent <span class="keyword">return</span> <span class="keyword">false</span>.</span><br><span class="line">ViewGroup/技术经理 onTouchEvent <span class="keyword">return</span> <span class="keyword">false</span></span><br><span class="line">Activity/老板秘书 onTouchEvent</span><br></pre></td></tr></table></figure>
 <h3 id="案例3"><a href="#案例3" class="headerlink" title="案例3"></a>案例3</h3><ol>
 <li>案例2中的客户想老板反映，希望网站的平均并发量可以达到100000/s,老板变将这个任务交给了项目项目经理</li>
 <li>项目经理由于对技术不是很熟悉，于是便直接将任务交给部门经理评估</li>
 <li>部门经理收到任务后，认为此需求不合理，找到老板秘书后表示阿里双11的峰值瞬时并发量也不过50000/s</li>
 <li>老板秘书向老板传到了部门经理的意见</li>
 </ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Activity/老板 dispatchTouchEvent <span class="keyword">return</span> dispatchTouchEvent.</div><div class="line">ViewGroup/项目经理 dispatchTouchEvent <span class="keyword">return</span> dispatchTouchEvent.</div><div class="line">ViewGroup/部门经理 onInterceptTouchEvent <span class="keyword">return</span> <span class="keyword">true</span>/onInterceptTouchEvent.</div><div class="line">Activity/老板秘书 onTouchEvent</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Activity/老板 dispatchTouchEvent <span class="keyword">return</span> dispatchTouchEvent.</span><br><span class="line">ViewGroup/项目经理 dispatchTouchEvent <span class="keyword">return</span> dispatchTouchEvent.</span><br><span class="line">ViewGroup/部门经理 onInterceptTouchEvent <span class="keyword">return</span> <span class="keyword">true</span>/onInterceptTouchEvent.</span><br><span class="line">Activity/老板秘书 onTouchEvent</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -558,8 +517,7 @@ dispatchTouchEvent">
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/10/24/事件的分发与上传/"
-           data-title="利用面向对象来讲解事件分发与上传" data-url="http://xudaojie.github.io/2016/10/24/事件的分发与上传/">
+      <div class="ds-thread" data-thread-key="2016/10/24/事件的分发与上传/" data-title="利用面向对象来讲解事件分发与上传" data-url="http://xudaojie.github.io/2016/10/24/事件的分发与上传/">
       </div>
     
   </div>
@@ -584,7 +542,7 @@ dispatchTouchEvent">
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -595,9 +553,7 @@ dispatchTouchEvent">
 
       <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/uploads/avatar.png"
-               alt="XuDaojie" />
+          <img class="site-author-image" itemprop="image" src="/uploads/avatar.png" alt="XuDaojie">
           <p class="site-author-name" itemprop="name">XuDaojie</p>
           <p class="site-description motion-element" itemprop="description">呆呆的初行者</p>
         </div>
@@ -706,7 +662,7 @@ dispatchTouchEvent">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#事件调度-dispatchTouchEvent"><span class="nav-number">1.</span> <span class="nav-text">事件调度 dispatchTouchEvent</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件拦截-onInterceptTouchEvent"><span class="nav-number">2.</span> <span class="nav-text">事件拦截 onInterceptTouchEvent</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件响应-onTouchEvent"><span class="nav-number">3.</span> <span class="nav-text">事件响应 onTouchEvent</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ViewGroup-事件流程图"><span class="nav-number">4.</span> <span class="nav-text">ViewGroup 事件流程图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number"></span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建对象"><span class="nav-number">1.</span> <span class="nav-text">创建对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#明确功能"><span class="nav-number">2.</span> <span class="nav-text">明确功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例1"><span class="nav-number">3.</span> <span class="nav-text">案例1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例2"><span class="nav-number">4.</span> <span class="nav-text">案例2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例3"><span class="nav-number">5.</span> <span class="nav-text">案例3</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#事件调度-dispatchTouchEvent"><span class="nav-number">1.</span> <span class="nav-text">事件调度 dispatchTouchEvent</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件拦截-onInterceptTouchEvent"><span class="nav-number">2.</span> <span class="nav-text">事件拦截 onInterceptTouchEvent</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件响应-onTouchEvent"><span class="nav-number">3.</span> <span class="nav-text">事件响应 onTouchEvent</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ViewGroup-事件流程图"><span class="nav-number">4.</span> <span class="nav-text">ViewGroup 事件流程图</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number"></span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建对象"><span class="nav-number">1.</span> <span class="nav-text">创建对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#明确功能"><span class="nav-number">2.</span> <span class="nav-text">明确功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例1"><span class="nav-number">3.</span> <span class="nav-text">案例1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例2"><span class="nav-number">4.</span> <span class="nav-text">案例2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例3"><span class="nav-number">5.</span> <span class="nav-text">案例3</span></a></li></ol></li></div>
             
           </div>
         </section>
@@ -722,7 +678,7 @@ dispatchTouchEvent">
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy;  2015 - 
   <span itemprop="copyrightYear">2019</span>
