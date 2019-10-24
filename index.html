@@ -261,6 +261,160 @@
             
               
                 
+                <a class="post-title-link" href="/2018/01/16/微服务架构问题/" itemprop="url">
+                  微服务架构问题
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2018-01-16T11:29:36+08:00" content="2018-01-16">
+              2018-01-16
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Spring-Cloud/" itemprop="url" rel="index">
+                    <span itemprop="name">Spring Cloud</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2018/01/16/微服务架构问题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/01/16/微服务架构问题/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2018/01/16/微服务架构问题/" class="leancloud_visitors" data-flag-title="微服务架构问题">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>多服务查询</p>
+<ol>
+<li>Euraka集群规则</li>
+<li></li>
+</ol>
+<h2 id="Spring-Boot"><a href="#Spring-Boot" class="headerlink" title="Spring Boot"></a>Spring Boot</h2><p><a href="https://github.com/spring-projects/spring-boot/blob/d3c34ee3d1bfd3db4a98678c524e145ef9bca51c/spring-boot-project/spring-boot/src/main/java/org/springframework/boot/web/servlet/error/DefaultErrorAttributes.java" target="_blank" rel="external">DefaultErrorAttributes</a></p>
+<p>###. 配置文件</p>
+<ul>
+<li>yml</li>
+<li>properties</li>
+</ul>
+<h4 id="加载顺序"><a href="#加载顺序" class="headerlink" title="加载顺序"></a>加载顺序</h4><ul>
+<li>bootstrap.yml</li>
+<li>bootstrap.application</li>
+<li>application.yml</li>
+<li>application.properties</li>
+</ul>
+<p>application.properties &gt; application.yml &gt; bootstrap.properties &gt; bootstrap.yml</p>
+<h4 id="运行环境"><a href="#运行环境" class="headerlink" title="运行环境"></a>运行环境</h4><p>外部参数<br>spring.profiles.active = dev</p>
+<p>外部配置文件<br>spring.config.location=/opt/config/application.properties</p>
+<h2 id="Gradle"><a href="#Gradle" class="headerlink" title="Gradle"></a>Gradle</h2><p>版本号 GA 稳定版  SHAPSHOP 开发版 Current<br>spring boot<br>http<br><a href="https://blog.csdn.net/u011548068/article/details/58591609" target="_blank" rel="external">Java的Servlet默认只支持GET\POST</a><br>当使用POST，Content-Type为x-www-form-urlencoded时，参数放在Body中进行传递，当到达服务端后，参数会被读取到url中，此时body中已无数据，</p>
+<p>gradle 用法 apply plugin 用法<br><a href="https://mvnrepository.com/artifact/org.bouncycastle" target="_blank" rel="external">https://mvnrepository.com/artifact/org.bouncycastle</a><br><a href="https://search.maven.org/" target="_blank" rel="external">https://search.maven.org/</a></p>
+<p><a href="https://blog.csdn.net/hry2015/article/details/78245149" target="_blank" rel="external"> Spring cloud系列五 Eureka 之集群同步、自我保护模式以及实例注册、心跳、下线</a></p>
+<h2 id="REST"><a href="#REST" class="headerlink" title="REST"></a>REST</h2><p><a href="https://github.com/aisuhua/restful-api-design-references" target="_blank" rel="external">restful-api-design-references</a><br><a href="http://www.360doc.com/content/17/0626/16/13792507_666704156.shtml" target="_blank" rel="external">REST API URI的七大设计原则</a></p>
+<h2 id="JWT"><a href="#JWT" class="headerlink" title="JWT"></a>JWT</h2><h3 id="JWT-官方文档"><a href="#JWT-官方文档" class="headerlink" title="JWT 官方文档"></a>JWT 官方文档</h3><p><a href="https://jwt.io/introduction/" target="_blank" rel="external">https://jwt.io/introduction/</a></p>
+<h3 id="Web-App-Token-鉴权方案的设计与思考"><a href="#Web-App-Token-鉴权方案的设计与思考" class="headerlink" title="Web App Token 鉴权方案的设计与思考"></a>Web App Token 鉴权方案的设计与思考</h3><p><a href="https://zhuanlan.zhihu.com/p/28295641" target="_blank" rel="external">Web App Token 鉴权方案的设计与思考</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/03/06/ubuntu修复引导/" itemprop="url">
                   ubuntu修复引导
                 </a>
@@ -960,7 +1114,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -968,7 +1122,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -977,7 +1131,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1070,7 +1224,7 @@
         <div class="copyright" >
   
   &copy;  2015 - 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
