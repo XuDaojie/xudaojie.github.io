@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.9.0">
+<meta name="generator" content="Hexo 4.0.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/xbox.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/xbox.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
 <link rel="stylesheet" href="/css/main.css">
@@ -23,7 +23,7 @@
     scheme: 'Muse',
     version: '7.4.2',
     exturl: false,
-    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    sidebar: {"position":"right","display":"always","offset":12,"onmobile":false},
     copycode: {"enable":false,"show_result":false,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
@@ -38,8 +38,8 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
-    path: '',
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
       copy_button: 'Copy',
@@ -50,21 +50,19 @@
   };
 </script>
 
-  <meta name="description" content="首先先来看下基本的套路，第一次看完事件分发后通常是懵逼，但我觉得还是应该先看下。 Android 中当系统捕获事件时，都是由最外层的View依次向下传递，当然，事件不能总是传递到最后一子View才结束，我们在每一级消息传递时都会对消息做出响应以决定继续分发或者拦截。    Touch事件相关方法 方法功能 View ViewGroup Activity     dispatchTouchEvent">
+  <meta name="description" content="首先先来看下基本的套路，第一次看完事件分发后通常是懵逼，但我觉得还是应该先看下。 Android 中当系统捕获事件时，都是由最外层的View依次向下传递，当然，事件不能总是传递到最后一子View才结束，我们在每一级消息传递时都会对消息做出响应以决定继续分发或者拦截。    Touch事件相关方法 方法功能 View ViewGroup Activity    dispatchTouchEvent">
 <meta property="og:type" content="article">
 <meta property="og:title" content="利用面向对象来讲解事件分发与上传">
-<meta property="og:url" content="http://xudaojie.github.io/2016/10/24/事件的分发与上传/index.html">
+<meta property="og:url" content="http:&#x2F;&#x2F;xudaojie.github.io&#x2F;2016&#x2F;10&#x2F;24&#x2F;%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%88%86%E5%8F%91%E4%B8%8E%E4%B8%8A%E4%BC%A0&#x2F;index.html">
 <meta property="og:site_name" content="XuDaojie的博客">
-<meta property="og:description" content="首先先来看下基本的套路，第一次看完事件分发后通常是懵逼，但我觉得还是应该先看下。 Android 中当系统捕获事件时，都是由最外层的View依次向下传递，当然，事件不能总是传递到最后一子View才结束，我们在每一级消息传递时都会对消息做出响应以决定继续分发或者拦截。    Touch事件相关方法 方法功能 View ViewGroup Activity     dispatchTouchEvent">
+<meta property="og:description" content="首先先来看下基本的套路，第一次看完事件分发后通常是懵逼，但我觉得还是应该先看下。 Android 中当系统捕获事件时，都是由最外层的View依次向下传递，当然，事件不能总是传递到最后一子View才结束，我们在每一级消息传递时都会对消息做出响应以决定继续分发或者拦截。    Touch事件相关方法 方法功能 View ViewGroup Activity    dispatchTouchEvent">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://www.processon.com/chart_image/581bf20ce4b0c6fe570ca35e.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.processon.com&#x2F;chart_image&#x2F;581bf20ce4b0c6fe570ca35e.png">
 <meta property="og:updated_time" content="2017-01-06T03:58:31.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="利用面向对象来讲解事件分发与上传">
-<meta name="twitter:description" content="首先先来看下基本的套路，第一次看完事件分发后通常是懵逼，但我觉得还是应该先看下。 Android 中当系统捕获事件时，都是由最外层的View依次向下传递，当然，事件不能总是传递到最后一子View才结束，我们在每一级消息传递时都会对消息做出响应以决定继续分发或者拦截。    Touch事件相关方法 方法功能 View ViewGroup Activity     dispatchTouchEvent">
-<meta name="twitter:image" content="https://www.processon.com/chart_image/581bf20ce4b0c6fe570ca35e.png">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;www.processon.com&#x2F;chart_image&#x2F;581bf20ce4b0c6fe570ca35e.png">
 
-<link rel="canonical" href="http://xudaojie.github.io/2016/10/24/事件的分发与上传/">
+<link rel="canonical" href="http://xudaojie.github.io/2016/10/24/%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%88%86%E5%8F%91%E4%B8%8E%E4%B8%8A%E4%BC%A0/">
 
 
 <script id="page-configurations">
@@ -82,6 +80,15 @@
   
 
 
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?2f76e3335b53d914e8e9fa9cd706bc87";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -153,9 +160,44 @@
     <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
 
   </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
   </ul>
 
 </nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
 </div>
     </header>
 
@@ -179,10 +221,10 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://xudaojie.github.io/2016/10/24/事件的分发与上传/">
+    <link itemprop="mainEntityOfPage" href="http://xudaojie.github.io/2016/10/24/%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%88%86%E5%8F%91%E4%B8%8E%E4%B8%8A%E4%BC%A0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/uploads/avatar.png">
       <meta itemprop="name" content="XuDaojie">
       <meta itemprop="description" content="呆呆的初行者">
     </span>
@@ -224,6 +266,34 @@
             </span>
 
           
+            <span id="/2016/10/24/%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%88%86%E5%8F%91%E4%B8%8E%E4%B8%8A%E4%BC%A0/" class="post-meta-item leancloud_visitors" data-flag-title="利用面向对象来讲解事件分发与上传" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2016/10/24/%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%88%86%E5%8F%91%E4%B8%8E%E4%B8%8A%E4%BC%A0/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2016/10/24/%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%88%86%E5%8F%91%E4%B8%8E%E4%B8%8A%E4%BC%A0/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -240,37 +310,41 @@
 <thead>
 <tr>
 <th>Touch事件相关方法</th>
-<th style="text-align:center">方法功能</th>
-<th style="text-align:center">View</th>
-<th style="text-align:center">ViewGroup</th>
-<th style="text-align:center">Activity</th>
+<th align="center">方法功能</th>
+<th align="center">View</th>
+<th align="center">ViewGroup</th>
+<th align="center">Activity</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>dispatchTouchEvent</td>
-<td style="text-align:center">事件调度</td>
-<td style="text-align:center">o</td>
-<td style="text-align:center">√</td>
-<td style="text-align:center">√</td>
+<td align="center">事件调度</td>
+<td align="center">o</td>
+<td align="center">√</td>
+<td align="center">√</td>
 </tr>
 <tr>
 <td>onInterceptTouchEvent</td>
-<td style="text-align:center">事件拦截</td>
-<td style="text-align:center">×</td>
-<td style="text-align:center">√</td>
-<td style="text-align:center">×</td>
+<td align="center">事件拦截</td>
+<td align="center">×</td>
+<td align="center">√</td>
+<td align="center">×</td>
 </tr>
 <tr>
 <td>onTouchEvent</td>
-<td style="text-align:center">事件响应</td>
-<td style="text-align:center">√</td>
-<td style="text-align:center">√</td>
-<td style="text-align:center">√</td>
+<td align="center">事件响应</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">√</td>
 </tr>
-</tbody>
-</table>
-<p><br></p>
+<tr>
+<td><br></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
 <blockquote>
 <p>Tips</p>
 <ol>
@@ -332,6 +406,7 @@
 <h3 id="案例1"><a href="#案例1" class="headerlink" title="案例1"></a>案例1</h3><p>某天一位潜在客户来找到老板，说希望实现一个淘宝，预算<strong>5W</strong>，老板一听，虎躯一震，直接回绝客户,然后就没有下文了。</p>
 <p>在这个案例中，老板自己就事情给处理了。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Activity/老板 dispatchTouchEvent <span class="keyword">return</span> <span class="keyword">true</span>.</span><br></pre></td></tr></table></figure>
+
 <h3 id="案例2"><a href="#案例2" class="headerlink" title="案例2"></a>案例2</h3><ol>
 <li>某天一位潜在客户来找到老板，说希望实现一个淘宝，预算<strong>5000W</strong>，但是要1个月必须上线第一版，老板一听，时间紧了点，但加加班还是可以搞定的，很快便签好了合同，并将任务派发给了项目经理并特别要求这个项目一定要做好，</li>
 <li>项目经理立马就将老板的指示传递给了部门经理</li>
@@ -341,6 +416,7 @@
 <li>秘书将第一版拿给了老板，并且最终通过了客户验收</li>
 </ol>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Activity/老板 dispatchTouchEvent <span class="keyword">return</span> dispatchTouchEvent.</span><br><span class="line">ViewGroup/项目经理 dispatchTouchEvent <span class="keyword">return</span> dispatchTouchEvent.</span><br><span class="line">ViewGroup/部门经理 onInterceptTouchEvent <span class="keyword">return</span> <span class="keyword">false</span>.</span><br><span class="line">View/码农 onTouchEvent <span class="keyword">return</span> <span class="keyword">false</span>.</span><br><span class="line">ViewGroup/技术经理 onTouchEvent <span class="keyword">return</span> <span class="keyword">false</span></span><br><span class="line">Activity/老板秘书 onTouchEvent</span><br></pre></td></tr></table></figure>
+
 <h3 id="案例3"><a href="#案例3" class="headerlink" title="案例3"></a>案例3</h3><ol>
 <li>案例2中的客户想老板反映，希望网站的平均并发量可以达到100000/s,老板变将这个任务交给了项目项目经理</li>
 <li>项目经理由于对技术不是很熟悉，于是便直接将任务交给部门经理评估</li>
@@ -348,6 +424,7 @@
 <li>老板秘书向老板传到了部门经理的意见</li>
 </ol>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Activity/老板 dispatchTouchEvent <span class="keyword">return</span> dispatchTouchEvent.</span><br><span class="line">ViewGroup/项目经理 dispatchTouchEvent <span class="keyword">return</span> dispatchTouchEvent.</span><br><span class="line">ViewGroup/部门经理 onInterceptTouchEvent <span class="keyword">return</span> <span class="keyword">true</span>/onInterceptTouchEvent.</span><br><span class="line">Activity/老板秘书 onTouchEvent</span><br></pre></td></tr></table></figure>
+
 
     </div>
 
@@ -361,7 +438,7 @@
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/2016/09/18/TextInputEditText样式设置/" rel="next" title="TextInputEditText样式设置">
+                <a href="/2016/09/18/TextInputEditText%E6%A0%B7%E5%BC%8F%E8%AE%BE%E7%BD%AE/" rel="next" title="TextInputEditText样式设置">
                   <i class="fa fa-chevron-left"></i> TextInputEditText样式设置
                 </a>
             </div>
@@ -369,7 +446,7 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-                <a href="/2017/03/06/ubuntu修复引导/" rel="prev" title="ubuntu修复引导">
+                <a href="/2017/03/06/ubuntu%E4%BF%AE%E5%A4%8D%E5%BC%95%E5%AF%BC/" rel="prev" title="ubuntu修复引导">
                   ubuntu修复引导 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
@@ -386,6 +463,7 @@
 
           </div>
           
+    <div class="comments" id="comments"></div>
 
         </div>
           
@@ -417,7 +495,7 @@
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <img class="site-author-image" itemprop="image" alt="XuDaojie"
-    src="/images/avatar.gif">
+    src="/uploads/avatar.png">
   <p class="site-author-name" itemprop="name">XuDaojie</p>
   <div class="site-description" itemprop="description">呆呆的初行者</div>
 </div>
@@ -432,18 +510,45 @@
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
-        <span class="site-state-item-count">7</span>
+          
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">9</span>
+          
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
 </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/xudaojie" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;xudaojie" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://weibo.com/u/2645037381" title="Weibo &amp;rarr; http:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;2645037381" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/xudaojieg" title="Twitter &amp;rarr; https:&#x2F;&#x2F;twitter.com&#x2F;xudaojieg" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+      </span>
+  </div>
 
 
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://wuliaonimei.com/" title="http:&#x2F;&#x2F;wuliaonimei.com&#x2F;" rel="noopener" target="_blank">Skilly</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://kaizen.wang/" title="http:&#x2F;&#x2F;kaizen.wang&#x2F;" rel="noopener" target="_blank">Kaizen</a>
+        </li>
+    </ul>
+  </div>
 
       </div>
 
@@ -461,20 +566,40 @@
 
 <div class="copyright">
   
-  &copy; 
+  &copy; 2015 – 
   <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">XuDaojie</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.4.2
+  <div class="theme-info">Theme – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.4.2
   </div>
 
         
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
 
 
 
@@ -509,6 +634,7 @@
 
 
 
+  <script src="/js/local-search.js"></script>
 
 
 
@@ -520,12 +646,40 @@
 
 
 
+
+
+  
 
   
 
   
 
-  
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'D4ST42sHdcVcdperqLyGMfJQ-gzGzoHsz',
+    appKey: '3eVvkr8sUHDDYijod6KXL5Dw',
+    placeholder: "Just go go",
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: true,
+    lang: '' || 'zh-cn',
+    path: location.pathname,
+    recordIP: false,
+    serverURLs: ''
+  });
+}, window.Valine);
+</script>
 
 </body>
 </html>

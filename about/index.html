@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.9.0">
+<meta name="generator" content="Hexo 4.0.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/xbox.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/xbox.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
 <link rel="stylesheet" href="/css/main.css">
@@ -23,7 +23,7 @@
     scheme: 'Muse',
     version: '7.4.2',
     exturl: false,
-    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    sidebar: {"position":"right","display":"always","offset":12,"onmobile":false},
     copycode: {"enable":false,"show_result":false,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
@@ -38,8 +38,8 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
-    path: '',
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
       copy_button: 'Copy',
@@ -53,14 +53,12 @@
   <meta name="description" content="许道杰2年.Net 2年AndroidAndroid工程师-杭州博采网络科技股份有限公司 | 杭州男 | 大专 | 4年开发经验17706527133 | xudaojieg@gmail.com 工作经历杭州博采网络科技股份有限公司Android开发经理&amp;emsp;&amp;emsp; 2015.08-至今1、Android客户端开发，独立开发或团队的都有。2、带新人、实习生，推广新技术。3、负责本组项目">
 <meta property="og:type" content="website">
 <meta property="og:title" content="about">
-<meta property="og:url" content="http://xudaojie.github.io/about/index.html">
+<meta property="og:url" content="http:&#x2F;&#x2F;xudaojie.github.io&#x2F;about&#x2F;index.html">
 <meta property="og:site_name" content="XuDaojie的博客">
 <meta property="og:description" content="许道杰2年.Net 2年AndroidAndroid工程师-杭州博采网络科技股份有限公司 | 杭州男 | 大专 | 4年开发经验17706527133 | xudaojieg@gmail.com 工作经历杭州博采网络科技股份有限公司Android开发经理&amp;emsp;&amp;emsp; 2015.08-至今1、Android客户端开发，独立开发或团队的都有。2、带新人、实习生，推广新技术。3、负责本组项目">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2017-02-22T05:26:50.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="about">
-<meta name="twitter:description" content="许道杰2年.Net 2年AndroidAndroid工程师-杭州博采网络科技股份有限公司 | 杭州男 | 大专 | 4年开发经验17706527133 | xudaojieg@gmail.com 工作经历杭州博采网络科技股份有限公司Android开发经理&amp;emsp;&amp;emsp; 2015.08-至今1、Android客户端开发，独立开发或团队的都有。2、带新人、实习生，推广新技术。3、负责本组项目">
 
 <link rel="canonical" href="http://xudaojie.github.io/about/">
 
@@ -81,6 +79,15 @@
   
 
 
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?2f76e3335b53d914e8e9fa9cd706bc87";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -152,9 +159,44 @@
     <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
 
   </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
   </ul>
 
 </nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
 </div>
     </header>
 
@@ -196,14 +238,13 @@
       
       
       <div class="post-body">
-          <p>许道杰<br>2年.Net 2年Android<br>Android工程师-杭州博采网络科技股份有限公司 | 杭州<br>男 | 大专 | <strong>4年开发经验</strong><br>17706527133 | xudaojieg@gmail.com</p>
+          <p>许道杰<br>2年.Net 2年Android<br>Android工程师-杭州博采网络科技股份有限公司 | 杭州<br>男 | 大专 | <strong>4年开发经验</strong><br>17706527133 | <a href="mailto:xudaojieg@gmail.com" target="_blank" rel="noopener">xudaojieg@gmail.com</a></p>
 <h2 id="工作经历"><a href="#工作经历" class="headerlink" title="工作经历"></a>工作经历</h2><h4 id="杭州博采网络科技股份有限公司"><a href="#杭州博采网络科技股份有限公司" class="headerlink" title="杭州博采网络科技股份有限公司"></a>杭州博采网络科技股份有限公司</h4><p><font color="#BDBDBD">Android开发经理&emsp;&emsp; 2015.08-至今</font><br>1、Android客户端开发，独立开发或团队的都有。<br>2、带新人、实习生，推广新技术。<br>3、负责本组项目工期及难度评估<br>4、技术难点突破<br>5、性能优化</p>
 <h4 id="杭州优管软件"><a href="#杭州优管软件" class="headerlink" title="杭州优管软件"></a>杭州优管软件</h4><p><font color="#BDBDBD">开发工程师&emsp;&emsp;&emsp;&emsp;&emsp;2013.10-2015.08</font><br>纺织企业ERP开发<br>1、使用Winform.Net进行界面开发，并实现业务逻辑，负责仓库、以及部分报表模块功能<br>2、ERP Android，包含PC端部分功能，以及PC端无法实现的功能，比如扫二维码。</p>
 <h2 id="项目经验"><a href="#项目经验" class="headerlink" title="项目经验"></a>项目经验</h2><h4 id="太空堡垒-RxJava-Retrofit-MPAndroidChart"><a href="#太空堡垒-RxJava-Retrofit-MPAndroidChart" class="headerlink" title="太空堡垒 RxJava/Retrofit/MPAndroidChart"></a>太空堡垒 RxJava/Retrofit/MPAndroidChart</h4><p><font color="#BDBDBD">独立开发、沟通需求&emsp;&emsp;2016.01-至今</font><br>1、告警模块，在首页总览各个功能模块的服务器健康状态，并以列表或图表形式查看详情。<br>2、运维模块，主要是对生产服务器进行直接操作，在发起操作后，会有相关管理员收到提醒，管理员允许才会允许继续执行DCOS扩容，容灾切换等操作。<br>3、服务模块，以直线图形式查看业务指标数据，并且指标的类型不固定，为后台可配置。<br>4、工作模块，此模块主要是展示功能、可扩展，使用人员可按需将自己需要的模块加入其中，除值班表为固定样式展示外，其余模块均为后台可配置，可以形式展示饼图、折线、列表、H5。</p>
 <h4 id="幸福东欣-RxJava-Retrofit"><a href="#幸福东欣-RxJava-Retrofit" class="headerlink" title="幸福东欣 RxJava/Retrofit"></a>幸福东欣 RxJava/Retrofit</h4><p><font color="#BDBDBD">独立开发&emsp;&emsp;2016.01-2016.03</font><br>1、商城功能，可查看社区附近的店铺，可定位该店铺，也可直接在App上购买商品，通过支付宝、微信支付进行支付。<br>2、查看物业公告，并可使用qq、微信、微博进行分享。<br>3、社区功能，可发布分享，也可在这个模块发布自己对物业的意见。<br>4、对接物业原有系统实现停车费、物业费缴纳。</p>
 <h4 id="嗨皮娃娃机-OKHttp"><a href="#嗨皮娃娃机-OKHttp" class="headerlink" title="嗨皮娃娃机 OKHttp"></a>嗨皮娃娃机 OKHttp</h4><p><font color="#BDBDBD">独立开发&emsp;&emsp;2015.10-2016.01</font><br>1、手机端通过发送UDP消息操控娃娃机的机械爪抓娃娃<br>2、通过对接大华摄像SDK实现实时显示影像。<br>3、将娃娃的相关信息分享至qq、微博、微信。<br>4、通过微信、支付宝购买金币。</p>
-<h2 id="教育经历"><a href="#教育经历" class="headerlink" title="教育经历"></a>教育经历</h2><h6 id="绍兴职业技术学院"><a href="#绍兴职业技术学院" class="headerlink" title="绍兴职业技术学院"></a>绍兴职业技术学院</h6><p><font color="#BDBDBD">大专  -   计算机辅助设计与制作  -   2013年毕业</font><br>-</p>
-<h2 id="作品展示"><a href="#作品展示" class="headerlink" title="作品展示"></a>作品展示</h2><h4 id="Blog"><a href="#Blog" class="headerlink" title="Blog"></a>Blog</h4><p><a href="http://nide.name/" target="_blank" rel="noopener">Http://nide.name/</a></p>
+<h2 id="教育经历"><a href="#教育经历" class="headerlink" title="教育经历"></a>教育经历</h2><h6 id="绍兴职业技术学院"><a href="#绍兴职业技术学院" class="headerlink" title="绍兴职业技术学院"></a>绍兴职业技术学院</h6><h2 id="大专-计算机辅助设计与制作-2013年毕业"><a href="#大专-计算机辅助设计与制作-2013年毕业" class="headerlink" title="大专  -   计算机辅助设计与制作  -   2013年毕业"></a><font color="#BDBDBD">大专  -   计算机辅助设计与制作  -   2013年毕业</font></h2><h2 id="作品展示"><a href="#作品展示" class="headerlink" title="作品展示"></a>作品展示</h2><h4 id="Blog"><a href="#Blog" class="headerlink" title="Blog"></a>Blog</h4><p><a href="http://nide.name/" target="_blank" rel="noopener">Http://nide.name/</a></p>
 <h4 id="Github"><a href="#Github" class="headerlink" title="Github"></a><a href="https://github.com/XuDaojie" target="_blank" rel="noopener">Github</a></h4><p>1、<a href="https://github.com/XuDaojie/MultiStateView" target="_blank" rel="noopener">MultiStateView star 170</a><br>通用的Loading、Error、Empty等状态切换的View，并且支持添加自定义的状态。<br>2、<a href="https://github.com/XuDaojie/QRCode-Android" target="_blank" rel="noopener">QRCode-Android star 72</a><br>二位码、条形码扫描</p>
 <h2 id="期望工作"><a href="#期望工作" class="headerlink" title="期望工作"></a>期望工作</h2><p>Android工程师 | 全职 | 杭州 | 薪资面议</p>
 <h2 id="技能"><a href="#技能" class="headerlink" title="技能"></a>技能</h2><p>经过标记为熟练使用的技能<br><code>Android、Java、Git、Retrofit、RxJava、SQL、C#</code> | React Native、Kotlin、C/C++、JavaScript</p>
@@ -223,6 +264,7 @@
 
           </div>
           
+    <div class="comments" id="comments"></div>
 
         </div>
           
@@ -247,14 +289,14 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#工作经历"><span class="nav-number">1.</span> <span class="nav-text">工作经历</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#杭州博采网络科技股份有限公司"><span class="nav-number">1.0.1.</span> <span class="nav-text">杭州博采网络科技股份有限公司</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#杭州优管软件"><span class="nav-number">1.0.2.</span> <span class="nav-text">杭州优管软件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目经验"><span class="nav-number">2.</span> <span class="nav-text">项目经验</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#太空堡垒-RxJava-Retrofit-MPAndroidChart"><span class="nav-number">2.0.1.</span> <span class="nav-text">太空堡垒 RxJava/Retrofit/MPAndroidChart</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#幸福东欣-RxJava-Retrofit"><span class="nav-number">2.0.2.</span> <span class="nav-text">幸福东欣 RxJava/Retrofit</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#嗨皮娃娃机-OKHttp"><span class="nav-number">2.0.3.</span> <span class="nav-text">嗨皮娃娃机 OKHttp</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#教育经历"><span class="nav-number">3.</span> <span class="nav-text">教育经历</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#绍兴职业技术学院"><span class="nav-number">3.0.0.0.1.</span> <span class="nav-text">绍兴职业技术学院</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#作品展示"><span class="nav-number">4.</span> <span class="nav-text">作品展示</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Blog"><span class="nav-number">4.0.1.</span> <span class="nav-text">Blog</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Github"><span class="nav-number">4.0.2.</span> <span class="nav-text">Github</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#期望工作"><span class="nav-number">5.</span> <span class="nav-text">期望工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#技能"><span class="nav-number">6.</span> <span class="nav-text">技能</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#工作经历"><span class="nav-number">1.</span> <span class="nav-text">工作经历</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#杭州博采网络科技股份有限公司"><span class="nav-number">1.0.1.</span> <span class="nav-text">杭州博采网络科技股份有限公司</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#杭州优管软件"><span class="nav-number">1.0.2.</span> <span class="nav-text">杭州优管软件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目经验"><span class="nav-number">2.</span> <span class="nav-text">项目经验</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#太空堡垒-RxJava-Retrofit-MPAndroidChart"><span class="nav-number">2.0.1.</span> <span class="nav-text">太空堡垒 RxJava/Retrofit/MPAndroidChart</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#幸福东欣-RxJava-Retrofit"><span class="nav-number">2.0.2.</span> <span class="nav-text">幸福东欣 RxJava/Retrofit</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#嗨皮娃娃机-OKHttp"><span class="nav-number">2.0.3.</span> <span class="nav-text">嗨皮娃娃机 OKHttp</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#教育经历"><span class="nav-number">3.</span> <span class="nav-text">教育经历</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#绍兴职业技术学院"><span class="nav-number">3.0.0.0.1.</span> <span class="nav-text">绍兴职业技术学院</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#大专-计算机辅助设计与制作-2013年毕业"><span class="nav-number">4.</span> <span class="nav-text">大专  -   计算机辅助设计与制作  -   2013年毕业</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#作品展示"><span class="nav-number">5.</span> <span class="nav-text">作品展示</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Blog"><span class="nav-number">5.0.1.</span> <span class="nav-text">Blog</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Github"><span class="nav-number">5.0.2.</span> <span class="nav-text">Github</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#期望工作"><span class="nav-number">6.</span> <span class="nav-text">期望工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#技能"><span class="nav-number">7.</span> <span class="nav-text">技能</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <img class="site-author-image" itemprop="image" alt="XuDaojie"
-    src="/images/avatar.gif">
+    src="/uploads/avatar.png">
   <p class="site-author-name" itemprop="name">XuDaojie</p>
   <div class="site-description" itemprop="description">呆呆的初行者</div>
 </div>
@@ -269,18 +311,45 @@
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
-        <span class="site-state-item-count">7</span>
+          
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">9</span>
+          
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
 </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/xudaojie" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;xudaojie" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://weibo.com/u/2645037381" title="Weibo &amp;rarr; http:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;2645037381" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/xudaojieg" title="Twitter &amp;rarr; https:&#x2F;&#x2F;twitter.com&#x2F;xudaojieg" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+      </span>
+  </div>
 
 
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://wuliaonimei.com/" title="http:&#x2F;&#x2F;wuliaonimei.com&#x2F;" rel="noopener" target="_blank">Skilly</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://kaizen.wang/" title="http:&#x2F;&#x2F;kaizen.wang&#x2F;" rel="noopener" target="_blank">Kaizen</a>
+        </li>
+    </ul>
+  </div>
 
       </div>
 
@@ -298,20 +367,40 @@
 
 <div class="copyright">
   
-  &copy; 
+  &copy; 2015 – 
   <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">XuDaojie</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.4.2
+  <div class="theme-info">Theme – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.4.2
   </div>
 
         
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
 
 
 
@@ -346,6 +435,7 @@
 
 
 
+  <script src="/js/local-search.js"></script>
 
 
 
@@ -357,12 +447,40 @@
 
 
 
+
+
+  
 
   
 
   
 
-  
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'D4ST42sHdcVcdperqLyGMfJQ-gzGzoHsz',
+    appKey: '3eVvkr8sUHDDYijod6KXL5Dw',
+    placeholder: "Just go go",
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: true,
+    lang: '' || 'zh-cn',
+    path: location.pathname,
+    recordIP: false,
+    serverURLs: ''
+  });
+}, window.Valine);
+</script>
 
 </body>
 </html>

@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.9.0">
+<meta name="generator" content="Hexo 4.0.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/xbox.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/xbox.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
 <link rel="stylesheet" href="/css/main.css">
@@ -23,7 +23,7 @@
     scheme: 'Muse',
     version: '7.4.2',
     exturl: false,
-    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    sidebar: {"position":"right","display":"always","offset":12,"onmobile":false},
     copycode: {"enable":false,"show_result":false,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
@@ -38,8 +38,8 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
-    path: '',
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
       copy_button: 'Copy',
@@ -50,24 +50,22 @@
   };
 </script>
 
-  <meta name="description" content="签名当程序中使用了第三方的功能，比如分享、地图时，要求程序必须是已签名的在Gradle中配置签名后，可以使我们的Debug也带上签名，而不需要使用Build/Generate Signer Apk去编译带签名的APK  build.gradle  1234567891011121314151617// 在 Android &amp;#123;&amp;#125; 节点下增加signingConfigs &amp;#123">
+  <meta name="description" content="签名当程序中使用了第三方的功能，比如分享、地图时，要求程序必须是已签名的在Gradle中配置签名后，可以使我们的Debug也带上签名，而不需要使用Build&#x2F;Generate Signer Apk去编译带签名的APK  build.gradle  1234567891011121314151617&#x2F;&#x2F; 在 Android &amp;#123;&amp;#125; 节点下增加signingConfigs &amp;#123">
 <meta name="keywords" content="Gradle">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Gradle-常用配置">
-<meta property="og:url" content="http://xudaojie.github.io/2015/12/20/Gradle-常用配置/index.html">
+<meta property="og:url" content="http:&#x2F;&#x2F;xudaojie.github.io&#x2F;2015&#x2F;12&#x2F;20&#x2F;Gradle-%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE&#x2F;index.html">
 <meta property="og:site_name" content="XuDaojie的博客">
-<meta property="og:description" content="签名当程序中使用了第三方的功能，比如分享、地图时，要求程序必须是已签名的在Gradle中配置签名后，可以使我们的Debug也带上签名，而不需要使用Build/Generate Signer Apk去编译带签名的APK  build.gradle  1234567891011121314151617// 在 Android &amp;#123;&amp;#125; 节点下增加signingConfigs &amp;#123">
+<meta property="og:description" content="签名当程序中使用了第三方的功能，比如分享、地图时，要求程序必须是已签名的在Gradle中配置签名后，可以使我们的Debug也带上签名，而不需要使用Build&#x2F;Generate Signer Apk去编译带签名的APK  build.gradle  1234567891011121314151617&#x2F;&#x2F; 在 Android &amp;#123;&amp;#125; 节点下增加signingConfigs &amp;#123">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://ww4.sinaimg.cn/large/9da81145gw1ez65rnuqydj20mf0a140k.jpg">
-<meta property="og:image" content="http://ww2.sinaimg.cn/large/9da81145gw1ez65ymnbp1j20fp02oq3f.jpg">
-<meta property="og:image" content="http://ww3.sinaimg.cn/large/9da81145gw1ez05ymejwyj20b608n3yz.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;ww4.sinaimg.cn&#x2F;large&#x2F;9da81145gw1ez65rnuqydj20mf0a140k.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;ww2.sinaimg.cn&#x2F;large&#x2F;9da81145gw1ez65ymnbp1j20fp02oq3f.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;ww3.sinaimg.cn&#x2F;large&#x2F;9da81145gw1ez05ymejwyj20b608n3yz.jpg">
 <meta property="og:updated_time" content="2018-04-14T08:14:02.179Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Gradle-常用配置">
-<meta name="twitter:description" content="签名当程序中使用了第三方的功能，比如分享、地图时，要求程序必须是已签名的在Gradle中配置签名后，可以使我们的Debug也带上签名，而不需要使用Build/Generate Signer Apk去编译带签名的APK  build.gradle  1234567891011121314151617// 在 Android &amp;#123;&amp;#125; 节点下增加signingConfigs &amp;#123">
-<meta name="twitter:image" content="http://ww4.sinaimg.cn/large/9da81145gw1ez65rnuqydj20mf0a140k.jpg">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;ww4.sinaimg.cn&#x2F;large&#x2F;9da81145gw1ez65rnuqydj20mf0a140k.jpg">
 
-<link rel="canonical" href="http://xudaojie.github.io/2015/12/20/Gradle-常用配置/">
+<link rel="canonical" href="http://xudaojie.github.io/2015/12/20/Gradle-%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/">
 
 
 <script id="page-configurations">
@@ -85,6 +83,15 @@
   
 
 
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?2f76e3335b53d914e8e9fa9cd706bc87";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -156,9 +163,44 @@
     <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
 
   </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
   </ul>
 
 </nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
 </div>
     </header>
 
@@ -182,10 +224,10 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://xudaojie.github.io/2015/12/20/Gradle-常用配置/">
+    <link itemprop="mainEntityOfPage" href="http://xudaojie.github.io/2015/12/20/Gradle-%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/uploads/avatar.png">
       <meta itemprop="name" content="XuDaojie">
       <meta itemprop="description" content="呆呆的初行者">
     </span>
@@ -227,6 +269,34 @@
             </span>
 
           
+            <span id="/2015/12/20/Gradle-%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/" class="post-meta-item leancloud_visitors" data-flag-title="Gradle-常用配置" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2015/12/20/Gradle-%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2015/12/20/Gradle-%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -242,38 +312,41 @@
 <li>build.gradle</li>
 </ul>
 <figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在 Android &#123;&#125; 节点下增加</span></span><br><span class="line">signingConfigs &#123;</span><br><span class="line">    signConfig &#123;</span><br><span class="line">        storeFile <span class="keyword">file</span> (<span class="string">'../key.jks'</span>)</span><br><span class="line">        storePassword <span class="string">'123456'</span></span><br><span class="line">        keyAlias <span class="string">'xdj'</span></span><br><span class="line">        keyPassword <span class="string">'123456'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">buildTypes &#123;</span><br><span class="line">    release &#123;</span><br><span class="line">        signingConfig signingConfigs.signConfig</span><br><span class="line">    &#125;</span><br><span class="line">    debug &#123;</span><br><span class="line">        signingConfig signingConfigs.signConfig <span class="comment">// 配置debug包的签名</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>获得签名文件信息<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 终端命令</span></span><br><span class="line">$ keytool -list -v -keystore ./key.jks</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+<li><p>获得签名文件信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 终端命令</span></span><br><span class="line">$ keytool -list -v -keystore ./key.jks</span><br></pre></td></tr></table></figure>
 <p>输出结果<br><img src="http://ww4.sinaimg.cn/large/9da81145gw1ez65rnuqydj20mf0a140k.jpg" alt="返回"></p>
 <blockquote>
 <p>Tips<br>还可通过在<strong>AndroidStudio</strong>自带<strong>终端</strong>中运行 <code>./gradlew signingReport</code>命令获取</p>
 </blockquote>
-<ul>
-<li>获得<strong>APK</strong>签名信息<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 终端命令</span></span><br><span class="line">$ jarsigner -verify -certs -verbose ./app/build/outputs/apk/app-googleplay-debug.apk</span><br></pre></td></tr></table></figure>
 </li>
-</ul>
+<li><p>获得<strong>APK</strong>签名信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 终端命令</span></span><br><span class="line">$ jarsigner -verify -certs -verbose ./app/build/outputs/apk/app-googleplay-debug.apk</span><br></pre></td></tr></table></figure>
 <p>输出结果<br><img src="http://ww2.sinaimg.cn/large/9da81145gw1ez65ymnbp1j20fp02oq3f.jpg" alt="返回结果"></p>
 <blockquote>
 <p>Tips:<br> <strong>${keyAlias}</strong>为<strong>CN=Android Debug</strong> 说明<strong>APK</strong>未签名</p>
 </blockquote>
+</li>
+</ul>
 <h2 id="多渠道打包"><a href="#多渠道打包" class="headerlink" title="多渠道打包"></a>多渠道打包</h2><p>以友盟为例</p>
 <ul>
 <li>build.gradle</li>
 </ul>
 <figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">defaultConfig &#123;</span><br><span class="line">    manifestPlaceHolders=[<span class="string">UMENG_CHANNEL_VALUE:</span><span class="string">'Umeng'</span>] <span class="comment">// 默认渠道为Umeng</span></span><br><span class="line">&#125;</span><br><span class="line">productFlavors &#123;</span><br><span class="line">    googleplay &#123;</span><br><span class="line">        manifestPlaceHolders=[<span class="string">UMENG_CANNEL_VALUE:</span><span class="string">'Google Play'</span>]</span><br><span class="line">    &#125;</span><br><span class="line">    wandoujia&#123;</span><br><span class="line">        manifestPlaceholders = [<span class="string">UMENG_CHANNEL_VALUE:</span> <span class="string">"Wandoujia"</span>]</span><br><span class="line"><span class="comment">//      minSdkVersion 19</span></span><br><span class="line"><span class="comment">//      applicationId 'com.rx.demo'</span></span><br><span class="line"><span class="comment">//      targetSdkVersion 22</span></span><br><span class="line"><span class="comment">//      versionCode 360</span></span><br><span class="line"><span class="comment">//      versionName '1.1.1'</span></span><br><span class="line"><span class="comment">//      signingConfig signingConfig.wandoujiaConfig</span></span><br><span class="line">    &#125;</span><br><span class="line">    xiaomi&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    tencent&#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>manifest </li>
 </ul>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 替换为您应用的推广渠道名称，channel id自定义。--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta-data</span> <span class="attr">android:name</span>=<span class="string">"UMENG_CHANNEL"</span> <span class="attr">android:value</span>=<span class="string">"$&#123;UMEMG_CHANNEL_VALUE&#125;"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>编译命令<br><code>./gradlew assemble</code>: 编译所有渠道的Debug和Release<br><code>./gradlew assembleWandoujia</code>: 编译豌豆荚的Debug和Release<br><code>./gradlew assembleWandoujiaDebug</code>: 编译豌豆荚的Debug<br><code>./gradlew build</code>: </li>
 </ul>
 <blockquote>
 <p>Tips<br>貌似<code>Android Studio</code>上有多渠道打包的插件，但最终还是需要使用命令行</p>
-<h3 id="自定义APK名称"><a href="#自定义APK名称" class="headerlink" title="自定义APK名称"></a>自定义APK名称</h3></blockquote>
-<ul>
+</blockquote>
+<h3 id="自定义APK名称"><a href="#自定义APK名称" class="headerlink" title="自定义APK名称"></a>自定义APK名称</h3><ul>
 <li>build.gradle</li>
 </ul>
 <figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 根节点下增加</span></span><br><span class="line"><span class="keyword">def</span> releaseTime() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Date().format(<span class="string">"yyyy-MM-dd"</span>, TimeZone.getTimeZone(<span class="string">"UTC"</span>))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">// Android &#123;&#125; 节点下增加</span></span><br><span class="line"> buildTypes &#123;</span><br><span class="line">    applicationVariants.all &#123; variant -&gt;</span><br><span class="line">        variant.outputs.each &#123; output -&gt;</span><br><span class="line">            <span class="keyword">def</span> outputFile = output.outputFile</span><br><span class="line">            <span class="comment">// &amp;&amp; outputFile.name.indexOf('debug') == -1</span></span><br><span class="line">            <span class="keyword">if</span> (outputFile != <span class="literal">null</span> &amp;&amp; outputFile.name.endsWith(<span class="string">'.apk'</span>)</span><br><span class="line">                    &amp;&amp; outputFile.name.indexOf(<span class="string">'debug'</span>) == <span class="number">-1</span>) &#123;</span><br><span class="line">                <span class="comment">// 输出apk名称为app-googleplay-release-v1.0-build1-2015-12-16</span></span><br><span class="line">                <span class="keyword">def</span> fileName = outputFile.name.replace(<span class="string">".apk"</span>, </span><br><span class="line">                    <span class="string">"-v$&#123;defaultConfig.versionName&#125;-build$&#123;defaultConfig.versionCode&#125;-"</span> +</span><br><span class="line">                    <span class="string">"$&#123;releaseTime()&#125;.apk"</span>)</span><br><span class="line">                output.outputFile = <span class="keyword">new</span> File(outputFile.parent, fileName)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -284,9 +357,11 @@
 <h3 id="导入-so"><a href="#导入-so" class="headerlink" title="导入 *.so"></a>导入 *.so</h3><ul>
 <li>Android Studio 默认路径：<code>Project</code>视图模式下<code>./app/src/main/jniLibs</code><br>这是我目前使用的方法，直接把so包放入文件夹即可，不需要其他操作<br><img src="http://ww3.sinaimg.cn/large/9da81145gw1ez05ymejwyj20b608n3yz.jpg" alt="so包默认存放路径"></li>
 <li>自定义路径<br>在<strong>Eclipse</strong>中的习惯是讲so包放入<strong>libs</strong>文件夹中，这在<strong>Android Studio</strong>中也可以通过配置<strong>Gradle</strong>实现<br>build.gradle<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在 Android&#123;&#125; 节点下增加</span></span><br><span class="line">sourceSets &#123;</span><br><span class="line">    main &#123;</span><br><span class="line"><span class="comment">//      jniLibs.srcDirs=['./libs']</span></span><br><span class="line">        jniLibs.srcDirs=[<span class="string">'./libs/jniLibs'</span>]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h2 id="完整build-gradle"><a href="#完整build-gradle" class="headerlink" title="完整build.gradle"></a>完整build.gradle</h2><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br></pre></td><td class="code"><pre><span class="line">apply plugin: <span class="string">'com.android.application'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> releaseTime() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Date().format(<span class="string">"yyyy-MM-dd"</span>, TimeZone.getTimeZone(<span class="string">"UTC"</span>))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">android &#123;</span><br><span class="line">    compileSdkVersion <span class="number">22</span></span><br><span class="line">    buildToolsVersion <span class="string">"23.0.1"</span></span><br><span class="line"></span><br><span class="line">    signingConfigs &#123;</span><br><span class="line">        signConfig &#123;</span><br><span class="line">            storeFile <span class="keyword">file</span> (<span class="string">"../key.jks"</span>)</span><br><span class="line">            storePassword  <span class="string">"123456"</span></span><br><span class="line">            keyAlias <span class="string">"xdj"</span></span><br><span class="line">            keyPassword <span class="string">"123456"</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    defaultConfig &#123;</span><br><span class="line">        applicationId <span class="string">"com.xdj.rxjavademo"</span></span><br><span class="line">        minSdkVersion <span class="number">15</span></span><br><span class="line">        targetSdkVersion <span class="number">22</span></span><br><span class="line">        versionCode <span class="number">1</span></span><br><span class="line">        versionName <span class="string">"1.0.0"</span></span><br><span class="line"></span><br><span class="line">        manifestPlaceholders=[UMENG_CHANNEL_VALUE: <span class="string">'Umeng'</span>]</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    buildTypes &#123;</span><br><span class="line">        release &#123;</span><br><span class="line">            minifyEnabled <span class="keyword">false</span></span><br><span class="line">            proguardFiles getDefaultProguardFile(<span class="string">'proguard-android.txt'</span>), <span class="string">'proguard-rules.pro'</span></span><br><span class="line">            signingConfig signingConfigs.signConfig</span><br><span class="line">            zipAlignEnabled <span class="keyword">true</span></span><br><span class="line"><span class="comment">//            shrinkResources true // 清除无用的resource</span></span><br><span class="line">        &#125;</span><br><span class="line">        debug &#123;</span><br><span class="line">            buildConfigField <span class="string">"boolean"</span>, <span class="string">"LOG_DEBUG"</span>, <span class="string">"false"</span> <span class="comment">// 设置是否打印LOG，貌似没效果</span></span><br><span class="line">            signingConfig signingConfigs.signConfig</span><br><span class="line">        &#125;</span><br><span class="line">        applicationVariants.all &#123; variant -&gt;</span><br><span class="line">            variant.outputs.<span class="keyword">each</span> &#123; output -&gt;</span><br><span class="line">                <span class="keyword">def</span> outputFile = output.outputFile</span><br><span class="line">                <span class="comment">// &amp;&amp; outputFile.name.indexOf('debug') == -1</span></span><br><span class="line">                <span class="keyword">if</span> (outputFile != <span class="keyword">null</span> &amp;&amp; outputFile.name.endsWith(<span class="string">'.apk'</span>)</span><br><span class="line">                        &amp;&amp; outputFile.name.indexOf(<span class="string">'debug'</span>) == -<span class="number">1</span>) &#123; <span class="comment">// 不对Debug进行重命名</span></span><br><span class="line">                    <span class="comment">// 输出apk名称为app-googleplay-release-2015-12-16-v1.0-build1</span></span><br><span class="line">                    <span class="keyword">def</span> fileName = outputFile.name.replace(<span class="string">".apk"</span>, <span class="string">"-$&#123;releaseTime()&#125;"</span> +</span><br><span class="line">                            <span class="string">"-v$&#123;defaultConfig.versionName&#125;-build$&#123;defaultConfig.versionCode&#125;"</span> +</span><br><span class="line">                            <span class="string">".apk"</span>)</span><br><span class="line">                    output.outputFile = <span class="keyword">new</span> <span class="keyword">File</span>(outputFile.parent, fileName)</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    productFlavors &#123;</span><br><span class="line">        googleplay &#123;</span><br><span class="line">            manifestPlaceholders = [UMENG_CHANNEL_VALUE: <span class="string">"Google Play"</span>]</span><br><span class="line">        &#125;</span><br><span class="line">        xiaomi &#123;</span><br><span class="line"><span class="comment">//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "Xiao Mi"]</span></span><br><span class="line">        &#125;</span><br><span class="line">        _360 &#123;</span><br><span class="line"><span class="comment">//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "360"]</span></span><br><span class="line"><span class="comment">//            minSdkVersion 19</span></span><br><span class="line"><span class="comment">//            applicationId 'com.rx.demo'</span></span><br><span class="line"><span class="comment">//            targetSdkVersion 22</span></span><br><span class="line"><span class="comment">//            versionCode 360</span></span><br><span class="line"><span class="comment">//            versionName '1.1.1'</span></span><br><span class="line"><span class="comment">//            signingConfig signingConfig._360Config</span></span><br><span class="line">        &#125;</span><br><span class="line">        tencent &#123;</span><br><span class="line"><span class="comment">//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "Tencent"]</span></span><br><span class="line">        &#125;</span><br><span class="line">        baidu &#123;</span><br><span class="line"><span class="comment">//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "Baidu"]</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">sourceSets</span> &#123;</span><br><span class="line">        main &#123;</span><br><span class="line">            jniLibs.srcDirs=[<span class="string">'./libs/jniLibs'</span>]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">dependencies</span> &#123;</span><br><span class="line">    <span class="keyword">compile</span> <span class="keyword">fileTree</span>(dir: <span class="string">'libs'</span>, <span class="keyword">include</span>: [<span class="string">'*.jar'</span>])</span><br><span class="line">    testCompile <span class="string">'junit:junit:4.12'</span></span><br><span class="line">    <span class="keyword">compile</span> <span class="string">'com.android.support:appcompat-v7:22.2.1'</span></span><br><span class="line">    <span class="keyword">compile</span> <span class="string">'com.android.support:design:22.2.1'</span></span><br><span class="line">    <span class="keyword">compile</span> <span class="string">'io.reactivex:rxjava:1.1.0'</span></span><br><span class="line">    <span class="keyword">compile</span> <span class="string">'io.reactivex:rxandroid:1.1.0'</span></span><br><span class="line">    <span class="comment">//    compile ('cn.trinea.android.view.autoscrollviewpager:android-auto-scroll-view-pager:1.1.2') &#123;</span></span><br><span class="line">    <span class="comment">//        exclude module: 'support-v4'</span></span><br><span class="line">    <span class="comment">//    &#125;</span></span><br><span class="line">    <span class="keyword">compile</span> <span class="string">'com.android.support:recyclerview-v7:22.2.1'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
     </div>
 
@@ -308,7 +383,7 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-                <a href="/2016/09/18/TextInputEditText样式设置/" rel="prev" title="TextInputEditText样式设置">
+                <a href="/2016/09/18/TextInputEditText%E6%A0%B7%E5%BC%8F%E8%AE%BE%E7%BD%AE/" rel="prev" title="TextInputEditText样式设置">
                   TextInputEditText样式设置 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
@@ -325,6 +400,7 @@
 
           </div>
           
+    <div class="comments" id="comments"></div>
 
         </div>
           
@@ -356,7 +432,7 @@
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <img class="site-author-image" itemprop="image" alt="XuDaojie"
-    src="/images/avatar.gif">
+    src="/uploads/avatar.png">
   <p class="site-author-name" itemprop="name">XuDaojie</p>
   <div class="site-description" itemprop="description">呆呆的初行者</div>
 </div>
@@ -371,18 +447,45 @@
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
-        <span class="site-state-item-count">7</span>
+          
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">9</span>
+          
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
 </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/xudaojie" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;xudaojie" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://weibo.com/u/2645037381" title="Weibo &amp;rarr; http:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;2645037381" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/xudaojieg" title="Twitter &amp;rarr; https:&#x2F;&#x2F;twitter.com&#x2F;xudaojieg" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+      </span>
+  </div>
 
 
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://wuliaonimei.com/" title="http:&#x2F;&#x2F;wuliaonimei.com&#x2F;" rel="noopener" target="_blank">Skilly</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://kaizen.wang/" title="http:&#x2F;&#x2F;kaizen.wang&#x2F;" rel="noopener" target="_blank">Kaizen</a>
+        </li>
+    </ul>
+  </div>
 
       </div>
 
@@ -400,20 +503,40 @@
 
 <div class="copyright">
   
-  &copy; 
+  &copy; 2015 – 
   <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">XuDaojie</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.4.2
+  <div class="theme-info">Theme – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.4.2
   </div>
 
         
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
 
 
 
@@ -448,6 +571,7 @@
 
 
 
+  <script src="/js/local-search.js"></script>
 
 
 
@@ -459,12 +583,40 @@
 
 
 
+
+
+  
 
   
 
   
 
-  
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'D4ST42sHdcVcdperqLyGMfJQ-gzGzoHsz',
+    appKey: '3eVvkr8sUHDDYijod6KXL5Dw',
+    placeholder: "Just go go",
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: true,
+    lang: '' || 'zh-cn',
+    path: location.pathname,
+    recordIP: false,
+    serverURLs: ''
+  });
+}, window.Valine);
+</script>
 
 </body>
 </html>
