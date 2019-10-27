@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hans">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -12,7 +12,7 @@
 
 <link rel="stylesheet" href="/css/main.css">
 
-
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Arial:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
 
@@ -24,9 +24,9 @@
     version: '7.4.2',
     exturl: false,
     sidebar: {"position":"right","display":"always","offset":12,"onmobile":false},
-    copycode: {"enable":false,"show_result":false,"style":null},
+    copycode: {"enable":true,"show_result":true,"style":"mac"},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
-    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    bookmark: {"enable":true,"color":"#222","save":"auto"},
     fancybox: false,
     mediumzoom: false,
     lazyload: false,
@@ -42,9 +42,9 @@
     path: '',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
-      copy_button: 'Copy',
-      copy_success: 'Copied',
-      copy_failure: 'Copy failed'
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
     },
     sidebarPadding: 40
   };
@@ -56,7 +56,7 @@
 <meta property="og:url" content="http:&#x2F;&#x2F;xudaojie.github.io&#x2F;index.html">
 <meta property="og:site_name" content="XuDaojie的博客">
 <meta property="og:description" content="呆呆的初行者">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://xudaojie.github.io/">
@@ -135,7 +135,7 @@
   </div>
 
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
+    <div class="toggle" aria-label="切换导航栏">
       <span class="toggle-line toggle-line-first"></span>
       <span class="toggle-line toggle-line-middle"></span>
       <span class="toggle-line toggle-line-last"></span>
@@ -149,26 +149,26 @@
   <ul id="menu" class="menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
 
   </li>
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
       </li>
   </ul>
@@ -182,7 +182,7 @@
   </span>
   <div class="search-input-container">
     <input autocomplete="off" autocorrect="off" autocapitalize="none"
-           placeholder="Searching..." spellcheck="false"
+           placeholder="搜索..." spellcheck="false"
            type="text" id="search-input">
   </div>
   <span class="popup-btn-close">
@@ -203,6 +203,10 @@
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/XuDaojie" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
 
 
     <main class="main">
@@ -217,7 +221,7 @@
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://xudaojie.github.io/2017/03/06/ubuntu%E4%BF%AE%E5%A4%8D%E5%BC%95%E5%AF%BC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -240,24 +244,24 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
 
-              <time title="Created: 2017-03-06 10:54:02" itemprop="dateCreated datePublished" datetime="2017-03-06T10:54:02+08:00">2017-03-06</time>
+              <time title="创建时间：2017-03-06 10:54:02" itemprop="dateCreated datePublished" datetime="2017-03-06T10:54:02+08:00">2017-03-06</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2017-03-14 21:15:43" itemprop="dateModified" datetime="2017-03-14T21:15:43+08:00">2017-03-14</time>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2017-03-14 21:15:43" itemprop="dateModified" datetime="2017-03-14T21:15:43+08:00">2017-03-14</time>
               </span>
 
           
-            <span id="/2017/03/06/ubuntu%E4%BF%AE%E5%A4%8D%E5%BC%95%E5%AF%BC/" class="post-meta-item leancloud_visitors" data-flag-title="ubuntu修复引导" title="Views">
+            <span id="/2017/03/06/ubuntu%E4%BF%AE%E5%A4%8D%E5%BC%95%E5%AF%BC/" class="post-meta-item leancloud_visitors" data-flag-title="ubuntu修复引导" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
-              <span class="post-meta-item-text">Views: </span>
+              <span class="post-meta-item-text">阅读次数：</span>
               <span class="leancloud-visitors-count"></span>
             </span>
   
@@ -266,7 +270,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-comment-o"></i>
       </span>
-      <span class="post-meta-item-text">Valine: </span>
+      <span class="post-meta-item-text">Valine：</span>
     
     <a title="valine" href="/2017/03/06/ubuntu%E4%BF%AE%E5%A4%8D%E5%BC%95%E5%AF%BC/#comments" itemprop="discussionUrl">
       <span class="post-comments-count valine-comment-count" data-xid="/2017/03/06/ubuntu%E4%BF%AE%E5%A4%8D%E5%BC%95%E5%AF%BC/" itemprop="commentCount"></span>
@@ -284,11 +288,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>首次以U盘方式安装Ubuntu16.04时，系统在开机时会让你选择进入Ubuntu还是Windows，后重新安装Ubuntu14.04的时候，就都是直接进入Ubuntu而没有选择项了。</p>
-<h2 id="修复引导"><a href="#修复引导" class="headerlink" title="修复引导"></a>修复引导</h2><p>执行此命令后便会修复引导</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo update-grub</span><br></pre></td></tr></table></figure>
-
-<h2 id="修改默认系统"><a href="#修改默认系统" class="headerlink" title="修改默认系统"></a>修改默认系统</h2><ol>
+          <p>首次以U盘方式安装Ubuntu16.04时，系统在开机时会让你选择进入Ubuntu还是Windows，后重新安装Ubuntu14.04的时候，就都是直接进入Ubuntu而没有选择项了。</p><h2 id="修复引导"><a href="#修复引导" class="headerlink" title="修复引导"></a>修复引导</h2><p>执行此命令后便会修复引导</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo update-grub</span><br></pre></td></tr></table></figure><h2 id="修改默认系统"><a href="#修改默认系统" class="headerlink" title="修改默认系统"></a>修改默认系统</h2><ol>
 <li><p>打开/etc/default/grub</p>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vim /etc/default/grub</span><br></pre></td></tr></table></figure></li>
 <li><p>修改默认系统<br>GRUB_DEFAULT=4<br>我的Windows是第五个选择，所以值设置4默认便是选择Windows</p>
@@ -298,10 +298,14 @@
 
 </li>
 </ol>
-<h2 id="资料来源"><a href="#资料来源" class="headerlink" title="资料来源"></a>资料来源</h2><blockquote>
-<p><a href="http://kwangka.github.io/2015/11/23/dualbootgrub/" target="_blank" rel="noopener">http://kwangka.github.io/2015/11/23/dualbootgrub/</a></p>
-</blockquote>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/03/06/ubuntu%E4%BF%AE%E5%A4%8D%E5%BC%95%E5%AF%BC/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -319,7 +323,7 @@
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://xudaojie.github.io/2016/10/24/%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%88%86%E5%8F%91%E4%B8%8E%E4%B8%8A%E4%BC%A0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -342,22 +346,22 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
 
-              <time title="Created: 2016-10-24 18:36:30" itemprop="dateCreated datePublished" datetime="2016-10-24T18:36:30+08:00">2016-10-24</time>
+              <time title="创建时间：2016-10-24 18:36:30" itemprop="dateCreated datePublished" datetime="2016-10-24T18:36:30+08:00">2016-10-24</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2017-01-06 11:58:31" itemprop="dateModified" datetime="2017-01-06T11:58:31+08:00">2017-01-06</time>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2017-01-06 11:58:31" itemprop="dateModified" datetime="2017-01-06T11:58:31+08:00">2017-01-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Android/" itemprop="url" rel="index">
                     <span itemprop="name">Android</span>
@@ -366,11 +370,11 @@
             </span>
 
           
-            <span id="/2016/10/24/%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%88%86%E5%8F%91%E4%B8%8E%E4%B8%8A%E4%BC%A0/" class="post-meta-item leancloud_visitors" data-flag-title="利用面向对象来讲解事件分发与上传" title="Views">
+            <span id="/2016/10/24/%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%88%86%E5%8F%91%E4%B8%8E%E4%B8%8A%E4%BC%A0/" class="post-meta-item leancloud_visitors" data-flag-title="利用面向对象来讲解事件分发与上传" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
-              <span class="post-meta-item-text">Views: </span>
+              <span class="post-meta-item-text">阅读次数：</span>
               <span class="leancloud-visitors-count"></span>
             </span>
   
@@ -379,7 +383,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-comment-o"></i>
       </span>
-      <span class="post-meta-item-text">Valine: </span>
+      <span class="post-meta-item-text">Valine：</span>
     
     <a title="valine" href="/2016/10/24/%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%88%86%E5%8F%91%E4%B8%8E%E4%B8%8A%E4%BC%A0/#comments" itemprop="discussionUrl">
       <span class="post-comments-count valine-comment-count" data-xid="/2016/10/24/%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%88%86%E5%8F%91%E4%B8%8E%E4%B8%8A%E4%BC%A0/" itemprop="commentCount"></span>
@@ -397,9 +401,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>首先先来看下基本的套路，第一次看完事件分发后通常是懵逼，但我觉得还是应该先看下。</p>
-<p>Android 中当系统捕获事件时，都是由最外层的<code>View</code>依次向下传递，当然，事件不能总是传递到最后一子View才结束，我们在每一级消息传递时都会对消息做出响应以决定继续分发或者拦截。<br><br></p>
-<table>
+          <p>首先先来看下基本的套路，第一次看完事件分发后通常是懵逼，但我觉得还是应该先看下。</p><p>Android 中当系统捕获事件时，都是由最外层的<code>View</code>依次向下传递，当然，事件不能总是传递到最后一子View才结束，我们在每一级消息传递时都会对消息做出响应以决定继续分发或者拦截。<br><br></p><table>
 <thead>
 <tr>
 <th>Touch事件相关方法</th>
@@ -438,87 +440,14 @@
 <td align="center"></td>
 </tr>
 </tbody></table>
-<blockquote>
-<p>Tips</p>
-<ol>
-<li>表格中的<code>View</code>指的是<strong>不包含</strong>任何子<code>View</code>的<code>View</code>，例如<code>TextView</code>、<code>Button</code></li>
-<li><code>View</code>本身是有<code>dispatchTouchEvent</code>方法的，但是由于没有子<code>View</code>,也就没有可分发的目标了</li>
-<li>下文中提到的事件消费，均表示事件终结，及在这之后，既不会发送分发，也不会上传</li>
-</ol>
-</blockquote>
-<h3 id="事件调度-dispatchTouchEvent"><a href="#事件调度-dispatchTouchEvent" class="headerlink" title="事件调度 dispatchTouchEvent"></a>事件调度 dispatchTouchEvent</h3><p><code>return true;</code> 事件已被消费，事件结束。<br><code>retrun false;</code> 事件不再继续分发，呼叫上层控件对其进行消费。<br><code>return super.dispatchTouchEvent(ev);</code> 事件分发，将被传递到<code>onInterceptTouchEvent</code>进行处理，（如果是<code>Activity</code>，则直接向下传递）</p>
-<blockquote>
-<p>Tips<br>事件分发本身也对事件进行消费</p>
-</blockquote>
-<h3 id="事件拦截-onInterceptTouchEvent"><a href="#事件拦截-onInterceptTouchEvent" class="headerlink" title="事件拦截 onInterceptTouchEvent"></a>事件拦截 onInterceptTouchEvent</h3><p>此方法只在ViewGroup中存在<br><code>return true;</code> 对事件进行拦截，并交由本层控件的<code>onTouchEvent</code>对事件进行处理<br><code>retrun false;</code> 不对事件进行拦截，向下分发，传递给子<code>View</code>的<code>dispatchTouchEvent</code>处理<br><code>return super.onInterceptTouchEvent(ev);</code> 默认等同于 <code>return true;</code> （既然是拦截器，默认功能当然是拦截啦）</p>
-<h3 id="事件响应-onTouchEvent"><a href="#事件响应-onTouchEvent" class="headerlink" title="事件响应 onTouchEvent"></a>事件响应 onTouchEvent</h3><p><code>return true;</code> 事件已被消费，事件终结<br><code>return false;</code> 事件处理后又<strong>上传</strong>到上层<code>View</code>,交由上层的<code>View</code>的<code>onTouchEvent</code>进行处理<br><code>return super.onTouchEvent(ev);</code> 默认等同于 <code>return false;</code></p>
-<h3 id="ViewGroup-事件流程图"><a href="#ViewGroup-事件流程图" class="headerlink" title="ViewGroup 事件流程图"></a>ViewGroup 事件流程图</h3><p>由于ViewGroup的事件是最全面的，所以图中只画了ViewGroup<br><img src="https://www.processon.com/chart_image/581bf20ce4b0c6fe570ca35e.png" alt="Flow"></p>
-<blockquote>
-<p>Thanks<br><a href="http://stackvoid.com/details-dispatch-onTouch-Event-in-Android/" target="_blank" rel="noopener">Android 事件分发机制详解</a> (这网址现在已经不能用了，心好累)<br><a href="https://www.processon.com" target="_blank" rel="noopener">Processon 免费在线绘图</a></p>
-</blockquote>
-<p>===</p>
-<blockquote>
-<p>Note<br>中发现<code>Activity</code> 默认只会将<strong>Down</strong>向下传递,而<strong>Move</strong>、<strong>Up</strong>会在<code>onTouchEvent</code>中消费，必须要将<strong>Down</strong>消费后，<strong>Move</strong>、<strong>Up</strong>才会向下传递</p>
-</blockquote>
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h3><ul>
-<li>老板 Activity<ol>
-<li>主要是派发任务，也就是<code>dispatchTouchEvent</code></li>
-<li><strong>秘书</strong> <code>onTouchEvent</code>(老板总不能所有事都亲历亲为，所以我们还得有个<strong>秘书</strong>)    </li>
-</ol>
-</li>
-<li>管理 ViewGroup<ol>
-<li>项目经理 <code>dispatchTouchEvent</code> 也是派发任务</li>
-<li>部门经理 <code>onInterceptTouchEvent</code> 用于评估项目经理提出的功能可行性及工时</li>
-<li>技术经理 <code>onTouchEvent</code> 公司技术骨干，有难度的活找他们。</li>
-</ol>
-</li>
-<li>码农 View<ol>
-<li>onTouchEvent 由于码农是在公司的最低层，所以咱们没得选</li>
-<li>dispatchTouchEvent 虽然这方法咱现在没用，但咱也总不能当一辈子码农啊</li>
-</ol>
-</li>
-</ul>
-<h3 id="明确功能"><a href="#明确功能" class="headerlink" title="明确功能"></a>明确功能</h3><ul>
-<li>dispatchTouchEvent<ol>
-<li><code>return true</code> 对应角色自己就将任务完成了</li>
-<li><code>return false</code> 对应角色自己无法下决定，于是请求上级出面解决</li>
-<li><code>return dispatchTouchEvent</code> 任务正常派发</li>
-</ol>
-</li>
-<li>onInterceptTouchEvent<ol>
-<li><code>return true/onInterceptTouchEvent</code> 对应角色认为任务不合理，将其驳回</li>
-<li><code>return false</code> 任务合理，不驳回</li>
-</ol>
-</li>
-<li>onTouchEvent <ol>
-<li><code>return true</code> 任务执行完成，但没必要汇报上级</li>
-<li><code>return false/super.onTouchEvent</code> 本职工作已完成，但你自己并不能决定任务是否已经完成，需要上级验收通过才算真正完成</li>
-</ol>
-</li>
-</ul>
-<h3 id="案例1"><a href="#案例1" class="headerlink" title="案例1"></a>案例1</h3><p>某天一位潜在客户来找到老板，说希望实现一个淘宝，预算<strong>5W</strong>，老板一听，虎躯一震，直接回绝客户,然后就没有下文了。</p>
-<p>在这个案例中，老板自己就事情给处理了。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Activity/老板 dispatchTouchEvent <span class="keyword">return</span> <span class="keyword">true</span>.</span><br></pre></td></tr></table></figure>
-
-<h3 id="案例2"><a href="#案例2" class="headerlink" title="案例2"></a>案例2</h3><ol>
-<li>某天一位潜在客户来找到老板，说希望实现一个淘宝，预算<strong>5000W</strong>，但是要1个月必须上线第一版，老板一听，时间紧了点，但加加班还是可以搞定的，很快便签好了合同，并将任务派发给了项目经理并特别要求这个项目一定要做好，</li>
-<li>项目经理立马就将老板的指示传递给了部门经理</li>
-<li>部分经理并没有提出异议，于是便将任务细化，派发给码农</li>
-<li>码农表示自己一个月时间肯定做不完啊，于是便向技术经理需求帮助</li>
-<li>一个月后，技术经理将第一版交到了老板的秘书手里</li>
-<li>秘书将第一版拿给了老板，并且最终通过了客户验收</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Activity/老板 dispatchTouchEvent <span class="keyword">return</span> dispatchTouchEvent.</span><br><span class="line">ViewGroup/项目经理 dispatchTouchEvent <span class="keyword">return</span> dispatchTouchEvent.</span><br><span class="line">ViewGroup/部门经理 onInterceptTouchEvent <span class="keyword">return</span> <span class="keyword">false</span>.</span><br><span class="line">View/码农 onTouchEvent <span class="keyword">return</span> <span class="keyword">false</span>.</span><br><span class="line">ViewGroup/技术经理 onTouchEvent <span class="keyword">return</span> <span class="keyword">false</span></span><br><span class="line">Activity/老板秘书 onTouchEvent</span><br></pre></td></tr></table></figure>
-
-<h3 id="案例3"><a href="#案例3" class="headerlink" title="案例3"></a>案例3</h3><ol>
-<li>案例2中的客户想老板反映，希望网站的平均并发量可以达到100000/s,老板变将这个任务交给了项目项目经理</li>
-<li>项目经理由于对技术不是很熟悉，于是便直接将任务交给部门经理评估</li>
-<li>部门经理收到任务后，认为此需求不合理，找到老板秘书后表示阿里双11的峰值瞬时并发量也不过50000/s</li>
-<li>老板秘书向老板传到了部门经理的意见</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Activity/老板 dispatchTouchEvent <span class="keyword">return</span> dispatchTouchEvent.</span><br><span class="line">ViewGroup/项目经理 dispatchTouchEvent <span class="keyword">return</span> dispatchTouchEvent.</span><br><span class="line">ViewGroup/部门经理 onInterceptTouchEvent <span class="keyword">return</span> <span class="keyword">true</span>/onInterceptTouchEvent.</span><br><span class="line">Activity/老板秘书 onTouchEvent</span><br></pre></td></tr></table></figure>
-
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2016/10/24/%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%88%86%E5%8F%91%E4%B8%8E%E4%B8%8A%E4%BC%A0/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -536,7 +465,7 @@
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://xudaojie.github.io/2016/09/18/TextInputEditText%E6%A0%B7%E5%BC%8F%E8%AE%BE%E7%BD%AE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -559,22 +488,22 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
 
-              <time title="Created: 2016-09-18 22:19:20" itemprop="dateCreated datePublished" datetime="2016-09-18T22:19:20+08:00">2016-09-18</time>
+              <time title="创建时间：2016-09-18 22:19:20" itemprop="dateCreated datePublished" datetime="2016-09-18T22:19:20+08:00">2016-09-18</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2017-01-06 11:58:31" itemprop="dateModified" datetime="2017-01-06T11:58:31+08:00">2017-01-06</time>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2017-01-06 11:58:31" itemprop="dateModified" datetime="2017-01-06T11:58:31+08:00">2017-01-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Android/" itemprop="url" rel="index">
                     <span itemprop="name">Android</span>
@@ -583,11 +512,11 @@
             </span>
 
           
-            <span id="/2016/09/18/TextInputEditText%E6%A0%B7%E5%BC%8F%E8%AE%BE%E7%BD%AE/" class="post-meta-item leancloud_visitors" data-flag-title="TextInputEditText样式设置" title="Views">
+            <span id="/2016/09/18/TextInputEditText%E6%A0%B7%E5%BC%8F%E8%AE%BE%E7%BD%AE/" class="post-meta-item leancloud_visitors" data-flag-title="TextInputEditText样式设置" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
-              <span class="post-meta-item-text">Views: </span>
+              <span class="post-meta-item-text">阅读次数：</span>
               <span class="leancloud-visitors-count"></span>
             </span>
   
@@ -596,7 +525,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-comment-o"></i>
       </span>
-      <span class="post-meta-item-text">Valine: </span>
+      <span class="post-meta-item-text">Valine：</span>
     
     <a title="valine" href="/2016/09/18/TextInputEditText%E6%A0%B7%E5%BC%8F%E8%AE%BE%E7%BD%AE/#comments" itemprop="discussionUrl">
       <span class="post-comments-count valine-comment-count" data-xid="/2016/09/18/TextInputEditText%E6%A0%B7%E5%BC%8F%E8%AE%BE%E7%BD%AE/" itemprop="commentCount"></span>
@@ -614,15 +543,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="TextInputEditText样式设置"><a href="#TextInputEditText样式设置" class="headerlink" title="TextInputEditText样式设置"></a>TextInputEditText样式设置</h1><p><code>TextInputEditText</code>是在<strong>Design</strong>包中<strong>MD</strong>风格的<code>EditText</code>。</p>
-<h2 id="样式调整"><a href="#样式调整" class="headerlink" title="样式调整"></a>样式调整</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"InputStyle"</span>&gt;</span></span><br><span class="line"><span class="xml">   <span class="comment">&lt;!-- 底部线 默认颜色 --&gt;</span></span></span><br><span class="line"><span class="xml">   <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorControlNormal"</span>&gt;</span>@android:color/white<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">   <span class="comment">&lt;!-- 底部线 EditText激活时颜色 --&gt;</span></span></span><br><span class="line"><span class="xml">   <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorControlActivated"</span>&gt;</span>@android:color/white<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">   <span class="comment">&lt;!-- 设置光标 --&gt;</span></span></span><br><span class="line"><span class="xml">   <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:textCursorDrawable"</span>&gt;</span>@drawable/line<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><code>android:textCursorDrawable</code>为<code>@null</code>时光标颜色与<code>textColor</code>相同，但是目测宽度只有1dp左右，太细了,所以最终还是选择了自定义光标</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">shape</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:shape</span>=<span class="string">"rectangle"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">solid</span> <span class="attr">android:color</span>=<span class="string">"@android:color/black"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">size</span> <span class="attr">android:width</span>=<span class="string">"2dip"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">shape</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="取消底部线"><a href="#取消底部线" class="headerlink" title="取消底部线"></a>取消底部线</h2><p>如果要取消<code>TextInputEditText</code>底部线，在EditText中我们设置<code>background=@null</code>，但是<code>TextInputEditText</code>不同，我们需要将<code>TextInputLayout</code>和<code>TextInputEdit</code>的<code>backgound</code>都设置为<code>@null</code></p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">android.support.design.widget.TextInputLayout</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:background</span>=<span class="string">"@null"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">android.support.design.widget.TextInputEditText</span></span></span><br><span class="line"><span class="tag">      <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">android:background</span>=<span class="string">"@null"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">android:hint</span>=<span class="string">"请输入手机号码"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">android:padding</span>=<span class="string">"8dp"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">android.support.design.widget.TextInputLayout</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
+          <h1 id="TextInputEditText样式设置"><a href="#TextInputEditText样式设置" class="headerlink" title="TextInputEditText样式设置"></a>TextInputEditText样式设置</h1><p><code>TextInputEditText</code>是在<strong>Design</strong>包中<strong>MD</strong>风格的<code>EditText</code>。</p><h2 id="样式调整"><a href="#样式调整" class="headerlink" title="样式调整"></a>样式调整</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"InputStyle"</span>&gt;</span></span><br><span class="line"><span class="xml">   <span class="comment">&lt;!-- 底部线 默认颜色 --&gt;</span></span></span><br><span class="line"><span class="xml">   <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorControlNormal"</span>&gt;</span>@android:color/white<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">   <span class="comment">&lt;!-- 底部线 EditText激活时颜色 --&gt;</span></span></span><br><span class="line"><span class="xml">   <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorControlActivated"</span>&gt;</span>@android:color/white<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">   <span class="comment">&lt;!-- 设置光标 --&gt;</span></span></span><br><span class="line"><span class="xml">   <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:textCursorDrawable"</span>&gt;</span>@drawable/line<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2016/09/18/TextInputEditText%E6%A0%B7%E5%BC%8F%E8%AE%BE%E7%BD%AE/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -640,7 +569,113 @@
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://xudaojie.github.io/2015/12/20/Gradle-%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AETest/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avatar.png">
+      <meta itemprop="name" content="XuDaojie">
+      <meta itemprop="description" content="呆呆的初行者">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XuDaojie的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2015/12/20/Gradle-%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AETest/" class="post-title-link" itemprop="url">Gradle-常用配置</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2015-12-20 09:19:28" itemprop="dateCreated datePublished" datetime="2015-12-20T09:19:28+08:00">2015-12-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-10-28 00:26:46" itemprop="dateModified" datetime="2019-10-28T00:26:46+08:00">2019-10-28</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2015/12/20/Gradle-%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AETest/" class="post-meta-item leancloud_visitors" data-flag-title="Gradle-常用配置" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2015/12/20/Gradle-%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AETest/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2015/12/20/Gradle-%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AETest/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="签名"><a href="#签名" class="headerlink" title="签名"></a>签名</h2><p>当程序中使用了第三方的功能，比如分享、地图时，要求程序必须是已签名的<br>在<strong>Gradle</strong>中配置签名后，可以使我们的Debug也带上签名，而不需要使用<strong>Build/Generate Signer Apk</strong>去编译带签名的APK</p><ul>
+<li>build.gradle</li>
+</ul><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">a &gt;= <span class="number">2</span>;</span><br><span class="line">a -&gt; <span class="number">2</span>;</span><br><span class="line">a == <span class="number">2</span>;</span><br><span class="line"><span class="comment">// 在 Android &#123;&#125; 节点下增加</span></span><br><span class="line">signingConfigs &#123;</span><br><span class="line">    signConfig &#123;</span><br><span class="line">        storeFile <span class="keyword">file</span> (<span class="string">'../key.jks'</span>)</span><br><span class="line">        storePassword <span class="string">'123456'</span></span><br><span class="line">        keyAlias <span class="string">'xdj'</span></span><br><span class="line">        keyPassword <span class="string">'123456'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">buildTypes &#123;</span><br><span class="line">    release &#123;</span><br><span class="line">        signingConfig signingConfigs.signConfig</span><br><span class="line">    &#125;</span><br><span class="line">    debug &#123;</span><br><span class="line">        signingConfig signingConfigs.signConfig <span class="comment">// 配置debug包的签名</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/12/20/Gradle-%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AETest/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://xudaojie.github.io/2015/12/20/Gradle-%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -663,22 +698,22 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
 
-              <time title="Created: 2015-12-20 09:19:28" itemprop="dateCreated datePublished" datetime="2015-12-20T09:19:28+08:00">2015-12-20</time>
+              <time title="创建时间：2015-12-20 09:19:28" itemprop="dateCreated datePublished" datetime="2015-12-20T09:19:28+08:00">2015-12-20</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2018-04-14 16:14:02" itemprop="dateModified" datetime="2018-04-14T16:14:02+08:00">2018-04-14</time>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2018-04-14 16:14:02" itemprop="dateModified" datetime="2018-04-14T16:14:02+08:00">2018-04-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Android/" itemprop="url" rel="index">
                     <span itemprop="name">Android</span>
@@ -687,11 +722,11 @@
             </span>
 
           
-            <span id="/2015/12/20/Gradle-%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/" class="post-meta-item leancloud_visitors" data-flag-title="Gradle-常用配置" title="Views">
+            <span id="/2015/12/20/Gradle-%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/" class="post-meta-item leancloud_visitors" data-flag-title="Gradle-常用配置" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
-              <span class="post-meta-item-text">Views: </span>
+              <span class="post-meta-item-text">阅读次数：</span>
               <span class="leancloud-visitors-count"></span>
             </span>
   
@@ -700,7 +735,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-comment-o"></i>
       </span>
-      <span class="post-meta-item-text">Valine: </span>
+      <span class="post-meta-item-text">Valine：</span>
     
     <a title="valine" href="/2015/12/20/Gradle-%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/#comments" itemprop="discussionUrl">
       <span class="post-comments-count valine-comment-count" data-xid="/2015/12/20/Gradle-%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/" itemprop="commentCount"></span>
@@ -718,62 +753,17 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="签名"><a href="#签名" class="headerlink" title="签名"></a>签名</h2><p>当程序中使用了第三方的功能，比如分享、地图时，要求程序必须是已签名的<br>在<strong>Gradle</strong>中配置签名后，可以使我们的Debug也带上签名，而不需要使用<strong>Build/Generate Signer Apk</strong>去编译带签名的APK</p>
-<ul>
+          <h2 id="签名"><a href="#签名" class="headerlink" title="签名"></a>签名</h2><p>当程序中使用了第三方的功能，比如分享、地图时，要求程序必须是已签名的<br>在<strong>Gradle</strong>中配置签名后，可以使我们的Debug也带上签名，而不需要使用<strong>Build/Generate Signer Apk</strong>去编译带签名的APK</p><ul>
 <li>build.gradle</li>
-</ul>
-<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在 Android &#123;&#125; 节点下增加</span></span><br><span class="line">signingConfigs &#123;</span><br><span class="line">    signConfig &#123;</span><br><span class="line">        storeFile <span class="keyword">file</span> (<span class="string">'../key.jks'</span>)</span><br><span class="line">        storePassword <span class="string">'123456'</span></span><br><span class="line">        keyAlias <span class="string">'xdj'</span></span><br><span class="line">        keyPassword <span class="string">'123456'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">buildTypes &#123;</span><br><span class="line">    release &#123;</span><br><span class="line">        signingConfig signingConfigs.signConfig</span><br><span class="line">    &#125;</span><br><span class="line">    debug &#123;</span><br><span class="line">        signingConfig signingConfigs.signConfig <span class="comment">// 配置debug包的签名</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>获得签名文件信息</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 终端命令</span></span><br><span class="line">$ keytool -list -v -keystore ./key.jks</span><br></pre></td></tr></table></figure>
-<p>输出结果<br><img src="http://ww4.sinaimg.cn/large/9da81145gw1ez65rnuqydj20mf0a140k.jpg" alt="返回"></p>
-<blockquote>
-<p>Tips<br>还可通过在<strong>AndroidStudio</strong>自带<strong>终端</strong>中运行 <code>./gradlew signingReport</code>命令获取</p>
-</blockquote>
-</li>
-<li><p>获得<strong>APK</strong>签名信息</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 终端命令</span></span><br><span class="line">$ jarsigner -verify -certs -verbose ./app/build/outputs/apk/app-googleplay-debug.apk</span><br></pre></td></tr></table></figure>
-<p>输出结果<br><img src="http://ww2.sinaimg.cn/large/9da81145gw1ez65ymnbp1j20fp02oq3f.jpg" alt="返回结果"></p>
-<blockquote>
-<p>Tips:<br> <strong>${keyAlias}</strong>为<strong>CN=Android Debug</strong> 说明<strong>APK</strong>未签名</p>
-</blockquote>
-</li>
-</ul>
-<h2 id="多渠道打包"><a href="#多渠道打包" class="headerlink" title="多渠道打包"></a>多渠道打包</h2><p>以友盟为例</p>
-<ul>
-<li>build.gradle</li>
-</ul>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">defaultConfig &#123;</span><br><span class="line">    manifestPlaceHolders=[<span class="string">UMENG_CHANNEL_VALUE:</span><span class="string">'Umeng'</span>] <span class="comment">// 默认渠道为Umeng</span></span><br><span class="line">&#125;</span><br><span class="line">productFlavors &#123;</span><br><span class="line">    googleplay &#123;</span><br><span class="line">        manifestPlaceHolders=[<span class="string">UMENG_CANNEL_VALUE:</span><span class="string">'Google Play'</span>]</span><br><span class="line">    &#125;</span><br><span class="line">    wandoujia&#123;</span><br><span class="line">        manifestPlaceholders = [<span class="string">UMENG_CHANNEL_VALUE:</span> <span class="string">"Wandoujia"</span>]</span><br><span class="line"><span class="comment">//      minSdkVersion 19</span></span><br><span class="line"><span class="comment">//      applicationId 'com.rx.demo'</span></span><br><span class="line"><span class="comment">//      targetSdkVersion 22</span></span><br><span class="line"><span class="comment">//      versionCode 360</span></span><br><span class="line"><span class="comment">//      versionName '1.1.1'</span></span><br><span class="line"><span class="comment">//      signingConfig signingConfig.wandoujiaConfig</span></span><br><span class="line">    &#125;</span><br><span class="line">    xiaomi&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    tencent&#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>manifest </li>
-</ul>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 替换为您应用的推广渠道名称，channel id自定义。--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta-data</span> <span class="attr">android:name</span>=<span class="string">"UMENG_CHANNEL"</span> <span class="attr">android:value</span>=<span class="string">"$&#123;UMEMG_CHANNEL_VALUE&#125;"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>编译命令<br><code>./gradlew assemble</code>: 编译所有渠道的Debug和Release<br><code>./gradlew assembleWandoujia</code>: 编译豌豆荚的Debug和Release<br><code>./gradlew assembleWandoujiaDebug</code>: 编译豌豆荚的Debug<br><code>./gradlew build</code>: </li>
-</ul>
-<blockquote>
-<p>Tips<br>貌似<code>Android Studio</code>上有多渠道打包的插件，但最终还是需要使用命令行</p>
-</blockquote>
-<h3 id="自定义APK名称"><a href="#自定义APK名称" class="headerlink" title="自定义APK名称"></a>自定义APK名称</h3><ul>
-<li>build.gradle</li>
-</ul>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 根节点下增加</span></span><br><span class="line"><span class="keyword">def</span> releaseTime() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Date().format(<span class="string">"yyyy-MM-dd"</span>, TimeZone.getTimeZone(<span class="string">"UTC"</span>))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">// Android &#123;&#125; 节点下增加</span></span><br><span class="line"> buildTypes &#123;</span><br><span class="line">    applicationVariants.all &#123; variant -&gt;</span><br><span class="line">        variant.outputs.each &#123; output -&gt;</span><br><span class="line">            <span class="keyword">def</span> outputFile = output.outputFile</span><br><span class="line">            <span class="comment">// &amp;&amp; outputFile.name.indexOf('debug') == -1</span></span><br><span class="line">            <span class="keyword">if</span> (outputFile != <span class="literal">null</span> &amp;&amp; outputFile.name.endsWith(<span class="string">'.apk'</span>)</span><br><span class="line">                    &amp;&amp; outputFile.name.indexOf(<span class="string">'debug'</span>) == <span class="number">-1</span>) &#123;</span><br><span class="line">                <span class="comment">// 输出apk名称为app-googleplay-release-v1.0-build1-2015-12-16</span></span><br><span class="line">                <span class="keyword">def</span> fileName = outputFile.name.replace(<span class="string">".apk"</span>, </span><br><span class="line">                    <span class="string">"-v$&#123;defaultConfig.versionName&#125;-build$&#123;defaultConfig.versionCode&#125;-"</span> +</span><br><span class="line">                    <span class="string">"$&#123;releaseTime()&#125;.apk"</span>)</span><br><span class="line">                output.outputFile = <span class="keyword">new</span> File(outputFile.parent, fileName)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="导入包"><a href="#导入包" class="headerlink" title="导入包"></a>导入包</h2><h3 id="导入aar、jar、modle"><a href="#导入aar、jar、modle" class="headerlink" title="导入aar、jar、modle"></a>导入aar、jar、modle</h3><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">dependencies</span> &#123;</span><br><span class="line">    <span class="keyword">compile</span> <span class="keyword">fileTree</span>(dir: <span class="string">'libs'</span>, <span class="keyword">include</span>: [<span class="string">'*.jar'</span>]) <span class="comment">// 导入libs文件夹中所有的jar包</span></span><br><span class="line">    <span class="keyword">compile</span> <span class="string">'group:name:version'</span></span><br><span class="line">    <span class="keyword">compile</span> <span class="string">'group:name:1.1.+'</span></span><br><span class="line">    <span class="keyword">compile</span>(<span class="keyword">group</span>:name:version) &#123;</span><br><span class="line">        <span class="keyword">exclude</span> module: <span class="string">'support-v4'</span> <span class="comment">// 发生冲突时，排除v4</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">compile</span>(name:<span class="string">'xxx'</span>, ext:<span class="string">'aar'</span>) <span class="comment">// aar包是用来替换jar的文件类型</span></span><br><span class="line">    <span class="keyword">compile</span> <span class="keyword">project</span>(:modle)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>Tips<br><code>+</code> 表示最新的版本号，曾经遇到过在<strong>Windows</strong>下导入包是输入的时准确的版本号<code>1.0.0</code>没有问题，到了<code>Mac</code>上的就提示找不到包，后来改成 <code>1.0.+</code>就好了</p>
-</blockquote>
-<h3 id="导入-so"><a href="#导入-so" class="headerlink" title="导入 *.so"></a>导入 *.so</h3><ul>
-<li>Android Studio 默认路径：<code>Project</code>视图模式下<code>./app/src/main/jniLibs</code><br>这是我目前使用的方法，直接把so包放入文件夹即可，不需要其他操作<br><img src="http://ww3.sinaimg.cn/large/9da81145gw1ez05ymejwyj20b608n3yz.jpg" alt="so包默认存放路径"></li>
-<li>自定义路径<br>在<strong>Eclipse</strong>中的习惯是讲so包放入<strong>libs</strong>文件夹中，这在<strong>Android Studio</strong>中也可以通过配置<strong>Gradle</strong>实现<br>build.gradle<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在 Android&#123;&#125; 节点下增加</span></span><br><span class="line">sourceSets &#123;</span><br><span class="line">    main &#123;</span><br><span class="line"><span class="comment">//      jniLibs.srcDirs=['./libs']</span></span><br><span class="line">        jniLibs.srcDirs=[<span class="string">'./libs/jniLibs'</span>]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h2 id="完整build-gradle"><a href="#完整build-gradle" class="headerlink" title="完整build.gradle"></a>完整build.gradle</h2><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br></pre></td><td class="code"><pre><span class="line">apply plugin: <span class="string">'com.android.application'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> releaseTime() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Date().format(<span class="string">"yyyy-MM-dd"</span>, TimeZone.getTimeZone(<span class="string">"UTC"</span>))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">android &#123;</span><br><span class="line">    compileSdkVersion <span class="number">22</span></span><br><span class="line">    buildToolsVersion <span class="string">"23.0.1"</span></span><br><span class="line"></span><br><span class="line">    signingConfigs &#123;</span><br><span class="line">        signConfig &#123;</span><br><span class="line">            storeFile <span class="keyword">file</span> (<span class="string">"../key.jks"</span>)</span><br><span class="line">            storePassword  <span class="string">"123456"</span></span><br><span class="line">            keyAlias <span class="string">"xdj"</span></span><br><span class="line">            keyPassword <span class="string">"123456"</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    defaultConfig &#123;</span><br><span class="line">        applicationId <span class="string">"com.xdj.rxjavademo"</span></span><br><span class="line">        minSdkVersion <span class="number">15</span></span><br><span class="line">        targetSdkVersion <span class="number">22</span></span><br><span class="line">        versionCode <span class="number">1</span></span><br><span class="line">        versionName <span class="string">"1.0.0"</span></span><br><span class="line"></span><br><span class="line">        manifestPlaceholders=[UMENG_CHANNEL_VALUE: <span class="string">'Umeng'</span>]</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    buildTypes &#123;</span><br><span class="line">        release &#123;</span><br><span class="line">            minifyEnabled <span class="keyword">false</span></span><br><span class="line">            proguardFiles getDefaultProguardFile(<span class="string">'proguard-android.txt'</span>), <span class="string">'proguard-rules.pro'</span></span><br><span class="line">            signingConfig signingConfigs.signConfig</span><br><span class="line">            zipAlignEnabled <span class="keyword">true</span></span><br><span class="line"><span class="comment">//            shrinkResources true // 清除无用的resource</span></span><br><span class="line">        &#125;</span><br><span class="line">        debug &#123;</span><br><span class="line">            buildConfigField <span class="string">"boolean"</span>, <span class="string">"LOG_DEBUG"</span>, <span class="string">"false"</span> <span class="comment">// 设置是否打印LOG，貌似没效果</span></span><br><span class="line">            signingConfig signingConfigs.signConfig</span><br><span class="line">        &#125;</span><br><span class="line">        applicationVariants.all &#123; variant -&gt;</span><br><span class="line">            variant.outputs.<span class="keyword">each</span> &#123; output -&gt;</span><br><span class="line">                <span class="keyword">def</span> outputFile = output.outputFile</span><br><span class="line">                <span class="comment">// &amp;&amp; outputFile.name.indexOf('debug') == -1</span></span><br><span class="line">                <span class="keyword">if</span> (outputFile != <span class="keyword">null</span> &amp;&amp; outputFile.name.endsWith(<span class="string">'.apk'</span>)</span><br><span class="line">                        &amp;&amp; outputFile.name.indexOf(<span class="string">'debug'</span>) == -<span class="number">1</span>) &#123; <span class="comment">// 不对Debug进行重命名</span></span><br><span class="line">                    <span class="comment">// 输出apk名称为app-googleplay-release-2015-12-16-v1.0-build1</span></span><br><span class="line">                    <span class="keyword">def</span> fileName = outputFile.name.replace(<span class="string">".apk"</span>, <span class="string">"-$&#123;releaseTime()&#125;"</span> +</span><br><span class="line">                            <span class="string">"-v$&#123;defaultConfig.versionName&#125;-build$&#123;defaultConfig.versionCode&#125;"</span> +</span><br><span class="line">                            <span class="string">".apk"</span>)</span><br><span class="line">                    output.outputFile = <span class="keyword">new</span> <span class="keyword">File</span>(outputFile.parent, fileName)</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    productFlavors &#123;</span><br><span class="line">        googleplay &#123;</span><br><span class="line">            manifestPlaceholders = [UMENG_CHANNEL_VALUE: <span class="string">"Google Play"</span>]</span><br><span class="line">        &#125;</span><br><span class="line">        xiaomi &#123;</span><br><span class="line"><span class="comment">//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "Xiao Mi"]</span></span><br><span class="line">        &#125;</span><br><span class="line">        _360 &#123;</span><br><span class="line"><span class="comment">//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "360"]</span></span><br><span class="line"><span class="comment">//            minSdkVersion 19</span></span><br><span class="line"><span class="comment">//            applicationId 'com.rx.demo'</span></span><br><span class="line"><span class="comment">//            targetSdkVersion 22</span></span><br><span class="line"><span class="comment">//            versionCode 360</span></span><br><span class="line"><span class="comment">//            versionName '1.1.1'</span></span><br><span class="line"><span class="comment">//            signingConfig signingConfig._360Config</span></span><br><span class="line">        &#125;</span><br><span class="line">        tencent &#123;</span><br><span class="line"><span class="comment">//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "Tencent"]</span></span><br><span class="line">        &#125;</span><br><span class="line">        baidu &#123;</span><br><span class="line"><span class="comment">//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "Baidu"]</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">sourceSets</span> &#123;</span><br><span class="line">        main &#123;</span><br><span class="line">            jniLibs.srcDirs=[<span class="string">'./libs/jniLibs'</span>]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">dependencies</span> &#123;</span><br><span class="line">    <span class="keyword">compile</span> <span class="keyword">fileTree</span>(dir: <span class="string">'libs'</span>, <span class="keyword">include</span>: [<span class="string">'*.jar'</span>])</span><br><span class="line">    testCompile <span class="string">'junit:junit:4.12'</span></span><br><span class="line">    <span class="keyword">compile</span> <span class="string">'com.android.support:appcompat-v7:22.2.1'</span></span><br><span class="line">    <span class="keyword">compile</span> <span class="string">'com.android.support:design:22.2.1'</span></span><br><span class="line">    <span class="keyword">compile</span> <span class="string">'io.reactivex:rxjava:1.1.0'</span></span><br><span class="line">    <span class="keyword">compile</span> <span class="string">'io.reactivex:rxandroid:1.1.0'</span></span><br><span class="line">    <span class="comment">//    compile ('cn.trinea.android.view.autoscrollviewpager:android-auto-scroll-view-pager:1.1.2') &#123;</span></span><br><span class="line">    <span class="comment">//        exclude module: 'support-v4'</span></span><br><span class="line">    <span class="comment">//    &#125;</span></span><br><span class="line">    <span class="keyword">compile</span> <span class="string">'com.android.support:recyclerview-v7:22.2.1'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
+</ul><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在 Android &#123;&#125; 节点下增加</span></span><br><span class="line">signingConfigs &#123;</span><br><span class="line">    signConfig &#123;</span><br><span class="line">        storeFile <span class="keyword">file</span> (<span class="string">'../key.jks'</span>)</span><br><span class="line">        storePassword <span class="string">'123456'</span></span><br><span class="line">        keyAlias <span class="string">'xdj'</span></span><br><span class="line">        keyPassword <span class="string">'123456'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">buildTypes &#123;</span><br><span class="line">    release &#123;</span><br><span class="line">        signingConfig signingConfigs.signConfig</span><br><span class="line">    &#125;</span><br><span class="line">    debug &#123;</span><br><span class="line">        signingConfig signingConfigs.signConfig <span class="comment">// 配置debug包的签名</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/12/20/Gradle-%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -811,10 +801,10 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          Table of Contents
+          文章目录
         </li>
         <li class="sidebar-nav-overview">
-          Overview
+          站点概览
         </li>
       </ul>
 
@@ -835,21 +825,21 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
-          <span class="site-state-item-name">posts</span>
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
         <span class="site-state-item-count">1</span>
-        <span class="site-state-item-name">categories</span></a>
+        <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
         <span class="site-state-item-count">4</span>
-        <span class="site-state-item-name">tags</span></a>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
@@ -904,10 +894,10 @@
   </span>
   <span class="author" itemprop="copyrightHolder">XuDaojie</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.0.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.4.2
+  <div class="theme-info">主题 – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.4.2
   </div>
 
         
@@ -917,7 +907,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-user"></i>
       </span>
-      <span class="site-uv" title="Total Visitors">
+      <span class="site-uv" title="总访客量">
         <span id="busuanzi_value_site_uv"></span>
       </span>
     </span>
@@ -926,7 +916,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-eye"></i>
       </span>
-      <span class="site-pv" title="Total Views">
+      <span class="site-pv" title="总访问量">
         <span id="busuanzi_value_site_pv"></span>
       </span>
     </span>
@@ -954,7 +944,7 @@
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 <script src="/js/utils.js"></script><script src="/js/motion.js"></script>
 <script src="/js/schemes/muse.js"></script>
-<script src="/js/next-boot.js"></script>
+<script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
 
 
 
