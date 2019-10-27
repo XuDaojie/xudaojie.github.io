@@ -1,92 +1,56 @@
-<!doctype html>
-
-
-
-  
-
-
-<html class="theme-next mist use-motion">
-<head><meta name="generator" content="Hexo 3.9.0">
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
-
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
 
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.4.2',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
 
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.lug.ustc.edu.cn/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-  
-
-<link href="https://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css">
-
-
-  <meta name="keywords" content="Hexo, NexT">
-
-
-
-
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/xbox.png?v=5.0.2">
-
-
-
-
-
-
-<meta name="description" content="呆呆的初行者">
+  <meta name="description" content="呆呆的初行者">
 <meta property="og:type" content="website">
 <meta property="og:title" content="XuDaojie的博客">
 <meta property="og:url" content="http://xudaojie.github.io/index.html">
@@ -97,251 +61,178 @@
 <meta name="twitter:title" content="XuDaojie的博客">
 <meta name="twitter:description" content="呆呆的初行者">
 
+<link rel="canonical" href="http://xudaojie.github.io/">
 
 
-<script type="text/javascript" id="hexo.configuration">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    scheme: 'Mist',
-    sidebar: {"position":"left","display":"always"},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: '6262526783023744000',
-      author: '博主'
-    }
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: true,
+    isPost: false,
+    isPage: false,
+    isArchive: false
   };
 </script>
 
+  <title>XuDaojie的博客</title>
+  
 
 
 
-  <link rel="canonical" href="http://xudaojie.github.io/">
 
 
-  <title> XuDaojie的博客 </title>
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
 </head>
 
-<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
-
-  
-
-
-
-  <script type="text/javascript">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "//hm.baidu.com/hm.js?2f76e3335b53d914e8e9fa9cd706bc87";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
-
-
-
-
-
-
-
-
-  
-  
-    
-  
-
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
 
-  <div class="custom-logo-site-title">
-    <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">XuDaojie的博客</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">XuDaojie的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
   </div>
-  <p class="site-subtitle"></p>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
 </div>
 
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
-</div>
 
 <nav class="site-nav">
   
-
-  
-    <ul id="menu" class="menu">
-      
-        
+  <ul id="menu" class="menu">
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
-            
-            分类
-          </a>
-        </li>
-      
-        
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
-            
-            标签
-          </a>
-        </li>
-      
 
-      
-    </ul>
-  
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
 
-  
+  </li>
+  </ul>
+
 </nav>
-
- </div>
+</div>
     </header>
 
-    <main id="main" class="main">
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content">
+          
+
+          <div class="content">
             
-  <section id="posts" class="posts-expand">
-    
-      
 
+  <div class="posts-expand">
+        
   
   
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://xudaojie.github.io/2018/01/16/微服务架构问题/">
 
-  
-  
-  
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="XuDaojie">
+      <meta itemprop="description" content="呆呆的初行者">
+    </span>
 
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XuDaojie的博客">
+    </span>
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2018/01/16/微服务架构问题/" itemprop="url">
-                  微服务架构问题
-                </a>
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/01/16/微服务架构问题/" class="post-title-link" itemprop="url">微服务架构问题</a>
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2018-01-16T11:29:36+08:00" content="2018-01-16">
-              2018-01-16
-            </time>
-          </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
 
-          
-            <span class="post-category">
-              &nbsp; | &nbsp;
+              <time title="Created: 2018-01-16 11:29:36" itemprop="dateCreated datePublished" datetime="2018-01-16T11:29:36+08:00">2018-01-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2018-04-24 16:26:54" itemprop="dateModified" datetime="2018-04-24T16:26:54+08:00">2018-04-24</time>
+              </span>
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Spring-Cloud/" itemprop="url" rel="index">
                     <span itemprop="name">Spring Cloud</span>
                   </a>
                 </span>
-
-                
-                
-
-              
             </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2018/01/16/微服务架构问题/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/01/16/微服务架构问题/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
 
           
 
-          
-          
-             <span id="/2018/01/16/微服务架构问题/" class="leancloud_visitors" data-flag-title="微服务架构问题">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
         </div>
       </header>
+
     
-
-
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
-          
-            <p>多服务查询</p>
+          <p>多服务查询</p>
 <ol>
 <li>Euraka集群规则</li>
 <li></li>
@@ -368,115 +259,70 @@
 <h2 id="JWT"><a href="#JWT" class="headerlink" title="JWT"></a>JWT</h2><h3 id="JWT-官方文档"><a href="#JWT-官方文档" class="headerlink" title="JWT 官方文档"></a>JWT 官方文档</h3><p><a href="https://jwt.io/introduction/" target="_blank" rel="noopener">https://jwt.io/introduction/</a></p>
 <h3 id="Web-App-Token-鉴权方案的设计与思考"><a href="#Web-App-Token-鉴权方案的设计与思考" class="headerlink" title="Web App Token 鉴权方案的设计与思考"></a>Web App Token 鉴权方案的设计与思考</h3><p><a href="https://zhuanlan.zhihu.com/p/28295641" target="_blank" rel="noopener">Web App Token 鉴权方案的设计与思考</a></p>
 
-          
-        
       
     </div>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
+    
+    
+    
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
+      </footer>
   </article>
-
-
-    
-      
-
-  
-  
-
   
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://xudaojie.github.io/2017/03/06/ubuntu修复引导/">
 
-    
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="XuDaojie">
+      <meta itemprop="description" content="呆呆的初行者">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XuDaojie的博客">
+    </span>
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/06/ubuntu修复引导/" itemprop="url">
-                  ubuntu修复引导
-                </a>
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/03/06/ubuntu修复引导/" class="post-title-link" itemprop="url">ubuntu修复引导</a>
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2017-03-06 10:54:02" itemprop="dateCreated datePublished" datetime="2017-03-06T10:54:02+08:00">2017-03-06</time>
             </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-03-06T10:54:02+08:00" content="2017-03-06">
-              2017-03-06
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2017/03/06/ubuntu修复引导/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/06/ubuntu修复引导/" itemprop="commentsCount"></span>
-                </a>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2017-03-14 21:15:43" itemprop="dateModified" datetime="2017-03-14T21:15:43+08:00">2017-03-14</time>
               </span>
-            
-          
 
           
 
-          
-          
-             <span id="/2017/03/06/ubuntu修复引导/" class="leancloud_visitors" data-flag-title="ubuntu修复引导">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
         </div>
       </header>
+
     
-
-
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
-          
-            <p>首次以U盘方式安装Ubuntu16.04时，系统在开机时会让你选择进入Ubuntu还是Windows，后重新安装Ubuntu14.04的时候，就都是直接进入Ubuntu而没有选择项了。</p>
+          <p>首次以U盘方式安装Ubuntu16.04时，系统在开机时会让你选择进入Ubuntu还是Windows，后重新安装Ubuntu14.04的时候，就都是直接进入Ubuntu而没有选择项了。</p>
 <h2 id="修复引导"><a href="#修复引导" class="headerlink" title="修复引导"></a>修复引导</h2><p>执行此命令后便会修复引导</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo update-grub</span><br></pre></td></tr></table></figure>
 <h2 id="修改默认系统"><a href="#修改默认系统" class="headerlink" title="修改默认系统"></a>修改默认系统</h2><ol>
@@ -493,134 +339,81 @@
 <p><a href="http://kwangka.github.io/2015/11/23/dualbootgrub/" target="_blank" rel="noopener">http://kwangka.github.io/2015/11/23/dualbootgrub/</a></p>
 </blockquote>
 
-          
-        
       
     </div>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
+    
+    
+    
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
+      </footer>
   </article>
-
-
-    
-      
-
-  
-  
-
   
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://xudaojie.github.io/2016/10/24/事件的分发与上传/">
 
-    
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="XuDaojie">
+      <meta itemprop="description" content="呆呆的初行者">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XuDaojie的博客">
+    </span>
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/10/24/事件的分发与上传/" itemprop="url">
-                  利用面向对象来讲解事件分发与上传
-                </a>
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2016/10/24/事件的分发与上传/" class="post-title-link" itemprop="url">利用面向对象来讲解事件分发与上传</a>
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-24T18:36:30+08:00" content="2016-10-24">
-              2016-10-24
-            </time>
-          </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
 
-          
-            <span class="post-category">
-              &nbsp; | &nbsp;
+              <time title="Created: 2016-10-24 18:36:30" itemprop="dateCreated datePublished" datetime="2016-10-24T18:36:30+08:00">2016-10-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2017-01-06 11:58:31" itemprop="dateModified" datetime="2017-01-06T11:58:31+08:00">2017-01-06</time>
+              </span>
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Android/" itemprop="url" rel="index">
                     <span itemprop="name">Android</span>
                   </a>
                 </span>
-
-                
-                
-
-              
             </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/10/24/事件的分发与上传/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/24/事件的分发与上传/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
 
           
 
-          
-          
-             <span id="/2016/10/24/事件的分发与上传/" class="leancloud_visitors" data-flag-title="利用面向对象来讲解事件分发与上传">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
         </div>
       </header>
+
     
-
-
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
-          
-            <p>首先先来看下基本的套路，第一次看完事件分发后通常是懵逼，但我觉得还是应该先看下。</p>
+          <p>首先先来看下基本的套路，第一次看完事件分发后通常是懵逼，但我觉得还是应该先看下。</p>
 <p>Android 中当系统捕获事件时，都是由最外层的<code>View</code>依次向下传递，当然，事件不能总是传递到最后一子View才结束，我们在每一级消息传递时都会对消息做出响应以决定继续分发或者拦截。<br><br></p>
 <table>
 <thead>
@@ -735,268 +528,162 @@
 </ol>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Activity/老板 dispatchTouchEvent <span class="keyword">return</span> dispatchTouchEvent.</span><br><span class="line">ViewGroup/项目经理 dispatchTouchEvent <span class="keyword">return</span> dispatchTouchEvent.</span><br><span class="line">ViewGroup/部门经理 onInterceptTouchEvent <span class="keyword">return</span> <span class="keyword">true</span>/onInterceptTouchEvent.</span><br><span class="line">Activity/老板秘书 onTouchEvent</span><br></pre></td></tr></table></figure>
 
-          
-        
       
     </div>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
+    
+    
+    
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
+      </footer>
   </article>
-
-
-    
-      
-
-  
-  
-
   
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://xudaojie.github.io/2016/09/18/TextInputEditText样式设置/">
 
-    
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="XuDaojie">
+      <meta itemprop="description" content="呆呆的初行者">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XuDaojie的博客">
+    </span>
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/18/TextInputEditText样式设置/" itemprop="url">
-                  TextInputEditText样式设置
-                </a>
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2016/09/18/TextInputEditText样式设置/" class="post-title-link" itemprop="url">TextInputEditText样式设置</a>
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-18T22:19:20+08:00" content="2016-09-18">
-              2016-09-18
-            </time>
-          </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
 
-          
-            <span class="post-category">
-              &nbsp; | &nbsp;
+              <time title="Created: 2016-09-18 22:19:20" itemprop="dateCreated datePublished" datetime="2016-09-18T22:19:20+08:00">2016-09-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2017-01-06 11:58:31" itemprop="dateModified" datetime="2017-01-06T11:58:31+08:00">2017-01-06</time>
+              </span>
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Android/" itemprop="url" rel="index">
                     <span itemprop="name">Android</span>
                   </a>
                 </span>
-
-                
-                
-
-              
             </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/18/TextInputEditText样式设置/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/18/TextInputEditText样式设置/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
 
           
 
-          
-          
-             <span id="/2016/09/18/TextInputEditText样式设置/" class="leancloud_visitors" data-flag-title="TextInputEditText样式设置">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
         </div>
       </header>
+
     
-
-
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
-          
-            <h1 id="TextInputEditText样式设置"><a href="#TextInputEditText样式设置" class="headerlink" title="TextInputEditText样式设置"></a>TextInputEditText样式设置</h1><p><code>TextInputEditText</code>是在<strong>Design</strong>包中<strong>MD</strong>风格的<code>EditText</code>。</p>
+          <h1 id="TextInputEditText样式设置"><a href="#TextInputEditText样式设置" class="headerlink" title="TextInputEditText样式设置"></a>TextInputEditText样式设置</h1><p><code>TextInputEditText</code>是在<strong>Design</strong>包中<strong>MD</strong>风格的<code>EditText</code>。</p>
 <h2 id="样式调整"><a href="#样式调整" class="headerlink" title="样式调整"></a>样式调整</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"InputStyle"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="xml">   <span class="comment">&lt;!-- 底部线 默认颜色 --&gt;</span></span></span><br><span class="line"><span class="xml">   <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorControlNormal"</span>&gt;</span>@android:color/white<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">   <span class="comment">&lt;!-- 底部线 EditText激活时颜色 --&gt;</span></span></span><br><span class="line"><span class="xml">   <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorControlActivated"</span>&gt;</span>@android:color/white<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">   <span class="comment">&lt;!-- 设置光标 --&gt;</span></span></span><br><span class="line"><span class="xml">   <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:textCursorDrawable"</span>&gt;</span>@drawable/line<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p><code>android:textCursorDrawable</code>为<code>@null</code>时光标颜色与<code>textColor</code>相同，但是目测宽度只有1dp左右，太细了,所以最终还是选择了自定义光标</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">shape</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:shape</span>=<span class="string">"rectangle"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">solid</span> <span class="attr">android:color</span>=<span class="string">"@android:color/black"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">size</span> <span class="attr">android:width</span>=<span class="string">"2dip"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">shape</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h2 id="取消底部线"><a href="#取消底部线" class="headerlink" title="取消底部线"></a>取消底部线</h2><p>如果要取消<code>TextInputEditText</code>底部线，在EditText中我们设置<code>background=@null</code>，但是<code>TextInputEditText</code>不同，我们需要将<code>TextInputLayout</code>和<code>TextInputEdit</code>的<code>backgound</code>都设置为<code>@null</code></p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">android.support.design.widget.TextInputLayout</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:background</span>=<span class="string">"@null"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">android.support.design.widget.TextInputEditText</span></span></span><br><span class="line"><span class="tag">      <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">android:background</span>=<span class="string">"@null"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">android:hint</span>=<span class="string">"请输入手机号码"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">android:padding</span>=<span class="string">"8dp"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">android.support.design.widget.TextInputLayout</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-          
-        
       
     </div>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
+    
+    
+    
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
+      </footer>
   </article>
-
-
-    
-      
-
-  
-  
-
   
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://xudaojie.github.io/2015/12/20/Gradle-常用配置/">
 
-    
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="XuDaojie">
+      <meta itemprop="description" content="呆呆的初行者">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XuDaojie的博客">
+    </span>
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/12/20/Gradle-常用配置/" itemprop="url">
-                  Gradle-常用配置
-                </a>
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2015/12/20/Gradle-常用配置/" class="post-title-link" itemprop="url">Gradle-常用配置</a>
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-12-20T09:19:28+08:00" content="2015-12-20">
-              2015-12-20
-            </time>
-          </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
 
-          
-            <span class="post-category">
-              &nbsp; | &nbsp;
+              <time title="Created: 2015-12-20 09:19:28" itemprop="dateCreated datePublished" datetime="2015-12-20T09:19:28+08:00">2015-12-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2018-04-14 16:14:02" itemprop="dateModified" datetime="2018-04-14T16:14:02+08:00">2018-04-14</time>
+              </span>
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Android/" itemprop="url" rel="index">
                     <span itemprop="name">Android</span>
                   </a>
                 </span>
-
-                
-                
-
-              
             </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/12/20/Gradle-常用配置/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/20/Gradle-常用配置/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
 
           
 
-          
-          
-             <span id="/2015/12/20/Gradle-常用配置/" class="leancloud_visitors" data-flag-title="Gradle-常用配置">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
         </div>
       </header>
+
     
-
-
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
-          
-            <h2 id="签名"><a href="#签名" class="headerlink" title="签名"></a>签名</h2><p>当程序中使用了第三方的功能，比如分享、地图时，要求程序必须是已签名的<br>在<strong>Gradle</strong>中配置签名后，可以使我们的Debug也带上签名，而不需要使用<strong>Build/Generate Signer Apk</strong>去编译带签名的APK</p>
+          <h2 id="签名"><a href="#签名" class="headerlink" title="签名"></a>签名</h2><p>当程序中使用了第三方的功能，比如分享、地图时，要求程序必须是已签名的<br>在<strong>Gradle</strong>中配置签名后，可以使我们的Debug也带上签名，而不需要使用<strong>Build/Generate Signer Apk</strong>去编译带签名的APK</p>
 <ul>
 <li>build.gradle</li>
 </ul>
@@ -1047,234 +734,153 @@
 </ul>
 <h2 id="完整build-gradle"><a href="#完整build-gradle" class="headerlink" title="完整build.gradle"></a>完整build.gradle</h2><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br></pre></td><td class="code"><pre><span class="line">apply plugin: <span class="string">'com.android.application'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> releaseTime() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Date().format(<span class="string">"yyyy-MM-dd"</span>, TimeZone.getTimeZone(<span class="string">"UTC"</span>))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">android &#123;</span><br><span class="line">    compileSdkVersion <span class="number">22</span></span><br><span class="line">    buildToolsVersion <span class="string">"23.0.1"</span></span><br><span class="line"></span><br><span class="line">    signingConfigs &#123;</span><br><span class="line">        signConfig &#123;</span><br><span class="line">            storeFile <span class="keyword">file</span> (<span class="string">"../key.jks"</span>)</span><br><span class="line">            storePassword  <span class="string">"123456"</span></span><br><span class="line">            keyAlias <span class="string">"xdj"</span></span><br><span class="line">            keyPassword <span class="string">"123456"</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    defaultConfig &#123;</span><br><span class="line">        applicationId <span class="string">"com.xdj.rxjavademo"</span></span><br><span class="line">        minSdkVersion <span class="number">15</span></span><br><span class="line">        targetSdkVersion <span class="number">22</span></span><br><span class="line">        versionCode <span class="number">1</span></span><br><span class="line">        versionName <span class="string">"1.0.0"</span></span><br><span class="line"></span><br><span class="line">        manifestPlaceholders=[UMENG_CHANNEL_VALUE: <span class="string">'Umeng'</span>]</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    buildTypes &#123;</span><br><span class="line">        release &#123;</span><br><span class="line">            minifyEnabled <span class="keyword">false</span></span><br><span class="line">            proguardFiles getDefaultProguardFile(<span class="string">'proguard-android.txt'</span>), <span class="string">'proguard-rules.pro'</span></span><br><span class="line">            signingConfig signingConfigs.signConfig</span><br><span class="line">            zipAlignEnabled <span class="keyword">true</span></span><br><span class="line"><span class="comment">//            shrinkResources true // 清除无用的resource</span></span><br><span class="line">        &#125;</span><br><span class="line">        debug &#123;</span><br><span class="line">            buildConfigField <span class="string">"boolean"</span>, <span class="string">"LOG_DEBUG"</span>, <span class="string">"false"</span> <span class="comment">// 设置是否打印LOG，貌似没效果</span></span><br><span class="line">            signingConfig signingConfigs.signConfig</span><br><span class="line">        &#125;</span><br><span class="line">        applicationVariants.all &#123; variant -&gt;</span><br><span class="line">            variant.outputs.<span class="keyword">each</span> &#123; output -&gt;</span><br><span class="line">                <span class="keyword">def</span> outputFile = output.outputFile</span><br><span class="line">                <span class="comment">// &amp;&amp; outputFile.name.indexOf('debug') == -1</span></span><br><span class="line">                <span class="keyword">if</span> (outputFile != <span class="keyword">null</span> &amp;&amp; outputFile.name.endsWith(<span class="string">'.apk'</span>)</span><br><span class="line">                        &amp;&amp; outputFile.name.indexOf(<span class="string">'debug'</span>) == -<span class="number">1</span>) &#123; <span class="comment">// 不对Debug进行重命名</span></span><br><span class="line">                    <span class="comment">// 输出apk名称为app-googleplay-release-2015-12-16-v1.0-build1</span></span><br><span class="line">                    <span class="keyword">def</span> fileName = outputFile.name.replace(<span class="string">".apk"</span>, <span class="string">"-$&#123;releaseTime()&#125;"</span> +</span><br><span class="line">                            <span class="string">"-v$&#123;defaultConfig.versionName&#125;-build$&#123;defaultConfig.versionCode&#125;"</span> +</span><br><span class="line">                            <span class="string">".apk"</span>)</span><br><span class="line">                    output.outputFile = <span class="keyword">new</span> <span class="keyword">File</span>(outputFile.parent, fileName)</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    productFlavors &#123;</span><br><span class="line">        googleplay &#123;</span><br><span class="line">            manifestPlaceholders = [UMENG_CHANNEL_VALUE: <span class="string">"Google Play"</span>]</span><br><span class="line">        &#125;</span><br><span class="line">        xiaomi &#123;</span><br><span class="line"><span class="comment">//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "Xiao Mi"]</span></span><br><span class="line">        &#125;</span><br><span class="line">        _360 &#123;</span><br><span class="line"><span class="comment">//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "360"]</span></span><br><span class="line"><span class="comment">//            minSdkVersion 19</span></span><br><span class="line"><span class="comment">//            applicationId 'com.rx.demo'</span></span><br><span class="line"><span class="comment">//            targetSdkVersion 22</span></span><br><span class="line"><span class="comment">//            versionCode 360</span></span><br><span class="line"><span class="comment">//            versionName '1.1.1'</span></span><br><span class="line"><span class="comment">//            signingConfig signingConfig._360Config</span></span><br><span class="line">        &#125;</span><br><span class="line">        tencent &#123;</span><br><span class="line"><span class="comment">//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "Tencent"]</span></span><br><span class="line">        &#125;</span><br><span class="line">        baidu &#123;</span><br><span class="line"><span class="comment">//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "Baidu"]</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">sourceSets</span> &#123;</span><br><span class="line">        main &#123;</span><br><span class="line">            jniLibs.srcDirs=[<span class="string">'./libs/jniLibs'</span>]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">dependencies</span> &#123;</span><br><span class="line">    <span class="keyword">compile</span> <span class="keyword">fileTree</span>(dir: <span class="string">'libs'</span>, <span class="keyword">include</span>: [<span class="string">'*.jar'</span>])</span><br><span class="line">    testCompile <span class="string">'junit:junit:4.12'</span></span><br><span class="line">    <span class="keyword">compile</span> <span class="string">'com.android.support:appcompat-v7:22.2.1'</span></span><br><span class="line">    <span class="keyword">compile</span> <span class="string">'com.android.support:design:22.2.1'</span></span><br><span class="line">    <span class="keyword">compile</span> <span class="string">'io.reactivex:rxjava:1.1.0'</span></span><br><span class="line">    <span class="keyword">compile</span> <span class="string">'io.reactivex:rxandroid:1.1.0'</span></span><br><span class="line">    <span class="comment">//    compile ('cn.trinea.android.view.autoscrollviewpager:android-auto-scroll-view-pager:1.1.2') &#123;</span></span><br><span class="line">    <span class="comment">//        exclude module: 'support-v4'</span></span><br><span class="line">    <span class="comment">//    &#125;</span></span><br><span class="line">    <span class="keyword">compile</span> <span class="string">'com.android.support:recyclerview-v7:22.2.1'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-          
-        
       
     </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
 
     
-  </section>
-
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
   
 
-
-          </div>
-          
-
-
-          
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
   </div>
 
-  <aside id="sidebar" class="sidebar">
+  
+
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
     <div class="sidebar-inner">
 
-      
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
 
-      
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
-          <img class="site-author-image" itemprop="image" src="/uploads/avatar.png" alt="XuDaojie">
-          <p class="site-author-name" itemprop="name">XuDaojie</p>
-          <p class="site-description motion-element" itemprop="description">呆呆的初行者</p>
-        </div>
-        <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">5</span>
-              <span class="site-state-item-name">日志</span>
-            </a>
-          </div>
-
-          
-            <div class="site-state-item site-state-categories">
-              <a href="/categories">
-                <span class="site-state-item-count">7</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
-          
-
-          
-            <div class="site-state-item site-state-tags">
-              <a href="/tags">
-                <span class="site-state-item-count">9</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="site-author-image" itemprop="image" alt="XuDaojie"
+    src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">XuDaojie</p>
+  <div class="site-description" itemprop="description">呆呆的初行者</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
         
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
 
-        <div class="links-of-author motion-element">
-          
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/xudaojie" target="_blank" title="GitHub">
-                  
-                    <i class="fa fa-fw fa-github"></i>
-                  
-                  GitHub
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://weibo.com/u/2645037381" target="_blank" title="Weibo">
-                  
-                    <i class="fa fa-fw fa-weibo"></i>
-                  
-                  Weibo
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://plus.google.com/u/0/100707984826436947220" target="_blank" title="Google+">
-                  
-                    <i class="fa fa-fw fa-google-plus"></i>
-                  
-                  Google+
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://twitter.com/xudaojieg" target="_blank" title="Twitter">
-                  
-                    <i class="fa fa-fw fa-twitter"></i>
-                  
-                  Twitter
-                </a>
-              </span>
-            
-          
-        </div>
 
-        
-        
 
-        
-        
-          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
-            <div class="links-of-blogroll-title">
-              <i class="fa  fa-fw fa-globe"></i>
-              友情链接
-            </div>
-            <ul class="links-of-blogroll-list">
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://wuliaonimei.com/" title="Skilly" target="_blank">Skilly</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://kaizen.wang/" title="Kaizen" target="_blank">Kaizen</a>
-                </li>
-              
-            </ul>
-          </div>
-        
-
-      </section>
-
-      
+      </div>
 
     </div>
   </aside>
+  <div id="sidebar-dimmer"></div>
 
 
-        
       </div>
     </main>
 
-    <footer id="footer" class="footer">
+    <footer class="footer">
       <div class="footer-inner">
-        <div class="copyright">
+        
+
+<div class="copyright">
   
-  &copy;  2015 - 
+  &copy; 
   <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
-    <i class="fa fa-heart"></i>
+    <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">XuDaojie</span>
 </div>
-
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
-
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
-  </a>
-</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.4.2
+  </div>
 
         
 
-<div class="busuanzi-count">
 
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-  
-    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
-  
 
-  
-    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
-  
-  
-</div>
+
+
+
+
+
 
 
 
         
       </div>
     </footer>
-
-    <div class="back-to-top">
-      <i class="fa fa-arrow-up"></i>
-    </div>
   </div>
 
   
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
 
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
+
+
+  
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1286,207 +892,9 @@
 
   
 
-
-
-  
-  <script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script>
-
-  
-  <script type="text/javascript" src="https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
-
-  
-  <script type="text/javascript" src="https://cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
-
-  
-  <script type="text/javascript" src="https://cdn.bootcss.com/velocity/1.2.1/velocity.min.js"></script>
-
-  
-  <script type="text/javascript" src="https://cdn.bootcss.com/velocity/1.2.1/velocity.ui.min.js"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
-
-
-
-  
   
 
   
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
-
-
-
-  
-
-  
-    
-  
-
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"xudaojieblog"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-
-  
-
-
-
-
-
-
-  
-  
-
-  
-
-  
-
-  
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
-  <script>AV.initialize("D4ST42sHdcVcdperqLyGMfJQ-gzGzoHsz", "3eVvkr8sUHDDYijod6KXL5Dw");</script>
-  <script>
-    function showTime(Counter) {
-      var query = new AV.Query(Counter);
-      var entries = [];
-      var $visitors = $(".leancloud_visitors");
-
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
-
-      query.containedIn('url', entries);
-      query.find()
-        .done(function (results) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.get('url');
-            var time = item.get('time');
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for(var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if( countSpan.text() == '') {
-              countSpan.text(0);
-            }
-          }
-        })
-        .fail(function (object, error) {
-          console.log("Error: " + error.code + " " + error.message);
-        });
-    }
-
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
-
-      query.equalTo("url", url);
-      query.find({
-        success: function(results) {
-          if (results.length > 0) {
-            var counter = results[0];
-            counter.fetchWhenSave(true);
-            counter.increment("time");
-            counter.save(null, {
-              success: function(counter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.get('time'));
-              },
-              error: function(counter, error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
-          } else {
-            var newcounter = new Counter();
-            /* Set ACL */
-            var acl = new AV.ACL();
-            acl.setPublicReadAccess(true);
-            acl.setPublicWriteAccess(true);
-            newcounter.setACL(acl);
-            /* End Set ACL */
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
-
-
-
-  
-<script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
-
-
-  
-
 
 </body>
 </html>
