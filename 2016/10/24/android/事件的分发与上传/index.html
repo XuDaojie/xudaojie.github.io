@@ -53,16 +53,16 @@
   <meta name="description" content="首先先来看下基本的套路，第一次看完事件分发后通常是懵逼，但我觉得还是应该先看下。Android 中当系统捕获事件时，都是由最外层的View依次向下传递，当然，事件不能总是传递到最后一子View才结束，我们在每一级消息传递时都会对消息做出响应以决定继续分发或者拦截。   Touch事件相关方法 方法功能 View ViewGroup Activity    dispatchTouchEvent 事件">
 <meta property="og:type" content="article">
 <meta property="og:title" content="利用面向对象来讲解事件分发与上传">
-<meta property="og:url" content="http:&#x2F;&#x2F;xudaojie.github.io&#x2F;2016&#x2F;10&#x2F;24&#x2F;%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%88%86%E5%8F%91%E4%B8%8E%E4%B8%8A%E4%BC%A0&#x2F;index.html">
+<meta property="og:url" content="http:&#x2F;&#x2F;xudaojie.github.io&#x2F;2016&#x2F;10&#x2F;24&#x2F;android&#x2F;%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%88%86%E5%8F%91%E4%B8%8E%E4%B8%8A%E4%BC%A0&#x2F;index.html">
 <meta property="og:site_name" content="XuDaojie的博客">
 <meta property="og:description" content="首先先来看下基本的套路，第一次看完事件分发后通常是懵逼，但我觉得还是应该先看下。Android 中当系统捕获事件时，都是由最外层的View依次向下传递，当然，事件不能总是传递到最后一子View才结束，我们在每一级消息传递时都会对消息做出响应以决定继续分发或者拦截。   Touch事件相关方法 方法功能 View ViewGroup Activity    dispatchTouchEvent 事件">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.processon.com&#x2F;chart_image&#x2F;581bf20ce4b0c6fe570ca35e.png">
-<meta property="og:updated_time" content="2017-01-06T03:58:31.000Z">
+<meta property="og:updated_time" content="2019-10-28T02:17:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;www.processon.com&#x2F;chart_image&#x2F;581bf20ce4b0c6fe570ca35e.png">
 
-<link rel="canonical" href="http://xudaojie.github.io/2016/10/24/%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%88%86%E5%8F%91%E4%B8%8E%E4%B8%8A%E4%BC%A0/">
+<link rel="canonical" href="http://xudaojie.github.io/2016/10/24/android/%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%88%86%E5%8F%91%E4%B8%8E%E4%B8%8A%E4%BC%A0/">
 
 
 <script id="page-configurations">
@@ -225,7 +225,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://xudaojie.github.io/2016/10/24/%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%88%86%E5%8F%91%E4%B8%8E%E4%B8%8A%E4%BC%A0/">
+    <link itemprop="mainEntityOfPage" href="http://xudaojie.github.io/2016/10/24/android/%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%88%86%E5%8F%91%E4%B8%8E%E4%B8%8A%E4%BC%A0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avatar.png">
@@ -255,7 +255,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2017-01-06 11:58:31" itemprop="dateModified" datetime="2017-01-06T11:58:31+08:00">2017-01-06</time>
+                <time title="修改时间：2019-10-28 10:17:24" itemprop="dateModified" datetime="2019-10-28T10:17:24+08:00">2019-10-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -285,8 +285,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2016/10/24/%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%88%86%E5%8F%91%E4%B8%8E%E4%B8%8A%E4%BC%A0/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2016/10/24/%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%88%86%E5%8F%91%E4%B8%8E%E4%B8%8A%E4%BC%A0/" itemprop="commentCount"></span>
+    <a title="valine" href="/2016/10/24/android/%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%88%86%E5%8F%91%E4%B8%8E%E4%B8%8A%E4%BC%A0/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2016/10/24/android/%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%88%86%E5%8F%91%E4%B8%8E%E4%B8%8A%E4%BC%A0/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -435,7 +435,7 @@
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/2016/09/18/TextInputEditText%E6%A0%B7%E5%BC%8F%E8%AE%BE%E7%BD%AE/" rel="next" title="TextInputEditText样式设置">
+                <a href="/2016/09/18/android/TextInputEditText%E6%A0%B7%E5%BC%8F%E8%AE%BE%E7%BD%AE/" rel="next" title="TextInputEditText样式设置">
                   <i class="fa fa-chevron-left"></i> TextInputEditText样式设置
                 </a>
             </div>
@@ -443,8 +443,8 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-                <a href="/2017/03/06/ubuntu%E4%BF%AE%E5%A4%8D%E5%BC%95%E5%AF%BC/" rel="prev" title="ubuntu修复引导">
-                  ubuntu修复引导 <i class="fa fa-chevron-right"></i>
+                <a href="/2017/03/06/ubuntu%E4%BF%AE%E5%A4%8D%E5%BC%95%E5%AF%BC/" rel="prev" title="Ubuntu修复引导">
+                  Ubuntu修复引导 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
