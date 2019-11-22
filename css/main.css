@@ -1278,7 +1278,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #73465e;
+  background: #81afff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2075,16 +2075,6 @@ pre .javascript .function {
   font-size: 0.875em;
   justify-content: center;
   text-align: center;
-}
-.vk_like {
-  align-self: center;
-  height: 21px;
-  padding-top: 7px;
-  width: 85px;
-}
-.fb_like {
-  align-self: center;
-  height: 30px;
 }
 .category-all-page .category-all-title {
   text-align: center;
