@@ -57,7 +57,7 @@
 <meta property="og:site_name" content="XuDaojie的博客">
 <meta property="og:description" content="tar解压1234# 解压到当前目录$ tar -zxvf apache-kylin-2.6.4-bin-cdh57.tar.gz# 解压到指定目录(指定命令选项`-C`),如果指定目录不存在，需要先新建目录$ tar -zxvf apache-kylin-2.6.4-bin-cdh57.tar.gz -C ..&#x2F;Applications">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-10T07:00:32.000Z">
+<meta property="og:updated_time" content="2019-12-19T03:34:19.000Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://xudaojie.github.io/2019/12/10/terminal/%E5%8E%8B%E7%BC%A9%E5%8F%8A%E8%A7%A3%E5%8E%8B%E5%91%BD%E4%BB%A4/">
@@ -246,6 +246,13 @@
 
               <time title="创建时间：2019-12-10 15:00:32" itemprop="dateCreated datePublished" datetime="2019-12-10T15:00:32+08:00">2019-12-10</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-12-19 11:34:19" itemprop="dateModified" datetime="2019-12-19T11:34:19+08:00">2019-12-19</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -296,7 +303,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="tar"><a href="#tar" class="headerlink" title="tar"></a>tar</h2><h3 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 解压到当前目录</span></span><br><span class="line">$ tar -zxvf apache-kylin-2.6.4-bin-cdh57.tar.gz</span><br><span class="line"><span class="comment"># 解压到指定目录(指定命令选项`-C`),如果指定目录不存在，需要先新建目录</span></span><br><span class="line">$ tar -zxvf apache-kylin-2.6.4-bin-cdh57.tar.gz -C ../Applications</span><br></pre></td></tr></table></figure>
+        <h2 id="tar"><a href="#tar" class="headerlink" title="tar"></a>tar</h2><h3 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 解压到当前目录</span></span><br><span class="line">$ tar -zxvf apache-kylin-2.6.4-bin-cdh57.tar.gz</span><br><span class="line"><span class="comment"># 解压到指定目录(指定命令选项`-C`),如果指定目录不存在，需要先新建目录</span></span><br><span class="line">$ tar -zxvf apache-kylin-2.6.4-bin-cdh57.tar.gz -C ../Applications</span><br></pre></td></tr></table></figure><a id="more"></a>
+
+<h3 id="压缩"><a href="#压缩" class="headerlink" title="压缩"></a>压缩</h3><p>tar可以保留文件的权限信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ tar -zcvf kylin-2.5.2.tar.gz kylin</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>相关资料<br><a href="https://www.zhihu.com/question/335911358" target="_blank" rel="noopener">为什么 Linux 要用 tar.gz，很少用 7Z 或 ZIP？</a></p>
+</blockquote>
+
     </div>
 
     
@@ -356,7 +371,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#tar"><span class="nav-number">1.</span> <span class="nav-text">tar</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解压"><span class="nav-number">1.1.</span> <span class="nav-text">解压</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#tar"><span class="nav-number">1.</span> <span class="nav-text">tar</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解压"><span class="nav-number">1.1.</span> <span class="nav-text">解压</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#压缩"><span class="nav-number">1.2.</span> <span class="nav-text">压缩</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
