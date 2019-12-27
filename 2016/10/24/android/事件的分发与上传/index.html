@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.0.0">
+<meta name="generator" content="Hexo 4.2.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/xbox.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/xbox.png">
@@ -53,14 +53,16 @@
   <meta name="description" content="首先先来看下基本的套路，第一次看完事件分发后通常是懵逼，但我觉得还是应该先看下。Android 中当系统捕获事件时，都是由最外层的View依次向下传递，当然，事件不能总是传递到最后一子View才结束，我们在每一级消息传递时都会对消息做出响应以决定继续分发或者拦截。   Touch事件相关方法 方法功能 View ViewGroup Activity    dispatchTouchEvent 事件">
 <meta property="og:type" content="article">
 <meta property="og:title" content="利用面向对象来讲解事件分发与上传">
-<meta property="og:url" content="http:&#x2F;&#x2F;xudaojie.github.io&#x2F;2016&#x2F;10&#x2F;24&#x2F;android&#x2F;%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%88%86%E5%8F%91%E4%B8%8E%E4%B8%8A%E4%BC%A0&#x2F;index.html">
+<meta property="og:url" content="http://xudaojie.github.io/2016/10/24/android/%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%88%86%E5%8F%91%E4%B8%8E%E4%B8%8A%E4%BC%A0/index.html">
 <meta property="og:site_name" content="XuDaojie的博客">
 <meta property="og:description" content="首先先来看下基本的套路，第一次看完事件分发后通常是懵逼，但我觉得还是应该先看下。Android 中当系统捕获事件时，都是由最外层的View依次向下传递，当然，事件不能总是传递到最后一子View才结束，我们在每一级消息传递时都会对消息做出响应以决定继续分发或者拦截。   Touch事件相关方法 方法功能 View ViewGroup Activity    dispatchTouchEvent 事件">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https:&#x2F;&#x2F;www.processon.com&#x2F;chart_image&#x2F;581bf20ce4b0c6fe570ca35e.png">
-<meta property="og:updated_time" content="2019-10-28T02:17:24.000Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.processon.com/chart_image/581bf20ce4b0c6fe570ca35e.png">
+<meta property="article:published_time" content="2016-10-24T10:36:30.000Z">
+<meta property="article:modified_time" content="2019-10-28T02:17:24.000Z">
+<meta property="article:author" content="XuDaojie">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;www.processon.com&#x2F;chart_image&#x2F;581bf20ce4b0c6fe570ca35e.png">
+<meta name="twitter:image" content="https://www.processon.com/chart_image/581bf20ce4b0c6fe570ca35e.png">
 
 <link rel="canonical" href="http://xudaojie.github.io/2016/10/24/android/%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%88%86%E5%8F%91%E4%B8%8E%E4%B8%8A%E4%BC%A0/">
 
@@ -153,11 +155,6 @@
     <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
 
   </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
-
-  </li>
         <li class="menu-item menu-item-tags">
 
     <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
@@ -166,6 +163,11 @@
         <li class="menu-item menu-item-categories">
 
     <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -568,7 +570,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">XuDaojie</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.0.0
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.0
   </div>
   <span class="post-meta-divider">|</span>
   <div class="theme-info">主题 – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.5.0
@@ -616,9 +618,19 @@
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/muse.js"></script>
-<script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
 
 
 
@@ -627,7 +639,9 @@
 
 
 
-  <script src="/js/local-search.js"></script>
+  
+<script src="/js/local-search.js"></script>
+
 
 
 
