@@ -19,22 +19,22 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"xudaojie.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.19.2","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="GitPage设置自定义域名后，浏览器会提示不安全  检查域名的DNS设置是否正确 进入Git Page的仓库 点击Settings 在边栏的“代码和自动化”部分中，单击“ Pages”。 在“ Custom domain”下，查看域名是否正确  重新设置域名的DNS   Scenario DNS record type DNS record name DNS record value(s)">
+    <meta name="description" content="问题GitPage设置自定义域名后，浏览器会提示不安全">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GitPage自定义域名不安全">
 <meta property="og:url" content="http://xudaojie.github.io/2024/04/20/git-page/GitPage%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E4%B8%8D%E5%AE%89%E5%85%A8/index.html">
 <meta property="og:site_name" content="XuDaojie的博客">
-<meta property="og:description" content="GitPage设置自定义域名后，浏览器会提示不安全  检查域名的DNS设置是否正确 进入Git Page的仓库 点击Settings 在边栏的“代码和自动化”部分中，单击“ Pages”。 在“ Custom domain”下，查看域名是否正确  重新设置域名的DNS   Scenario DNS record type DNS record name DNS record value(s)">
+<meta property="og:description" content="问题GitPage设置自定义域名后，浏览器会提示不安全">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gitee.com/xudaojie/oss/raw/master/uPic/2024/04/20/XmRolV.png">
-<meta property="og:image" content="https://gitee.com/xudaojie/oss/raw/master/uPic/2024/04/20/7BTkYj.png">
-<meta property="og:image" content="https://gitee.com/xudaojie/oss/raw/master/uPic/2024/04/20/eeYD6i.png">
-<meta property="og:image" content="https://gitee.com/xudaojie/oss/raw/master/uPic/2024/04/21/kPCRJb.png">
+<meta property="og:image" content="https://s2.loli.net/2024/04/21/6W74KIZkrjabuez.png">
+<meta property="og:image" content="https://s2.loli.net/2024/04/21/O7P9juatZAHn5U3.png">
+<meta property="og:image" content="https://s2.loli.net/2024/04/21/G3IheqKZd7NCkoS.png">
+<meta property="og:image" content="https://s2.loli.net/2024/04/21/CZGdvcuFjEx3VKw.png">
 <meta property="article:published_time" content="2024-04-20T15:19:05.000Z">
 <meta property="article:modified_time" content="2024-04-20T15:19:05.000Z">
 <meta property="article:author" content="XuDaojie">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitee.com/xudaojie/oss/raw/master/uPic/2024/04/20/XmRolV.png">
+<meta name="twitter:image" content="https://s2.loli.net/2024/04/21/6W74KIZkrjabuez.png">
 
 
 <link rel="canonical" href="http://xudaojie.github.io/2024/04/20/git-page/GitPage%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E4%B8%8D%E5%AE%89%E5%85%A8/">
@@ -145,7 +145,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A3%80%E6%9F%A5%E5%9F%9F%E5%90%8D%E7%9A%84DNS%E8%AE%BE%E7%BD%AE%E6%98%AF%E5%90%A6%E6%AD%A3%E7%A1%AE"><span class="nav-number">1.</span> <span class="nav-text">检查域名的DNS设置是否正确</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E6%96%B0%E8%AE%BE%E7%BD%AE%E5%9F%9F%E5%90%8D%E7%9A%84DNS"><span class="nav-number">2.</span> <span class="nav-text">重新设置域名的DNS</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A3%80%E6%9F%A5%E5%9F%9F%E5%90%8D%E7%9A%84DNS%E8%AE%BE%E7%BD%AE%E6%98%AF%E5%90%A6%E6%AD%A3%E7%A1%AE"><span class="nav-number">2.</span> <span class="nav-text">检查域名的DNS设置是否正确</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E6%96%B0%E8%AE%BE%E7%BD%AE%E5%9F%9F%E5%90%8D%E7%9A%84DNS"><span class="nav-number">3.</span> <span class="nav-text">重新设置域名的DNS</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -272,13 +272,14 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>GitPage设置自定义域名后，浏览器会提示不安全</p>
-<p><img src="https://gitee.com/xudaojie/oss/raw/master/uPic/2024/04/20/XmRolV.png" alt="不安全"></p>
+    <div class="post-body" itemprop="articleBody"><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>GitPage设置自定义域名后，浏览器会提示不安全</p>
+<span id="more"></span>
+<p><img src="https://s2.loli.net/2024/04/21/6W74KIZkrjabuez.png" alt="6W74KIZkrjabuez"></p>
 <h2 id="检查域名的DNS设置是否正确"><a href="#检查域名的DNS设置是否正确" class="headerlink" title="检查域名的DNS设置是否正确"></a>检查域名的DNS设置是否正确</h2><ol>
 <li>进入<code>Git Page</code>的仓库</li>
 <li>点击<code>Settings</code></li>
 <li>在边栏的“代码和自动化”部分中，单击“ Pages”。</li>
-<li>在“ Custom domain”下，查看域名是否正确<br><img src="https://gitee.com/xudaojie/oss/raw/master/uPic/2024/04/20/7BTkYj.png"></li>
+<li>在“ Custom domain”下，查看域名是否正确<br><img src="https://s2.loli.net/2024/04/21/O7P9juatZAHn5U3.png" alt="O7P9juatZAHn5U3"></li>
 </ol>
 <h2 id="重新设置域名的DNS"><a href="#重新设置域名的DNS" class="headerlink" title="重新设置域名的DNS"></a>重新设置域名的DNS</h2><table>
 <thead>
@@ -314,11 +315,11 @@
 <td><code>USERNAME.github.io</code> or<br /> <code>ORGANIZATION.github.io</code></td>
 </tr>
 </tbody></table>
-<p>修改完后再检查自定义域名的DNS设置是否正确<br><img src="https://gitee.com/xudaojie/oss/raw/master/uPic/2024/04/20/eeYD6i.png"></p>
+<p>修改完后再检查自定义域名的DNS设置是否正确<br><img src="https://s2.loli.net/2024/04/21/G3IheqKZd7NCkoS.png" alt="G3IheqKZd7NCkoS"></p>
 <p>访问自定义域名，发现依然不安全，等待DNS生效，一般需要24小时，可使用<code>dig</code>命令或者DNS在线解析工具确认DNS是否生效</p>
 <ol>
 <li>dig命令 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">$ dig nide.name</span><br><span class="line"></span><br><span class="line">; &lt;&lt;&gt;&gt; DiG 9.10.6 &lt;&lt;&gt;&gt; nide.name</span><br><span class="line">;; global options: +cmd</span><br><span class="line">;; Got answer:</span><br><span class="line">;; -&gt;&gt;HEADER&lt;&lt;- <span class="string">opcode: QUERY, status: NOERROR, id: 47330</span></span><br><span class="line"><span class="string">;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">;; OPT PSEUDOSECTION:</span></span><br><span class="line"><span class="string">; EDNS: version: 0, flags:; udp: 1408</span></span><br><span class="line"><span class="string">;; QUESTION SECTION:</span></span><br><span class="line"><span class="string">;nide.name.			IN	A</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">;; ANSWER SECTION:</span></span><br><span class="line"><span class="string">nide.name.		1	IN	A	192.30.252.154</span></span><br><span class="line"><span class="string">nide.name.		1	IN	A	192.30.252.153</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">;; Query time: 5 msec</span></span><br><span class="line"><span class="string">;; SERVER: 192.168.2.1#53(192.168.2.1)</span></span><br><span class="line"><span class="string">;; WHEN: Sun Apr 21 00:16:21 CST 2024</span></span><br><span class="line"><span class="string">;; MSG SIZE  rcvd: 70</span></span><br></pre></td></tr></table></figure></li>
-<li>在线DNS解析工具<br><img src="https://gitee.com/xudaojie/oss/raw/master/uPic/2024/04/21/kPCRJb.png" alt="在线DNS解析工具"></li>
+<li>在线DNS解析工具<br><img src="https://s2.loli.net/2024/04/21/CZGdvcuFjEx3VKw.png" alt="CZGdvcuFjEx3VKw"></li>
 </ol>
 <p>可以看到IPV4的A记录部分DNS服务商已经生效。将电脑的 DNS 修改为已经生效的 DNS 服务商，再访问自定义域名。<br>例如我这 Google DNS 已经是修改后 DNS IP 了,将电脑 DNS 修改为<code>8.8.8.8</code>。再次访问自定义域名，发现已经是安全的了。<br>剩下的DNS服务商生效后，再将电脑的 DNS 修改为默认的DNS服务商即可。</p>
 <blockquote>
