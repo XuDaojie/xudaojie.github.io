@@ -152,7 +152,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -215,7 +215,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://xudaojie.github.io/2019/10/27/Hexo%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7/">
+    <link itemprop="mainEntityOfPage" href="http://xudaojie.github.io/2024/04/20/git-page/GitPage%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E4%B8%8D%E5%AE%89%E5%85%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avatar.png">
@@ -233,7 +233,127 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/10/27/Hexo%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7/" class="post-title-link" itemprop="url">Hexo版本升级</a>
+          <a href="/2024/04/20/git-page/GitPage%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E4%B8%8D%E5%AE%89%E5%85%A8/" class="post-title-link" itemprop="url">GitPage自定义域名不安全</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2024-04-20 23:19:05" itemprop="dateCreated datePublished" datetime="2024-04-20T23:19:05+08:00">2024-04-20</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>GitPage设置自定义域名后，浏览器会提示不安全</p>
+<p><img src="https://gitee.com/xudaojie/oss/raw/master/uPic/2024/04/20/XmRolV.png" alt="不安全"></p>
+<h2 id="检查域名的DNS设置是否正确"><a href="#检查域名的DNS设置是否正确" class="headerlink" title="检查域名的DNS设置是否正确"></a>检查域名的DNS设置是否正确</h2><ol>
+<li>进入<code>Git Page</code>的仓库</li>
+<li>点击<code>Settings</code></li>
+<li>在边栏的“代码和自动化”部分中，单击“ Pages”。</li>
+<li>在“ Custom domain”下，查看域名是否正确<br><img src="https://gitee.com/xudaojie/oss/raw/master/uPic/2024/04/20/7BTkYj.png"></li>
+</ol>
+<h2 id="重新设置域名的DNS"><a href="#重新设置域名的DNS" class="headerlink" title="重新设置域名的DNS"></a>重新设置域名的DNS</h2><table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>DNS record type</th>
+<th>DNS record name</th>
+<th>DNS record value(s)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Apex domain<br />(<code>example.com</code>)</td>
+<td><code>A</code></td>
+<td><code>@</code></td>
+<td><code>185.199.108.153</code><br /><code>185.199.109.153</code><br /><code>185.199.110.153</code><br /><code>185.199.111.153</code></td>
+</tr>
+<tr>
+<td>Apex domain<br />(<code>example.com</code>)</td>
+<td><code>AAAA</code></td>
+<td><code>@</code></td>
+<td><code>2606:50c0:8000::153</code><br /><code>2606:50c0:8001::153</code><br /><code>2606:50c0:8002::153</code><br /><code>2606:50c0:8003::153</code></td>
+</tr>
+<tr>
+<td>Apex domain<br />(<code>example.com</code>)</td>
+<td><code>ALIAS</code> or <code>ANAME</code></td>
+<td><code>@</code></td>
+<td><code>USERNAME.github.io</code> or<br /> <code>ORGANIZATION.github.io</code></td>
+</tr>
+<tr>
+<td>Subdomain<br />(<code>ww​w.example.com</code>,<br /><code>blog.example.com</code>)</td>
+<td><code>CNAME</code></td>
+<td><code>SUBDOMAIN</code></td>
+<td><code>USERNAME.github.io</code> or<br /> <code>ORGANIZATION.github.io</code></td>
+</tr>
+</tbody></table>
+<p>修改完后再检查自定义域名的DNS设置是否正确<br><img src="https://gitee.com/xudaojie/oss/raw/master/uPic/2024/04/20/eeYD6i.png"></p>
+<p>访问自定义域名，发现依然不安全，等待DNS生效，一般需要24小时，可使用<code>dig</code>命令或者DNS在线解析工具确认DNS是否生效</p>
+<ol>
+<li>dig命令 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">$ dig nide.name</span><br><span class="line"></span><br><span class="line">; &lt;&lt;&gt;&gt; DiG 9.10.6 &lt;&lt;&gt;&gt; nide.name</span><br><span class="line">;; global options: +cmd</span><br><span class="line">;; Got answer:</span><br><span class="line">;; -&gt;&gt;HEADER&lt;&lt;- <span class="string">opcode: QUERY, status: NOERROR, id: 47330</span></span><br><span class="line"><span class="string">;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">;; OPT PSEUDOSECTION:</span></span><br><span class="line"><span class="string">; EDNS: version: 0, flags:; udp: 1408</span></span><br><span class="line"><span class="string">;; QUESTION SECTION:</span></span><br><span class="line"><span class="string">;nide.name.			IN	A</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">;; ANSWER SECTION:</span></span><br><span class="line"><span class="string">nide.name.		1	IN	A	192.30.252.154</span></span><br><span class="line"><span class="string">nide.name.		1	IN	A	192.30.252.153</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">;; Query time: 5 msec</span></span><br><span class="line"><span class="string">;; SERVER: 192.168.2.1#53(192.168.2.1)</span></span><br><span class="line"><span class="string">;; WHEN: Sun Apr 21 00:16:21 CST 2024</span></span><br><span class="line"><span class="string">;; MSG SIZE  rcvd: 70</span></span><br></pre></td></tr></table></figure></li>
+<li>在线DNS解析工具<br><img src="https://gitee.com/xudaojie/oss/raw/master/uPic/2024/04/21/kPCRJb.png" alt="在线DNS解析工具"></li>
+</ol>
+<p>可以看到IPV4的A记录部分DNS服务商已经生效。将电脑的 DNS 修改为已经生效的 DNS 服务商，再访问自定义域名。<br>例如我这 Google DNS 已经是修改后 DNS IP 了,将电脑 DNS 修改为<code>8.8.8.8</code>。再次访问自定义域名，发现已经是安全的了。<br>剩下的DNS服务商生效后，再将电脑的 DNS 修改为默认的DNS服务商即可。</p>
+<blockquote>
+<p>参考<br><a target="_blank" rel="noopener" href="https://docs.github.com/zh/pages/getting-started-with-github-pages/securing-your-github-pages-site-with-https#troubleshooting-certificate-provisioning-certificate-not-yet-created-error">使用 HTTPS 保护 GitHub Pages 站点</a></p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://xudaojie.github.io/2019/10/27/git-page/Hexo%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avatar.png">
+      <meta itemprop="name" content="XuDaojie">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XuDaojie的博客">
+      <meta itemprop="description" content="呆呆的初行者">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | XuDaojie的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2019/10/27/git-page/Hexo%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7/" class="post-title-link" itemprop="url">Hexo版本升级</a>
         </h2>
 
         <div class="post-meta-container">
@@ -268,7 +388,7 @@
 <h2 id="升级Hexo"><a href="#升级Hexo" class="headerlink" title="升级Hexo"></a>升级Hexo</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装hexo-cli命令行工具</span></span><br><span class="line">$ npm install -g hexo-cli</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装npm-check </span></span><br><span class="line">$ npm install -g npm-check</span><br><span class="line"><span class="comment"># 检查npm依赖包是否有更新</span></span><br><span class="line">$ npm-check</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装npm包更新工具</span></span><br><span class="line">$ npm install -g npm-upgrade</span><br><span class="line"><span class="comment"># 更新package.json、node-modules</span></span><br><span class="line">$ npm-upgrade -g</span><br><span class="line">$ npm-upgrade -save</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2019/10/27/Hexo%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7/#more" rel="contents">
+              <a class="btn" href="/2019/10/27/git-page/Hexo%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>

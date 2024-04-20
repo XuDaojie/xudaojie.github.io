@@ -1,33 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hexo版本升级</title>
-    <url>/2019/10/27/Hexo%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7/</url>
-    <content><![CDATA[<h2 id="先升级Node-js到最新版"><a href="#先升级Node-js到最新版" class="headerlink" title="先升级Node.js到最新版"></a>先升级Node.js到最新版</h2><p>这里推荐使用<code>nvm</code>安装最新版<code>node</code></p>
-<h2 id="升级Hexo"><a href="#升级Hexo" class="headerlink" title="升级Hexo"></a>升级Hexo</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装hexo-cli命令行工具</span></span><br><span class="line">$ npm install -g hexo-cli</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装npm-check </span></span><br><span class="line">$ npm install -g npm-check</span><br><span class="line"><span class="comment"># 检查npm依赖包是否有更新</span></span><br><span class="line">$ npm-check</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装npm包更新工具</span></span><br><span class="line">$ npm install -g npm-upgrade</span><br><span class="line"><span class="comment"># 更新package.json、node-modules</span></span><br><span class="line">$ npm-upgrade -g</span><br><span class="line">$ npm-upgrade -save</span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-<blockquote>
-<p>参考<br><a href="https://leimingshan.com/posts/d9017f30/">Hexo升级指南</a><br><a href="https://baize.cc/posts/15ac.html">Hexo版本升级指南</a></p>
-</blockquote>
-<h3 id="可能出现的异常"><a href="#可能出现的异常" class="headerlink" title="可能出现的异常"></a>可能出现的异常</h3><ul>
-<li>npm install -g hexo-cli<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br><span class="line">npm ERR! code CERT_HAS_EXPIRED</span><br><span class="line">npm ERR! errno CERT_HAS_EXPIRED</span><br><span class="line">npm ERR! request to https://registry.npm.taobao.org/hexo-cli failed, reason: certificate has expired</span><br><span class="line"></span><br><span class="line">npm ERR! A complete <span class="built_in">log</span> of this run can be found <span class="keyword">in</span>:</span><br><span class="line">npm ERR!     /Users/xdj/.npm/_logs/2024-04-19T01_08_00_873Z-debug.log</span><br></pre></td></tr></table></figure>
-此情况是之前配置的<code>npm</code>源证书过期，需要更换新的源。<br><code>npm config set registry https://registry.npmmirror.com</code></li>
-</ul>
-<blockquote>
-<p>参考<br><a href="https://blog.csdn.net/qq_49907632/article/details/135974644">npm ERR! reason: certificate has expired（淘宝镜像过期）</a></p>
-</blockquote>
-<ul>
-<li>npm-upgrade<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm-upgrade</span><br><span class="line">Checking <span class="keyword">for</span> outdated production, optional, development, peer and bundled dependencies <span class="keyword">for</span> <span class="string">&quot;/Users/xdj/Documents/Hexo/package.json&quot;</span>...</span><br><span class="line">[====================] 13/13 100%</span><br><span class="line"></span><br><span class="line">New versions of active modules available:</span><br><span class="line"></span><br><span class="line">  hexo                      ^4.2.0   →   ^7.2.0</span><br><span class="line">  hexo-cli                  ^3.1.0   →   ^4.3.2</span><br><span class="line">  hexo-deployer-git         ^2.1.0   →   ^4.0.0</span><br><span class="line">  hexo-generator-archive    ^1.0.0   →   ^2.0.0</span><br><span class="line">  hexo-generator-category   ^1.0.0   →   ^2.0.0</span><br><span class="line">  hexo-generator-index      ^1.0.0   →   ^3.0.0</span><br><span class="line">  hexo-generator-searchdb   ^1.2.0   →   ^1.4.1</span><br><span class="line">  hexo-generator-tag        ^1.0.0   →   ^2.0.0</span><br><span class="line">  hexo-renderer-ejs         ^1.0.0   →   ^2.0.0</span><br><span class="line">  hexo-renderer-marked      ^2.0.0   →   ^6.3.0</span><br><span class="line">  hexo-renderer-stylus      ^1.1.0   →   ^3.0.1</span><br><span class="line">  hexo-server               ^1.0.0   →   ^3.0.0</span><br><span class="line"></span><br><span class="line">? Update <span class="string">&quot;hexo&quot;</span> <span class="keyword">in</span> package.json from ^4.2.0 to ^7.2.0? Yes</span><br><span class="line"></span><br><span class="line">? Update <span class="string">&quot;hexo-cli&quot;</span> <span class="keyword">in</span> package.json from ^3.1.0 to ^4.3.2? (Use arrow keys)</span><br><span class="line">❯ Yes</span><br><span class="line">  No</span><br><span class="line">  Show changelog</span><br><span class="line">  Ignore</span><br><span class="line">  Finish update process</span><br></pre></td></tr></table></figure></li>
-</ul>
-<p>一路<code>yes</code>即可</p>
-]]></content>
-      <tags>
-        <tag>hexo</tag>
-        <tag>node</tag>
-        <tag>nvm</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Ubuntu修复引导</title>
     <url>/2017/03/06/ubuntu%E4%BF%AE%E5%A4%8D%E5%BC%95%E5%AF%BC/</url>
     <content><![CDATA[<p>首次以U盘方式安装Ubuntu16.04时，系统在开机时会让你选择进入Ubuntu还是Windows，后重新安装Ubuntu14.04的时候，就都是直接进入Ubuntu而没有选择项了。</p>
@@ -286,5 +259,89 @@
         <category>Linux</category>
         <category>terminal</category>
       </categories>
+  </entry>
+  <entry>
+    <title>Hexo版本升级</title>
+    <url>/2019/10/27/git-page/Hexo%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7/</url>
+    <content><![CDATA[<h2 id="先升级Node-js到最新版"><a href="#先升级Node-js到最新版" class="headerlink" title="先升级Node.js到最新版"></a>先升级Node.js到最新版</h2><p>这里推荐使用<code>nvm</code>安装最新版<code>node</code></p>
+<h2 id="升级Hexo"><a href="#升级Hexo" class="headerlink" title="升级Hexo"></a>升级Hexo</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装hexo-cli命令行工具</span></span><br><span class="line">$ npm install -g hexo-cli</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装npm-check </span></span><br><span class="line">$ npm install -g npm-check</span><br><span class="line"><span class="comment"># 检查npm依赖包是否有更新</span></span><br><span class="line">$ npm-check</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装npm包更新工具</span></span><br><span class="line">$ npm install -g npm-upgrade</span><br><span class="line"><span class="comment"># 更新package.json、node-modules</span></span><br><span class="line">$ npm-upgrade -g</span><br><span class="line">$ npm-upgrade -save</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<blockquote>
+<p>参考<br><a href="https://leimingshan.com/posts/d9017f30/">Hexo升级指南</a><br><a href="https://baize.cc/posts/15ac.html">Hexo版本升级指南</a></p>
+</blockquote>
+<h3 id="可能出现的异常"><a href="#可能出现的异常" class="headerlink" title="可能出现的异常"></a>可能出现的异常</h3><ul>
+<li>npm install -g hexo-cli<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br><span class="line">npm ERR! code CERT_HAS_EXPIRED</span><br><span class="line">npm ERR! errno CERT_HAS_EXPIRED</span><br><span class="line">npm ERR! request to https://registry.npm.taobao.org/hexo-cli failed, reason: certificate has expired</span><br><span class="line"></span><br><span class="line">npm ERR! A complete <span class="built_in">log</span> of this run can be found <span class="keyword">in</span>:</span><br><span class="line">npm ERR!     /Users/xdj/.npm/_logs/2024-04-19T01_08_00_873Z-debug.log</span><br></pre></td></tr></table></figure>
+此情况是之前配置的<code>npm</code>源证书过期，需要更换新的源。<br><code>npm config set registry https://registry.npmmirror.com</code></li>
+</ul>
+<blockquote>
+<p>参考<br><a href="https://blog.csdn.net/qq_49907632/article/details/135974644">npm ERR! reason: certificate has expired（淘宝镜像过期）</a></p>
+</blockquote>
+<ul>
+<li>npm-upgrade<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm-upgrade</span><br><span class="line">Checking <span class="keyword">for</span> outdated production, optional, development, peer and bundled dependencies <span class="keyword">for</span> <span class="string">&quot;/Users/xdj/Documents/Hexo/package.json&quot;</span>...</span><br><span class="line">[====================] 13/13 100%</span><br><span class="line"></span><br><span class="line">New versions of active modules available:</span><br><span class="line"></span><br><span class="line">  hexo                      ^4.2.0   →   ^7.2.0</span><br><span class="line">  hexo-cli                  ^3.1.0   →   ^4.3.2</span><br><span class="line">  hexo-deployer-git         ^2.1.0   →   ^4.0.0</span><br><span class="line">  hexo-generator-archive    ^1.0.0   →   ^2.0.0</span><br><span class="line">  hexo-generator-category   ^1.0.0   →   ^2.0.0</span><br><span class="line">  hexo-generator-index      ^1.0.0   →   ^3.0.0</span><br><span class="line">  hexo-generator-searchdb   ^1.2.0   →   ^1.4.1</span><br><span class="line">  hexo-generator-tag        ^1.0.0   →   ^2.0.0</span><br><span class="line">  hexo-renderer-ejs         ^1.0.0   →   ^2.0.0</span><br><span class="line">  hexo-renderer-marked      ^2.0.0   →   ^6.3.0</span><br><span class="line">  hexo-renderer-stylus      ^1.1.0   →   ^3.0.1</span><br><span class="line">  hexo-server               ^1.0.0   →   ^3.0.0</span><br><span class="line"></span><br><span class="line">? Update <span class="string">&quot;hexo&quot;</span> <span class="keyword">in</span> package.json from ^4.2.0 to ^7.2.0? Yes</span><br><span class="line"></span><br><span class="line">? Update <span class="string">&quot;hexo-cli&quot;</span> <span class="keyword">in</span> package.json from ^3.1.0 to ^4.3.2? (Use arrow keys)</span><br><span class="line">❯ Yes</span><br><span class="line">  No</span><br><span class="line">  Show changelog</span><br><span class="line">  Ignore</span><br><span class="line">  Finish update process</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>一路<code>yes</code>即可</p>
+]]></content>
+      <tags>
+        <tag>hexo</tag>
+        <tag>node</tag>
+        <tag>nvm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>GitPage自定义域名不安全</title>
+    <url>/2024/04/20/git-page/GitPage%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E4%B8%8D%E5%AE%89%E5%85%A8/</url>
+    <content><![CDATA[<p>GitPage设置自定义域名后，浏览器会提示不安全</p>
+<p><img src="https://gitee.com/xudaojie/oss/raw/master/uPic/2024/04/20/XmRolV.png" alt="不安全"></p>
+<h2 id="检查域名的DNS设置是否正确"><a href="#检查域名的DNS设置是否正确" class="headerlink" title="检查域名的DNS设置是否正确"></a>检查域名的DNS设置是否正确</h2><ol>
+<li>进入<code>Git Page</code>的仓库</li>
+<li>点击<code>Settings</code></li>
+<li>在边栏的“代码和自动化”部分中，单击“ Pages”。</li>
+<li>在“ Custom domain”下，查看域名是否正确<br><img src="https://gitee.com/xudaojie/oss/raw/master/uPic/2024/04/20/7BTkYj.png"></li>
+</ol>
+<h2 id="重新设置域名的DNS"><a href="#重新设置域名的DNS" class="headerlink" title="重新设置域名的DNS"></a>重新设置域名的DNS</h2><table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>DNS record type</th>
+<th>DNS record name</th>
+<th>DNS record value(s)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Apex domain<br />(<code>example.com</code>)</td>
+<td><code>A</code></td>
+<td><code>@</code></td>
+<td><code>185.199.108.153</code><br /><code>185.199.109.153</code><br /><code>185.199.110.153</code><br /><code>185.199.111.153</code></td>
+</tr>
+<tr>
+<td>Apex domain<br />(<code>example.com</code>)</td>
+<td><code>AAAA</code></td>
+<td><code>@</code></td>
+<td><code>2606:50c0:8000::153</code><br /><code>2606:50c0:8001::153</code><br /><code>2606:50c0:8002::153</code><br /><code>2606:50c0:8003::153</code></td>
+</tr>
+<tr>
+<td>Apex domain<br />(<code>example.com</code>)</td>
+<td><code>ALIAS</code> or <code>ANAME</code></td>
+<td><code>@</code></td>
+<td><code>USERNAME.github.io</code> or<br /> <code>ORGANIZATION.github.io</code></td>
+</tr>
+<tr>
+<td>Subdomain<br />(<code>ww​w.example.com</code>,<br /><code>blog.example.com</code>)</td>
+<td><code>CNAME</code></td>
+<td><code>SUBDOMAIN</code></td>
+<td><code>USERNAME.github.io</code> or<br /> <code>ORGANIZATION.github.io</code></td>
+</tr>
+</tbody></table>
+<p>修改完后再检查自定义域名的DNS设置是否正确<br><img src="https://gitee.com/xudaojie/oss/raw/master/uPic/2024/04/20/eeYD6i.png"></p>
+<p>访问自定义域名，发现依然不安全，等待DNS生效，一般需要24小时，可使用<code>dig</code>命令或者DNS在线解析工具确认DNS是否生效</p>
+<ol>
+<li>dig命令 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ dig nide.name</span><br><span class="line"></span><br><span class="line">; &lt;&lt;&gt;&gt; DiG 9.10.6 &lt;&lt;&gt;&gt; nide.name</span><br><span class="line">;; global options: +cmd</span><br><span class="line">;; Got answer:</span><br><span class="line">;; -&gt;&gt;HEADER&lt;&lt;- <span class="string">opcode: QUERY, status: NOERROR, id: 47330</span></span><br><span class="line"><span class="string">;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">;; OPT PSEUDOSECTION:</span></span><br><span class="line"><span class="string">; EDNS: version: 0, flags:; udp: 1408</span></span><br><span class="line"><span class="string">;; QUESTION SECTION:</span></span><br><span class="line"><span class="string">;nide.name.			IN	A</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">;; ANSWER SECTION:</span></span><br><span class="line"><span class="string">nide.name.		1	IN	A	192.30.252.154</span></span><br><span class="line"><span class="string">nide.name.		1	IN	A	192.30.252.153</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">;; Query time: 5 msec</span></span><br><span class="line"><span class="string">;; SERVER: 192.168.2.1#53(192.168.2.1)</span></span><br><span class="line"><span class="string">;; WHEN: Sun Apr 21 00:16:21 CST 2024</span></span><br><span class="line"><span class="string">;; MSG SIZE  rcvd: 70</span></span><br></pre></td></tr></table></figure></li>
+<li>在线DNS解析工具<br><img src="https://gitee.com/xudaojie/oss/raw/master/uPic/2024/04/21/kPCRJb.png" alt="在线DNS解析工具"></li>
+</ol>
+<p>可以看到IPV4的A记录部分DNS服务商已经生效。将电脑的 DNS 修改为已经生效的 DNS 服务商，再访问自定义域名。<br>例如我这 Google DNS 已经是修改后 DNS IP 了,将电脑 DNS 修改为<code>8.8.8.8</code>。再次访问自定义域名，发现已经是安全的了。<br>剩下的DNS服务商生效后，再将电脑的 DNS 修改为默认的DNS服务商即可。</p>
+<blockquote>
+<p>参考<br><a href="https://docs.github.com/zh/pages/getting-started-with-github-pages/securing-your-github-pages-site-with-https#troubleshooting-certificate-provisioning-certificate-not-yet-created-error">使用 HTTPS 保护 GitHub Pages 站点</a></p>
+</blockquote>
+]]></content>
   </entry>
 </search>
