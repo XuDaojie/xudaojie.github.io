@@ -279,7 +279,7 @@
     
     <div class="post-body" itemprop="articleBody"><h2 id="先升级Node-js到最新版"><a href="#先升级Node-js到最新版" class="headerlink" title="先升级Node.js到最新版"></a>先升级Node.js到最新版</h2><p>这里推荐使用<code>nvm</code>安装最新版<code>node</code></p>
 <h2 id="升级Hexo"><a href="#升级Hexo" class="headerlink" title="升级Hexo"></a>升级Hexo</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装hexo-cli命令行工具</span></span><br><span class="line">$ npm install -g hexo-cli</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装npm-check </span></span><br><span class="line">$ npm install -g npm-check</span><br><span class="line"><span class="comment"># 检查npm依赖包是否有更新</span></span><br><span class="line">$ npm-check</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装npm包更新工具</span></span><br><span class="line">$ npm install -g npm-upgrade</span><br><span class="line"><span class="comment"># 更新package.json、node-modules</span></span><br><span class="line">$ npm-upgrade -g</span><br><span class="line">$ npm-upgrade -save</span><br></pre></td></tr></table></figure>
-
+<span id="more"></span>
 <blockquote>
 <p>参考<br><a target="_blank" rel="noopener" href="https://leimingshan.com/posts/d9017f30/">Hexo升级指南</a><br><a target="_blank" rel="noopener" href="https://baize.cc/posts/15ac.html">Hexo版本升级指南</a></p>
 </blockquote>
@@ -331,6 +331,7 @@
 
 
 
+    <div class="comments gitalk-container"></div>
 </div>
   </main>
 
@@ -410,6 +411,10 @@
 
 
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"XuDaojie","repo":"https://github.com/XuDaojie/gitalk.git","client_id":"6f032724253296ba5dbf","client_secret":"a958e6cc98ff060a138512a3cc5e703fc0359728","admin_user":"XuDaojie","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"568d371ae782aceebb2e2f675e6f9fac"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>
 </html>

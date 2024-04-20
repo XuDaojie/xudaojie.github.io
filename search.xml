@@ -5,7 +5,7 @@
     <url>/2019/10/27/Hexo%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7/</url>
     <content><![CDATA[<h2 id="先升级Node-js到最新版"><a href="#先升级Node-js到最新版" class="headerlink" title="先升级Node.js到最新版"></a>先升级Node.js到最新版</h2><p>这里推荐使用<code>nvm</code>安装最新版<code>node</code></p>
 <h2 id="升级Hexo"><a href="#升级Hexo" class="headerlink" title="升级Hexo"></a>升级Hexo</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装hexo-cli命令行工具</span></span><br><span class="line">$ npm install -g hexo-cli</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装npm-check </span></span><br><span class="line">$ npm install -g npm-check</span><br><span class="line"><span class="comment"># 检查npm依赖包是否有更新</span></span><br><span class="line">$ npm-check</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装npm包更新工具</span></span><br><span class="line">$ npm install -g npm-upgrade</span><br><span class="line"><span class="comment"># 更新package.json、node-modules</span></span><br><span class="line">$ npm-upgrade -g</span><br><span class="line">$ npm-upgrade -save</span><br></pre></td></tr></table></figure>
-
+<span id="more"></span>
 <blockquote>
 <p>参考<br><a href="https://leimingshan.com/posts/d9017f30/">Hexo升级指南</a><br><a href="https://baize.cc/posts/15ac.html">Hexo版本升级指南</a></p>
 </blockquote>
