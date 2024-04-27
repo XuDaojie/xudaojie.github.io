@@ -340,8 +340,8 @@
 <h3 id="压缩"><a href="#压缩" class="headerlink" title="压缩"></a>压缩</h3><p>tar可以保留文件的权限信息</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ tar -zcvf kylin-2.5.2.tar.gz kylin</span><br></pre></td></tr></table></figure>
 
-<h2 id="zip"><a href="#zip" class="headerlink" title="zip"></a>zip</h2><h3 id="解压-1"><a href="#解压-1" class="headerlink" title="解压"></a>解压</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">unzip -o -d /home/sunny myfile.zip</span><br></pre></td></tr></table></figure>
-<p>把myfile.zip文件解压到 &#x2F;home&#x2F;sunny&#x2F;<br>-o:不提示的情况下覆盖文件；<br>-d:-d &#x2F;home&#x2F;sunny 指明将文件解压缩到&#x2F;home&#x2F;sunny目录下；</p>
+<h2 id="zip"><a href="#zip" class="headerlink" title="zip"></a>zip</h2><h3 id="解压-1"><a href="#解压-1" class="headerlink" title="解压"></a>解压</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ unzip -o -d /home/sunny myfile.zip</span><br></pre></td></tr></table></figure>
+<p>把 myfile.zip 文件解压到 &#x2F;home&#x2F;sunny&#x2F;<br>-o:  不提示的情况下覆盖文件；<br>-d: -d &#x2F;home&#x2F;sunny 指明将文件解压缩到&#x2F;home&#x2F;sunny目录下；</p>
 <blockquote>
 <p>相关资料<br><a href="https://www.zhihu.com/question/335911358">为什么 Linux 要用 tar.gz，很少用 7Z 或 ZIP？</a></p>
 </blockquote>
@@ -350,5 +350,21 @@
         <category>Linux</category>
         <category>terminal</category>
       </categories>
+  </entry>
+  <entry>
+    <title>Java计算对象占用的内存大小</title>
+    <url>/2024/04/27/java/Java%E8%AE%A1%E7%AE%97%E5%AF%B9%E8%B1%A1%E5%8D%A0%E7%94%A8%E7%9A%84%E5%86%85%E5%AD%98%E5%A4%A7%E5%B0%8F/</url>
+    <content><![CDATA[<ol>
+<li>引入jar包 <figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">implementation <span class="string">&quot;com.carrotsearch:java-sizeof:$&#123;javaSizeOf&#125;&quot;</span></span><br></pre></td></tr></table></figure></li>
+<li>代码 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String[] arrays = <span class="keyword">new</span> <span class="title class_">String</span>[<span class="number">100_0000</span>];</span><br><span class="line">System.out.println(<span class="string">&quot;占用内存：&quot;</span> + RamUsageEstimator.humanSizeOf(arrays));</span><br></pre></td></tr></table></figure>
+ 执行后输出结果 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">占用内存：3.8 MB</span><br></pre></td></tr></table></figure></li>
+</ol>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
   </entry>
 </search>
