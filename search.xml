@@ -333,6 +333,29 @@
       </tags>
   </entry>
   <entry>
+    <title>Java计算对象占用的内存大小</title>
+    <url>/2024/04/27/java/Java%E8%AE%A1%E7%AE%97%E5%AF%B9%E8%B1%A1%E5%8D%A0%E7%94%A8%E7%9A%84%E5%86%85%E5%AD%98%E5%A4%A7%E5%B0%8F/</url>
+    <content><![CDATA[<ol>
+<li>引入jar包<ul>
+<li><p>Gradle</p>
+ <figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">implementation <span class="string">&quot;com.carrotsearch:java-sizeof:$&#123;javaSizeOf&#125;&quot;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Maven</p>
+ <figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">&lt;!-- <span class="attr">https:</span><span class="comment">//mvnrepository.com/artifact/com.carrotsearch/java-sizeof --&gt;</span></span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.carrotsearch&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;java-sizeof&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;<span class="number">0.0</span><span class="number">.5</span>&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>代码 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String[] arrays = <span class="keyword">new</span> <span class="title class_">String</span>[<span class="number">100_0000</span>];</span><br><span class="line">System.out.println(<span class="string">&quot;占用内存：&quot;</span> + RamUsageEstimator.humanSizeOf(arrays));</span><br></pre></td></tr></table></figure>
+ 执行后输出结果 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">占用内存：3.8 MB</span><br></pre></td></tr></table></figure></li>
+</ol>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Linux压缩及解压命令</title>
     <url>/2019/12/10/terminal/%E5%8E%8B%E7%BC%A9%E5%8F%8A%E8%A7%A3%E5%8E%8B%E5%91%BD%E4%BB%A4/</url>
     <content><![CDATA[<h2 id="tar"><a href="#tar" class="headerlink" title="tar"></a>tar</h2><h3 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 解压到当前目录</span></span><br><span class="line">$ tar -zxvf apache-kylin-2.6.4-bin-cdh57.tar.gz</span><br><span class="line"><span class="comment"># 解压到指定目录(指定命令选项`-C`),如果指定目录不存在，需要先新建目录</span></span><br><span class="line">$ tar -zxvf apache-kylin-2.6.4-bin-cdh57.tar.gz -C ../Applications</span><br></pre></td></tr></table></figure>
@@ -350,21 +373,5 @@
         <category>Linux</category>
         <category>terminal</category>
       </categories>
-  </entry>
-  <entry>
-    <title>Java计算对象占用的内存大小</title>
-    <url>/2024/04/27/java/Java%E8%AE%A1%E7%AE%97%E5%AF%B9%E8%B1%A1%E5%8D%A0%E7%94%A8%E7%9A%84%E5%86%85%E5%AD%98%E5%A4%A7%E5%B0%8F/</url>
-    <content><![CDATA[<ol>
-<li>引入jar包 <figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">implementation <span class="string">&quot;com.carrotsearch:java-sizeof:$&#123;javaSizeOf&#125;&quot;</span></span><br></pre></td></tr></table></figure></li>
-<li>代码 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String[] arrays = <span class="keyword">new</span> <span class="title class_">String</span>[<span class="number">100_0000</span>];</span><br><span class="line">System.out.println(<span class="string">&quot;占用内存：&quot;</span> + RamUsageEstimator.humanSizeOf(arrays));</span><br></pre></td></tr></table></figure>
- 执行后输出结果 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">占用内存：3.8 MB</span><br></pre></td></tr></table></figure></li>
-</ol>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
   </entry>
 </search>

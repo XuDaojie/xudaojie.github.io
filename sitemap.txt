@@ -19,7 +19,7 @@ http://xudaojie.github.io/tags/node/
 http://xudaojie.github.io/tags/nvm/
 http://xudaojie.github.io/tags/Java/
 http://xudaojie.github.io/categories/Android/
-http://xudaojie.github.io/categories/Android/build-tool/
-http://xudaojie.github.io/categories/Linux/
 http://xudaojie.github.io/categories/Java/
+http://xudaojie.github.io/categories/Linux/
+http://xudaojie.github.io/categories/Android/build-tool/
 http://xudaojie.github.io/categories/Linux/terminal/
