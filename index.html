@@ -271,7 +271,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>69</span>
+      <span>103</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -292,7 +292,7 @@
           <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">expectedInsertions</span> <span class="operator">=</span> <span class="number">100_0000</span>; <span class="comment">// 预估数据量</span></span><br><span class="line"><span class="type">double</span> <span class="variable">fpp</span> <span class="operator">=</span> <span class="number">0.0001</span>; <span class="comment">// 期望的误差率 0.01%</span></span><br><span class="line">BloomFilter&lt;String&gt; bloomFilter = BloomFilter.create(Funnels.stringFunnel(Charset.forName(<span class="string">&quot;UTF-8&quot;</span>)), expectedInsertions, fpp);</span><br><span class="line"></span><br><span class="line">bloomFilter.put(<span class="string">&quot;hello world!&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 判断是否存在，false则表示一定不存在； true表示可能存在</span></span><br><span class="line"><span class="type">boolean</span> <span class="variable">ans</span> <span class="operator">=</span> bloomFilter.mightContain(<span class="string">&quot;hello world!&quot;</span>);</span><br><span class="line">System.out.println(ans);</span><br></pre></td></tr></table></figure>
 
 <blockquote>
-<p>资料<br><a target="_blank" rel="noopener" href="https://krisives.github.io/bloom-calculator/">Bloom Filter Calculator</a><br><a target="_blank" rel="noopener" href="https://hur.st/bloomfilter/">Bloom Filter Calculator</a>  </p>
+<p>资料<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_51721904/article/details/125454821">十亿数据如何去重，红黑树到hash再到布隆过滤器</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/weisenz/p/4347508.html">Google Guava 中布隆过滤器的介绍和使用 </a><br><a target="_blank" rel="noopener" href="https://krisives.github.io/bloom-calculator/">Bloom Filter Calculator</a><br><a target="_blank" rel="noopener" href="https://hur.st/bloomfilter/">Bloom Filter Calculator</a>  </p>
 </blockquote>
 
       
