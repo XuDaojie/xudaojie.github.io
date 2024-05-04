@@ -6,7 +6,7 @@
   <link href="http://xudaojie.github.io/atom.xml" rel="self"/>
   
   <link href="http://xudaojie.github.io/"/>
-  <updated>2024-04-27T14:39:07.000Z</updated>
+  <updated>2024-05-04T14:37:12.000Z</updated>
   <id>http://xudaojie.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Guava BloomFilter</title>
+    <link href="http://xudaojie.github.io/2024/05/04/java/Guava%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8/"/>
+    <id>http://xudaojie.github.io/2024/05/04/java/Guava%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8/</id>
+    <published>2024-05-04T14:37:12.000Z</published>
+    <updated>2024-05-04T14:37:12.000Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">expectedInsertions</span> <span class="operator">=</span> <span class="number">100_0000</span>; <span class="comment">// 预估数据量</span></span><br><span class="line"><span class="type">double</span> <span class="variable">fpp</span> <span class="operator">=</span> <span class="number">0.0001</span>; <span class="comment">// 期望的误差率 0.01%</span></span><br><span class="line">BloomFilter&lt;String&gt; bloomFilter = BloomFilter.create(Funnels.stringFunnel(Charset.forName(<span class="string">&quot;UTF-8&quot;</span>)), expectedInsertions, fpp);</span><br><span class="line"></span><br><span class="line">bloomFilter.put(<span class="string">&quot;hello world!&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 判断是否存在，false则表示一定不存在； true表示可能存在</span></span><br><span class="line"><span class="type">boolean</span> <span class="variable">ans</span> <span class="operator">=</span> bloomFilter.mightContain(<span class="string">&quot;hello world!&quot;</span>);</span><br><span class="line">System.out.println(ans);</span><br></pre></td></tr></table></figure><blockquote><p>资料<br><a href="https://krisives.github.io/bloom-calculator/">Bloom Filter Calculator</a><br><a href="https://hur.st/bloomfilter/">Bloom Filter Calculator</a>  </p></blockquote>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=</summary>
+      
+    
+    
+    
+    <category term="Guava" scheme="http://xudaojie.github.io/categories/Guava/"/>
+    
+    <category term="Bloom Filters" scheme="http://xudaojie.github.io/categories/Guava/Bloom-Filters/"/>
+    
+    
+    <category term="Guava" scheme="http://xudaojie.github.io/tags/Guava/"/>
+    
+    <category term="Bloom Filters" scheme="http://xudaojie.github.io/tags/Bloom-Filters/"/>
+    
+  </entry>
   
   <entry>
     <title>Java计算对象占用的内存大小</title>

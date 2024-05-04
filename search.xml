@@ -333,6 +333,24 @@
       </tags>
   </entry>
   <entry>
+    <title>Guava BloomFilter</title>
+    <url>/2024/05/04/java/Guava%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8/</url>
+    <content><![CDATA[<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">expectedInsertions</span> <span class="operator">=</span> <span class="number">100_0000</span>; <span class="comment">// 预估数据量</span></span><br><span class="line"><span class="type">double</span> <span class="variable">fpp</span> <span class="operator">=</span> <span class="number">0.0001</span>; <span class="comment">// 期望的误差率 0.01%</span></span><br><span class="line">BloomFilter&lt;String&gt; bloomFilter = BloomFilter.create(Funnels.stringFunnel(Charset.forName(<span class="string">&quot;UTF-8&quot;</span>)), expectedInsertions, fpp);</span><br><span class="line"></span><br><span class="line">bloomFilter.put(<span class="string">&quot;hello world!&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 判断是否存在，false则表示一定不存在； true表示可能存在</span></span><br><span class="line"><span class="type">boolean</span> <span class="variable">ans</span> <span class="operator">=</span> bloomFilter.mightContain(<span class="string">&quot;hello world!&quot;</span>);</span><br><span class="line">System.out.println(ans);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>资料<br><a href="https://krisives.github.io/bloom-calculator/">Bloom Filter Calculator</a><br><a href="https://hur.st/bloomfilter/">Bloom Filter Calculator</a>  </p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Guava</category>
+        <category>Bloom Filters</category>
+      </categories>
+      <tags>
+        <tag>Guava</tag>
+        <tag>Bloom Filters</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Java计算对象占用的内存大小</title>
     <url>/2024/04/27/java/Java%E8%AE%A1%E7%AE%97%E5%AF%B9%E8%B1%A1%E5%8D%A0%E7%94%A8%E7%9A%84%E5%86%85%E5%AD%98%E5%A4%A7%E5%B0%8F/</url>
     <content><![CDATA[<ol>
