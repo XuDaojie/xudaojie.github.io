@@ -156,13 +156,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -844,6 +844,115 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://xudaojie.github.io/2018/04/14/build-tool/Gradle-%E9%AB%98%E7%BA%A7%E5%8A%9F%E8%83%BD/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avatar.png">
+      <meta itemprop="name" content="XuDaojie">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XuDaojie的博客">
+      <meta itemprop="description" content="呆呆的初行者">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | XuDaojie的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/04/14/build-tool/Gradle-%E9%AB%98%E7%BA%A7%E5%8A%9F%E8%83%BD/" class="post-title-link" itemprop="url">Gradle-高级功能</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-04-14 22:06:34" itemprop="dateCreated datePublished" datetime="2018-04-14T22:06:34+08:00">2018-04-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2019-11-07 11:37:23" itemprop="dateModified" datetime="2019-11-07T11:37:23+08:00">2019-11-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Gradle/" itemprop="url" rel="index"><span itemprop="name">Gradle</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>193</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 反向查找依赖树</span></span><br><span class="line">./gradlew :debt-web:dependencyInsight --dependency mysql-connector-java &gt; reverse.log</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打印依赖树 https://docs.gradle.org/6.1.1/userguide/viewing_debugging_dependencies.html#sec:listing_dependencies</span></span><br><span class="line"><span class="comment"># https://www.stkent.com/2020/02/04/listing-your-android-apps-actual-dependencies-in-2020.html</span></span><br><span class="line"><span class="comment"># 查看编译时依赖</span></span><br><span class="line">./gradlew dependencies --configuration compile</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看运行时依赖</span></span><br><span class="line">./gradlew dependencies --configuration runtime</span><br></pre></td></tr></table></figure>
+
+<h2 id="gradle-任务性能监测"><a href="#gradle-任务性能监测" class="headerlink" title="gradle 任务性能监测"></a>gradle 任务性能监测</h2><p>.&#x2F;gradlew build –scan</p>
+<p>&#x2F;&#x2F; noinspection GroovyAssignabilityCheck<br>可取消gradle告警</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/sbsujjbcy/article/details/52079413">Gradle系列之从init.gradle说起</a></p>
+<h2 id="buildScript-repositories-区别"><a href="#buildScript-repositories-区别" class="headerlink" title="buildScript\repositories 区别"></a>buildScript\repositories 区别</h2><p>1、 buildscript里是gradle脚本执行所需依赖，分别是对应的maven库和插件<br>2、 allprojects里是项目本身需要的依赖，比如我现在要依赖我自己maven库的toastutils库，那么我应该将maven {url ‘<a target="_blank" rel="noopener" href="https://dl.bintray.com/calvinning/maven'%7D%E5%86%99%E5%9C%A8%E8%BF%99%E9%87%8C%EF%BC%8C%E8%80%8C%E4%B8%8D%E6%98%AFbuildscript%E4%B8%AD%EF%BC%8C%E4%B8%8D%E7%84%B6%E6%89%BE%E4%B8%8D%E5%88%B0%E3%80%82">https://dl.bintray.com/calvinning/maven&#39;}写在这里，而不是buildscript中，不然找不到。</a></p>
+<p>pluginManagement 似乎又出了个新标签</p>
+<blockquote>
+<p>资料<br><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1941232">Gradle | allprojects ，根 repositories 区别是什么？</a></p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://xudaojie.github.io/2017/03/06/ubuntu%E4%BF%AE%E5%A4%8D%E5%BC%95%E5%AF%BC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1222,13 +1331,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">13 分钟</span>
+    <span title="站点阅读时长">14 分钟</span>
   </span>
 </div>
 <div class="busuanzi-count">
     <span class="post-meta-item" id="busuanzi_container_site_uv">
       <span class="post-meta-item-icon">
-        <i class="user"></i>
+        <i class="fa fa-user"></i>
       </span>
       <span class="site-uv" title="总访客量">
         <span id="busuanzi_value_site_uv"></span>
@@ -1236,7 +1345,7 @@
     </span>
     <span class="post-meta-item" id="busuanzi_container_site_pv">
       <span class="post-meta-item-icon">
-        <i class="eye"></i>
+        <i class="fa fa-eye"></i>
       </span>
       <span class="site-pv" title="总访问量">
         <span id="busuanzi_value_site_pv"></span>

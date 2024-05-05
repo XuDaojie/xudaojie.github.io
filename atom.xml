@@ -139,6 +139,30 @@
   </entry>
   
   <entry>
+    <title>Gradle-高级功能</title>
+    <link href="http://xudaojie.github.io/2018/04/14/build-tool/Gradle-%E9%AB%98%E7%BA%A7%E5%8A%9F%E8%83%BD/"/>
+    <id>http://xudaojie.github.io/2018/04/14/build-tool/Gradle-%E9%AB%98%E7%BA%A7%E5%8A%9F%E8%83%BD/</id>
+    <published>2018-04-14T14:06:34.000Z</published>
+    <updated>2019-11-07T03:37:23.000Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 反向查找依赖树</span></span><br><span class="line">./gradlew :debt-web:dependencyInsight --dependency mysql-connector-java &gt; reverse.log</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打印依赖树 https://docs.gradle.org/6.1.1/userguide/viewing_debugging_dependencies.html#sec:listing_dependencies</span></span><br><span class="line"><span class="comment"># https://www.stkent.com/2020/02/04/listing-your-android-apps-actual-dependencies-in-2020.html</span></span><br><span class="line"><span class="comment"># 查看编译时依赖</span></span><br><span class="line">./gradlew dependencies --configuration compile</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看运行时依赖</span></span><br><span class="line">./gradlew dependencies --configuration runtime</span><br></pre></td></tr></table></figure><h2 id="gradle-任务性能监测"><a href="#gradle-任务性能监测" class="headerlink" title="gradle 任务性能监测"></a>gradle 任务性能监测</h2><p>.&#x2F;gradlew build –scan</p><p>&#x2F;&#x2F; noinspection GroovyAssignabilityCheck<br>可取消gradle告警</p><p><a href="https://blog.csdn.net/sbsujjbcy/article/details/52079413">Gradle系列之从init.gradle说起</a></p><h2 id="buildScript-repositories-区别"><a href="#buildScript-repositories-区别" class="headerlink" title="buildScript\repositories 区别"></a>buildScript\repositories 区别</h2><p>1、 buildscript里是gradle脚本执行所需依赖，分别是对应的maven库和插件<br>2、 allprojects里是项目本身需要的依赖，比如我现在要依赖我自己maven库的toastutils库，那么我应该将maven {url ‘<a href="https://dl.bintray.com/calvinning/maven'%7D%E5%86%99%E5%9C%A8%E8%BF%99%E9%87%8C%EF%BC%8C%E8%80%8C%E4%B8%8D%E6%98%AFbuildscript%E4%B8%AD%EF%BC%8C%E4%B8%8D%E7%84%B6%E6%89%BE%E4%B8%8D%E5%88%B0%E3%80%82">https://dl.bintray.com/calvinning/maven&#39;}写在这里，而不是buildscript中，不然找不到。</a></p><p>pluginManagement 似乎又出了个新标签</p><blockquote><p>资料<br><a href="https://cloud.tencent.com/developer/article/1941232">Gradle | allprojects ，根 repositories 区别是什么？</a></p></blockquote>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=</summary>
+      
+    
+    
+    
+    <category term="Gradle" scheme="http://xudaojie.github.io/categories/Gradle/"/>
+    
+    
+    <category term="Gradle" scheme="http://xudaojie.github.io/tags/Gradle/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Ubuntu修复引导</title>
     <link href="http://xudaojie.github.io/2017/03/06/ubuntu%E4%BF%AE%E5%A4%8D%E5%BC%95%E5%AF%BC/"/>
     <id>http://xudaojie.github.io/2017/03/06/ubuntu%E4%BF%AE%E5%A4%8D%E5%BC%95%E5%AF%BC/</id>

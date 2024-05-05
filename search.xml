@@ -24,6 +24,98 @@
       </tags>
   </entry>
   <entry>
+    <title>Android Gradle 常用配置</title>
+    <url>/2017/01/06/build-tool/Android-Gradle-%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<h1 id="Gradle-常用配置"><a href="#Gradle-常用配置" class="headerlink" title="Gradle 常用配置"></a>Gradle 常用配置</h1><h2 id="签名"><a href="#签名" class="headerlink" title="签名"></a>签名</h2><p>当程序中使用了第三方的功能，比如分享、地图时，要求程序必须是已签名的<br>在<strong>Gradle</strong>中配置签名后，可以使我们的Debug也带上签名，而不需要使用<strong>Build&#x2F;Generate Signer Apk</strong>去编译带签名的APK</p>
+<ul>
+<li>build.gradle</li>
+</ul>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 在 Android &#123;&#125; 节点下增加</span></span><br><span class="line">signingConfigs &#123;</span><br><span class="line">	signConfig &#123;</span><br><span class="line">		storeFile file (<span class="string">&#x27;../key.jks&#x27;</span>)</span><br><span class="line">		storePassword <span class="string">&#x27;123456&#x27;</span></span><br><span class="line">		keyAlias <span class="string">&#x27;xdj&#x27;</span></span><br><span class="line">		keyPassword <span class="string">&#x27;123456&#x27;</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">buildTypes &#123;</span><br><span class="line">	release &#123;</span><br><span class="line">		signingConfig signingConfigs.signConfig</span><br><span class="line">	&#125;</span><br><span class="line">	debug &#123;</span><br><span class="line">		signingConfig signingConfigs.signConfig <span class="comment">// 配置debug包的签名</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+
+<ul>
+<li>获得签名文件信息</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">// 终端命令</span><br><span class="line">keytool -list -v -keystore ./key.jks</span><br></pre></td></tr></table></figure>
+<p>输出结果<br><img src="http://ww4.sinaimg.cn/large/9da81145gw1ez65rnuqydj20mf0a140k.jpg" alt="返回"></p>
+<blockquote>
+<p>Tips<br>还可通过在<strong>AndroidStudio</strong>自带<strong>终端</strong>中运行 <code>./gradlew signingReport</code>命令获取</p>
+</blockquote>
+<ul>
+<li>获得<strong>APK</strong>签名信息</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 终端命令</span></span><br><span class="line">jarsigner -verify -certs -verbose ./app/build/outputs/apk/app-googleplay-debug.apk</span><br></pre></td></tr></table></figure>
+<p>输出结果<br><img src="http://ww2.sinaimg.cn/large/9da81145gw1ez65ymnbp1j20fp02oq3f.jpg" alt="返回结果"></p>
+<blockquote>
+<p>Tips:<br> <strong>${keyAlias}<strong>为</strong>CN&#x3D;Android Debug</strong> 说明<strong>APK</strong>未签名</p>
+</blockquote>
+<h2 id="多渠道打包"><a href="#多渠道打包" class="headerlink" title="多渠道打包"></a>多渠道打包</h2><p>以友盟为例</p>
+<ul>
+<li>build.gradle</li>
+</ul>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">defaultConfig &#123;</span><br><span class="line">	manifestPlaceHolders=[<span class="attr">UMENG_CHANNEL_VALUE:</span><span class="string">&#x27;Umeng&#x27;</span>] <span class="comment">// 默认渠道为Umeng</span></span><br><span class="line">&#125;</span><br><span class="line">productFlavors &#123;</span><br><span class="line">	googleplay &#123;</span><br><span class="line">		manifestPlaceHolders=[<span class="attr">UMENG_CANNEL_VALUE:</span><span class="string">&#x27;Google Play&#x27;</span>]</span><br><span class="line">	&#125;</span><br><span class="line">	wandoujia&#123;</span><br><span class="line">		manifestPlaceholders = [<span class="attr">UMENG_CHANNEL_VALUE:</span> <span class="string">&quot;Wandoujia&quot;</span>]</span><br><span class="line"><span class="comment">//		minSdkVersion 19</span></span><br><span class="line"><span class="comment">//		applicationId &#x27;com.rx.demo&#x27;</span></span><br><span class="line"><span class="comment">//		targetSdkVersion 22</span></span><br><span class="line"><span class="comment">//		versionCode 360</span></span><br><span class="line"><span class="comment">//		versionName &#x27;1.1.1&#x27;</span></span><br><span class="line"><span class="comment">//      signingConfig signingConfig.wandoujiaConfig</span></span><br><span class="line">	&#125;</span><br><span class="line">	xiaomi&#123;</span><br><span class="line">	&#125;</span><br><span class="line">	tencent&#123;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>manifest</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 替换为您应用的推广渠道名称，channel id自定义。--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta-data</span> <span class="attr">android:name</span>=<span class="string">&quot;UMENG_CHANNEL&quot;</span> <span class="attr">android:value</span>=<span class="string">&quot;$&#123;UMEMG_CHANNEL_VALUE&#125;&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>编译命令<br><code>./gradlew assemble</code>: 编译所有渠道的Debug和Release<br><code>./gradlew assembleWandoujia</code>: 编译豌豆荚的Debug和Release<br><code>./gradlew assembleWandoujiaDebug</code>: 编译豌豆荚的Debug<br><code>./gradlew build</code>: <blockquote>
+<p>Tips<br>貌似<code>Android Studio</code>上有多渠道打包的插件，但最终还是需要使用命令行</p>
+</blockquote>
+</li>
+</ul>
+<p>###自定义APK名称</p>
+<ul>
+<li>build.gradle</li>
+</ul>
+ <figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 根节点下增加</span></span><br><span class="line"><span class="keyword">def</span> releaseTime() &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> Date().format(<span class="string">&quot;yyyy-MM-dd&quot;</span>, TimeZone.getTimeZone(<span class="string">&quot;UTC&quot;</span>))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">// Android &#123;&#125; 节点下增加</span></span><br><span class="line"> buildTypes &#123;</span><br><span class="line">    applicationVariants.all &#123; variant -&gt;</span><br><span class="line">        variant.outputs.each &#123; output -&gt;</span><br><span class="line">            <span class="keyword">def</span> outputFile = output.outputFile</span><br><span class="line">            <span class="comment">// &amp;&amp; outputFile.name.indexOf(&#x27;debug&#x27;) == -1</span></span><br><span class="line">            <span class="keyword">if</span> (outputFile != <span class="literal">null</span> &amp;&amp; outputFile.name.endsWith(<span class="string">&#x27;.apk&#x27;</span>)</span><br><span class="line">                    &amp;&amp; outputFile.name.indexOf(<span class="string">&#x27;debug&#x27;</span>) == <span class="number">-1</span>) &#123;</span><br><span class="line">                <span class="comment">// 输出apk名称为app-googleplay-release-v1.0-build1-2015-12-16</span></span><br><span class="line">                <span class="keyword">def</span> fileName = outputFile.name.replace(<span class="string">&quot;.apk&quot;</span>, <span class="string">&quot;-v$&#123;defaultConfig.versionName&#125;-build$&#123;defaultConfig.versionCode&#125;-&quot;</span> +</span><br><span class="line">                        <span class="string">&quot;$&#123;releaseTime()&#125;.apk&quot;</span>)</span><br><span class="line">                output.outputFile = <span class="keyword">new</span> File(outputFile.parent, fileName)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="导入包"><a href="#导入包" class="headerlink" title="导入包"></a>导入包</h2><h3 id="导入aar、jar、modle"><a href="#导入aar、jar、modle" class="headerlink" title="导入aar、jar、modle"></a>导入aar、jar、modle</h3><figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">dependencies &#123;</span><br><span class="line">	compile fileTree(<span class="attr">dir:</span> <span class="string">&#x27;libs&#x27;</span>, <span class="attr">include:</span> [<span class="string">&#x27;*.jar&#x27;</span>]) <span class="comment">// 导入libs文件夹中所有的jar包</span></span><br><span class="line">	compile <span class="string">&#x27;group:name:version&#x27;</span></span><br><span class="line">	compile <span class="string">&#x27;group:name:1.1.+&#x27;</span></span><br><span class="line">	compile(<span class="attr">group:</span><span class="attr">name:</span>version) &#123;</span><br><span class="line">		exclude <span class="attr">module:</span> <span class="string">&#x27;support-v4&#x27;</span> <span class="comment">// 发生冲突时，排除v4</span></span><br><span class="line">	&#125;</span><br><span class="line">	compile(<span class="attr">name:</span><span class="string">&#x27;xxx&#x27;</span>, <span class="attr">ext:</span><span class="string">&#x27;aar&#x27;</span>) <span class="comment">// aar包是用来替换jar的文件类型</span></span><br><span class="line">	compile project(:modle)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Tips<br><code>+</code> 表示最新的版本号，曾经遇到过在<strong>Windows</strong>下导入包是输入的时准确的版本号<code>1.0.0</code>没有问题，到了<code>Mac</code>上的就提示找不到包，后来改成 <code>1.0.+</code>就好了</p>
+</blockquote>
+<h3 id="导入-so"><a href="#导入-so" class="headerlink" title="导入 *.so"></a>导入 *.so</h3><ul>
+<li>Android Studio 默认路径：<code>Project</code>视图模式下<code>./app/src/main/jniLibs</code><br>这是我目前使用的方法，直接把so包放入文件夹即可，不需要其他操作<br><img src="http://ww3.sinaimg.cn/large/9da81145gw1ez05ymejwyj20b608n3yz.jpg" alt="so包默认存放路径"></li>
+<li>自定义路径<br>在<strong>Eclipse</strong>中的习惯是讲so包放入<strong>libs</strong>文件夹中，这在<strong>Android Studio</strong>中也可以通过配置<strong>Gradle</strong>实现<br>build.gradle<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 在 Android&#123;&#125; 节点下增加</span></span><br><span class="line">sourceSets &#123;</span><br><span class="line">	main &#123;</span><br><span class="line"><span class="comment">//		jniLibs.srcDirs=[&#x27;./libs&#x27;]</span></span><br><span class="line">	    jniLibs.srcDirs=[<span class="string">&#x27;./libs/jniLibs&#x27;</span>]</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="其他配置"><a href="#其他配置" class="headerlink" title="其他配置"></a>其他配置</h2><ul>
+<li>下载源码及文档</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">idea &#123;</span><br><span class="line">    module &#123;</span><br><span class="line">        downloadSources = true</span><br><span class="line">        downloadJavadoc = false</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">eclipse &#123;</span><br><span class="line">    classpath &#123;</span><br><span class="line">        downloadSources = true</span><br><span class="line">        downloadJavadoc = false</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="完整build-gradle"><a href="#完整build-gradle" class="headerlink" title="完整build.gradle"></a>完整build.gradle</h2><figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">apply <span class="attr">plugin:</span> <span class="string">&#x27;com.android.application&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> releaseTime() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Date().format(<span class="string">&quot;yyyy-MM-dd&quot;</span>, TimeZone.getTimeZone(<span class="string">&quot;UTC&quot;</span>))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">android &#123;</span><br><span class="line">    compileSdkVersion <span class="number">22</span></span><br><span class="line">    buildToolsVersion <span class="string">&quot;23.0.1&quot;</span></span><br><span class="line"></span><br><span class="line">    signingConfigs &#123;</span><br><span class="line">        signConfig &#123;</span><br><span class="line">            storeFile file (<span class="string">&quot;../key.jks&quot;</span>)</span><br><span class="line">            storePassword  <span class="string">&quot;123456&quot;</span></span><br><span class="line">            keyAlias <span class="string">&quot;xdj&quot;</span></span><br><span class="line">            keyPassword <span class="string">&quot;123456&quot;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    defaultConfig &#123;</span><br><span class="line">        applicationId <span class="string">&quot;com.xdj.rxjavademo&quot;</span></span><br><span class="line">        minSdkVersion <span class="number">15</span></span><br><span class="line">        targetSdkVersion <span class="number">22</span></span><br><span class="line">        versionCode <span class="number">1</span></span><br><span class="line">        versionName <span class="string">&quot;1.0.0&quot;</span></span><br><span class="line"></span><br><span class="line">        manifestPlaceholders=[<span class="attr">UMENG_CHANNEL_VALUE:</span> <span class="string">&#x27;Umeng&#x27;</span>]</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    buildTypes &#123;</span><br><span class="line">        release &#123;</span><br><span class="line">            minifyEnabled <span class="literal">false</span></span><br><span class="line">            proguardFiles getDefaultProguardFile(<span class="string">&#x27;proguard-android.txt&#x27;</span>), <span class="string">&#x27;proguard-rules.pro&#x27;</span></span><br><span class="line">            signingConfig signingConfigs.signConfig</span><br><span class="line">            zipAlignEnabled <span class="literal">true</span></span><br><span class="line"><span class="comment">//            shrinkResources true // 清除无用的resource</span></span><br><span class="line">        &#125;</span><br><span class="line">        debug &#123;</span><br><span class="line">            buildConfigField <span class="string">&quot;boolean&quot;</span>, <span class="string">&quot;LOG_DEBUG&quot;</span>, <span class="string">&quot;false&quot;</span> <span class="comment">// 设置是否打印LOG，貌似没效果</span></span><br><span class="line">            signingConfig signingConfigs.signConfig</span><br><span class="line">        &#125;</span><br><span class="line">        applicationVariants.all &#123; variant -&gt;</span><br><span class="line">            variant.outputs.each &#123; output -&gt;</span><br><span class="line">                <span class="keyword">def</span> outputFile = output.outputFile</span><br><span class="line">                <span class="comment">// &amp;&amp; outputFile.name.indexOf(&#x27;debug&#x27;) == -1</span></span><br><span class="line">                <span class="keyword">if</span> (outputFile != <span class="literal">null</span> &amp;&amp; outputFile.name.endsWith(<span class="string">&#x27;.apk&#x27;</span>)</span><br><span class="line">                        &amp;&amp; outputFile.name.indexOf(<span class="string">&#x27;debug&#x27;</span>) == <span class="number">-1</span>) &#123; <span class="comment">// 不对Debug进行重命名</span></span><br><span class="line">                    <span class="comment">// 输出apk名称为app-googleplay-release-2015-12-16-v1.0-build1</span></span><br><span class="line">                    <span class="keyword">def</span> fileName = outputFile.name.replace(<span class="string">&quot;.apk&quot;</span>, <span class="string">&quot;-$&#123;releaseTime()&#125;&quot;</span> +</span><br><span class="line">                            <span class="string">&quot;-v$&#123;defaultConfig.versionName&#125;-build$&#123;defaultConfig.versionCode&#125;&quot;</span> +</span><br><span class="line">                            <span class="string">&quot;.apk&quot;</span>)</span><br><span class="line">                    output.outputFile = <span class="keyword">new</span> File(outputFile.parent, fileName)</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    productFlavors &#123;</span><br><span class="line">        googleplay &#123;</span><br><span class="line">            manifestPlaceholders = [<span class="attr">UMENG_CHANNEL_VALUE:</span> <span class="string">&quot;Google Play&quot;</span>]</span><br><span class="line">        &#125;</span><br><span class="line">        xiaomi &#123;</span><br><span class="line"><span class="comment">//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: &quot;Xiao Mi&quot;]</span></span><br><span class="line">        &#125;</span><br><span class="line">        _360 &#123;</span><br><span class="line"><span class="comment">//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: &quot;360&quot;]</span></span><br><span class="line"><span class="comment">//            minSdkVersion 19</span></span><br><span class="line"><span class="comment">//            applicationId &#x27;com.rx.demo&#x27;</span></span><br><span class="line"><span class="comment">//            targetSdkVersion 22</span></span><br><span class="line"><span class="comment">//            versionCode 360</span></span><br><span class="line"><span class="comment">//            versionName &#x27;1.1.1&#x27;</span></span><br><span class="line"><span class="comment">//            signingConfig signingConfig._360Config</span></span><br><span class="line">        &#125;</span><br><span class="line">        tencent &#123;</span><br><span class="line"><span class="comment">//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: &quot;Tencent&quot;]</span></span><br><span class="line">        &#125;</span><br><span class="line">        baidu &#123;</span><br><span class="line"><span class="comment">//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: &quot;Baidu&quot;]</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    sourceSets &#123;</span><br><span class="line">        main &#123;</span><br><span class="line">            jniLibs.srcDirs=[<span class="string">&#x27;./libs/jniLibs&#x27;</span>]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">dependencies &#123;</span><br><span class="line">    compile fileTree(<span class="attr">dir:</span> <span class="string">&#x27;libs&#x27;</span>, <span class="attr">include:</span> [<span class="string">&#x27;*.jar&#x27;</span>])</span><br><span class="line">    testCompile <span class="string">&#x27;junit:junit:4.12&#x27;</span></span><br><span class="line">    compile <span class="string">&#x27;com.android.support:appcompat-v7:22.2.1&#x27;</span></span><br><span class="line">    compile <span class="string">&#x27;com.android.support:design:22.2.1&#x27;</span></span><br><span class="line">    compile <span class="string">&#x27;io.reactivex:rxjava:1.1.0&#x27;</span></span><br><span class="line">    compile <span class="string">&#x27;io.reactivex:rxandroid:1.1.0&#x27;</span></span><br><span class="line">    <span class="comment">//    compile (&#x27;cn.trinea.android.view.autoscrollviewpager:android-auto-scroll-view-pager:1.1.2&#x27;) &#123;</span></span><br><span class="line">    <span class="comment">//        exclude module: &#x27;support-v4&#x27;</span></span><br><span class="line">    <span class="comment">//    &#125;</span></span><br><span class="line">    compile <span class="string">&#x27;com.android.support:recyclerview-v7:22.2.1&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="gradle-bin镜像地址"><a href="#gradle-bin镜像地址" class="headerlink" title="gradle bin镜像地址"></a>gradle bin镜像地址</h2><p><a href="https://mirrors.aliyun.com/macports/distfiles/gradle/">https://mirrors.aliyun.com/macports/distfiles/gradle/</a></p>
+]]></content>
+      <categories>
+        <category>Android</category>
+        <category>build-tool</category>
+      </categories>
+      <tags>
+        <tag>Gradle</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Gradle-高级功能</title>
+    <url>/2018/04/14/build-tool/Gradle-%E9%AB%98%E7%BA%A7%E5%8A%9F%E8%83%BD/</url>
+    <content><![CDATA[<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 反向查找依赖树</span></span><br><span class="line">./gradlew :debt-web:dependencyInsight --dependency mysql-connector-java &gt; reverse.log</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打印依赖树 https://docs.gradle.org/6.1.1/userguide/viewing_debugging_dependencies.html#sec:listing_dependencies</span></span><br><span class="line"><span class="comment"># https://www.stkent.com/2020/02/04/listing-your-android-apps-actual-dependencies-in-2020.html</span></span><br><span class="line"><span class="comment"># 查看编译时依赖</span></span><br><span class="line">./gradlew dependencies --configuration compile</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看运行时依赖</span></span><br><span class="line">./gradlew dependencies --configuration runtime</span><br></pre></td></tr></table></figure>
+
+<h2 id="gradle-任务性能监测"><a href="#gradle-任务性能监测" class="headerlink" title="gradle 任务性能监测"></a>gradle 任务性能监测</h2><p>.&#x2F;gradlew build –scan</p>
+<p>&#x2F;&#x2F; noinspection GroovyAssignabilityCheck<br>可取消gradle告警</p>
+<p><a href="https://blog.csdn.net/sbsujjbcy/article/details/52079413">Gradle系列之从init.gradle说起</a></p>
+<h2 id="buildScript-repositories-区别"><a href="#buildScript-repositories-区别" class="headerlink" title="buildScript\repositories 区别"></a>buildScript\repositories 区别</h2><p>1、 buildscript里是gradle脚本执行所需依赖，分别是对应的maven库和插件<br>2、 allprojects里是项目本身需要的依赖，比如我现在要依赖我自己maven库的toastutils库，那么我应该将maven {url ‘<a href="https://dl.bintray.com/calvinning/maven'%7D%E5%86%99%E5%9C%A8%E8%BF%99%E9%87%8C%EF%BC%8C%E8%80%8C%E4%B8%8D%E6%98%AFbuildscript%E4%B8%AD%EF%BC%8C%E4%B8%8D%E7%84%B6%E6%89%BE%E4%B8%8D%E5%88%B0%E3%80%82">https://dl.bintray.com/calvinning/maven&#39;}写在这里，而不是buildscript中，不然找不到。</a></p>
+<p>pluginManagement 似乎又出了个新标签</p>
+<blockquote>
+<p>资料<br><a href="https://cloud.tencent.com/developer/article/1941232">Gradle | allprojects ，根 repositories 区别是什么？</a></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Gradle</category>
+      </categories>
+      <tags>
+        <tag>Gradle</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>TextInputEditText样式设置</title>
     <url>/2016/09/18/android/TextInputEditText%E6%A0%B7%E5%BC%8F%E8%AE%BE%E7%BD%AE/</url>
     <content><![CDATA[<h1 id="TextInputEditText样式设置"><a href="#TextInputEditText样式设置" class="headerlink" title="TextInputEditText样式设置"></a>TextInputEditText样式设置</h1><p><code>TextInputEditText</code>是在<strong>Design</strong>包中<strong>MD</strong>风格的<code>EditText</code>。</p>
@@ -175,118 +267,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Android Gradle 常用配置</title>
-    <url>/2017/01/06/build-tool/Android-Gradle-%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<h1 id="Gradle-常用配置"><a href="#Gradle-常用配置" class="headerlink" title="Gradle 常用配置"></a>Gradle 常用配置</h1><h2 id="签名"><a href="#签名" class="headerlink" title="签名"></a>签名</h2><p>当程序中使用了第三方的功能，比如分享、地图时，要求程序必须是已签名的<br>在<strong>Gradle</strong>中配置签名后，可以使我们的Debug也带上签名，而不需要使用<strong>Build&#x2F;Generate Signer Apk</strong>去编译带签名的APK</p>
-<ul>
-<li>build.gradle</li>
-</ul>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 在 Android &#123;&#125; 节点下增加</span></span><br><span class="line">signingConfigs &#123;</span><br><span class="line">	signConfig &#123;</span><br><span class="line">		storeFile file (<span class="string">&#x27;../key.jks&#x27;</span>)</span><br><span class="line">		storePassword <span class="string">&#x27;123456&#x27;</span></span><br><span class="line">		keyAlias <span class="string">&#x27;xdj&#x27;</span></span><br><span class="line">		keyPassword <span class="string">&#x27;123456&#x27;</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">buildTypes &#123;</span><br><span class="line">	release &#123;</span><br><span class="line">		signingConfig signingConfigs.signConfig</span><br><span class="line">	&#125;</span><br><span class="line">	debug &#123;</span><br><span class="line">		signingConfig signingConfigs.signConfig <span class="comment">// 配置debug包的签名</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-
-<ul>
-<li>获得签名文件信息</li>
-</ul>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">// 终端命令</span><br><span class="line">keytool -list -v -keystore ./key.jks</span><br></pre></td></tr></table></figure>
-<p>输出结果<br><img src="http://ww4.sinaimg.cn/large/9da81145gw1ez65rnuqydj20mf0a140k.jpg" alt="返回"></p>
-<blockquote>
-<p>Tips<br>还可通过在<strong>AndroidStudio</strong>自带<strong>终端</strong>中运行 <code>./gradlew signingReport</code>命令获取</p>
-</blockquote>
-<ul>
-<li>获得<strong>APK</strong>签名信息</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 终端命令</span></span><br><span class="line">jarsigner -verify -certs -verbose ./app/build/outputs/apk/app-googleplay-debug.apk</span><br></pre></td></tr></table></figure>
-<p>输出结果<br><img src="http://ww2.sinaimg.cn/large/9da81145gw1ez65ymnbp1j20fp02oq3f.jpg" alt="返回结果"></p>
-<blockquote>
-<p>Tips:<br> <strong>${keyAlias}<strong>为</strong>CN&#x3D;Android Debug</strong> 说明<strong>APK</strong>未签名</p>
-</blockquote>
-<h2 id="多渠道打包"><a href="#多渠道打包" class="headerlink" title="多渠道打包"></a>多渠道打包</h2><p>以友盟为例</p>
-<ul>
-<li>build.gradle</li>
-</ul>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">defaultConfig &#123;</span><br><span class="line">	manifestPlaceHolders=[<span class="attr">UMENG_CHANNEL_VALUE:</span><span class="string">&#x27;Umeng&#x27;</span>] <span class="comment">// 默认渠道为Umeng</span></span><br><span class="line">&#125;</span><br><span class="line">productFlavors &#123;</span><br><span class="line">	googleplay &#123;</span><br><span class="line">		manifestPlaceHolders=[<span class="attr">UMENG_CANNEL_VALUE:</span><span class="string">&#x27;Google Play&#x27;</span>]</span><br><span class="line">	&#125;</span><br><span class="line">	wandoujia&#123;</span><br><span class="line">		manifestPlaceholders = [<span class="attr">UMENG_CHANNEL_VALUE:</span> <span class="string">&quot;Wandoujia&quot;</span>]</span><br><span class="line"><span class="comment">//		minSdkVersion 19</span></span><br><span class="line"><span class="comment">//		applicationId &#x27;com.rx.demo&#x27;</span></span><br><span class="line"><span class="comment">//		targetSdkVersion 22</span></span><br><span class="line"><span class="comment">//		versionCode 360</span></span><br><span class="line"><span class="comment">//		versionName &#x27;1.1.1&#x27;</span></span><br><span class="line"><span class="comment">//      signingConfig signingConfig.wandoujiaConfig</span></span><br><span class="line">	&#125;</span><br><span class="line">	xiaomi&#123;</span><br><span class="line">	&#125;</span><br><span class="line">	tencent&#123;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>manifest</li>
-</ul>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 替换为您应用的推广渠道名称，channel id自定义。--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta-data</span> <span class="attr">android:name</span>=<span class="string">&quot;UMENG_CHANNEL&quot;</span> <span class="attr">android:value</span>=<span class="string">&quot;$&#123;UMEMG_CHANNEL_VALUE&#125;&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>编译命令<br><code>./gradlew assemble</code>: 编译所有渠道的Debug和Release<br><code>./gradlew assembleWandoujia</code>: 编译豌豆荚的Debug和Release<br><code>./gradlew assembleWandoujiaDebug</code>: 编译豌豆荚的Debug<br><code>./gradlew build</code>: <blockquote>
-<p>Tips<br>貌似<code>Android Studio</code>上有多渠道打包的插件，但最终还是需要使用命令行</p>
-</blockquote>
-</li>
-</ul>
-<p>###自定义APK名称</p>
-<ul>
-<li>build.gradle</li>
-</ul>
- <figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 根节点下增加</span></span><br><span class="line"><span class="keyword">def</span> releaseTime() &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> Date().format(<span class="string">&quot;yyyy-MM-dd&quot;</span>, TimeZone.getTimeZone(<span class="string">&quot;UTC&quot;</span>))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">// Android &#123;&#125; 节点下增加</span></span><br><span class="line"> buildTypes &#123;</span><br><span class="line">    applicationVariants.all &#123; variant -&gt;</span><br><span class="line">        variant.outputs.each &#123; output -&gt;</span><br><span class="line">            <span class="keyword">def</span> outputFile = output.outputFile</span><br><span class="line">            <span class="comment">// &amp;&amp; outputFile.name.indexOf(&#x27;debug&#x27;) == -1</span></span><br><span class="line">            <span class="keyword">if</span> (outputFile != <span class="literal">null</span> &amp;&amp; outputFile.name.endsWith(<span class="string">&#x27;.apk&#x27;</span>)</span><br><span class="line">                    &amp;&amp; outputFile.name.indexOf(<span class="string">&#x27;debug&#x27;</span>) == <span class="number">-1</span>) &#123;</span><br><span class="line">                <span class="comment">// 输出apk名称为app-googleplay-release-v1.0-build1-2015-12-16</span></span><br><span class="line">                <span class="keyword">def</span> fileName = outputFile.name.replace(<span class="string">&quot;.apk&quot;</span>, <span class="string">&quot;-v$&#123;defaultConfig.versionName&#125;-build$&#123;defaultConfig.versionCode&#125;-&quot;</span> +</span><br><span class="line">                        <span class="string">&quot;$&#123;releaseTime()&#125;.apk&quot;</span>)</span><br><span class="line">                output.outputFile = <span class="keyword">new</span> File(outputFile.parent, fileName)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<h2 id="导入包"><a href="#导入包" class="headerlink" title="导入包"></a>导入包</h2><h3 id="导入aar、jar、modle"><a href="#导入aar、jar、modle" class="headerlink" title="导入aar、jar、modle"></a>导入aar、jar、modle</h3><figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">dependencies &#123;</span><br><span class="line">	compile fileTree(<span class="attr">dir:</span> <span class="string">&#x27;libs&#x27;</span>, <span class="attr">include:</span> [<span class="string">&#x27;*.jar&#x27;</span>]) <span class="comment">// 导入libs文件夹中所有的jar包</span></span><br><span class="line">	compile <span class="string">&#x27;group:name:version&#x27;</span></span><br><span class="line">	compile <span class="string">&#x27;group:name:1.1.+&#x27;</span></span><br><span class="line">	compile(<span class="attr">group:</span><span class="attr">name:</span>version) &#123;</span><br><span class="line">		exclude <span class="attr">module:</span> <span class="string">&#x27;support-v4&#x27;</span> <span class="comment">// 发生冲突时，排除v4</span></span><br><span class="line">	&#125;</span><br><span class="line">	compile(<span class="attr">name:</span><span class="string">&#x27;xxx&#x27;</span>, <span class="attr">ext:</span><span class="string">&#x27;aar&#x27;</span>) <span class="comment">// aar包是用来替换jar的文件类型</span></span><br><span class="line">	compile project(:modle)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>Tips<br><code>+</code> 表示最新的版本号，曾经遇到过在<strong>Windows</strong>下导入包是输入的时准确的版本号<code>1.0.0</code>没有问题，到了<code>Mac</code>上的就提示找不到包，后来改成 <code>1.0.+</code>就好了</p>
-</blockquote>
-<h3 id="导入-so"><a href="#导入-so" class="headerlink" title="导入 *.so"></a>导入 *.so</h3><ul>
-<li>Android Studio 默认路径：<code>Project</code>视图模式下<code>./app/src/main/jniLibs</code><br>这是我目前使用的方法，直接把so包放入文件夹即可，不需要其他操作<br><img src="http://ww3.sinaimg.cn/large/9da81145gw1ez05ymejwyj20b608n3yz.jpg" alt="so包默认存放路径"></li>
-<li>自定义路径<br>在<strong>Eclipse</strong>中的习惯是讲so包放入<strong>libs</strong>文件夹中，这在<strong>Android Studio</strong>中也可以通过配置<strong>Gradle</strong>实现<br>build.gradle<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 在 Android&#123;&#125; 节点下增加</span></span><br><span class="line">sourceSets &#123;</span><br><span class="line">	main &#123;</span><br><span class="line"><span class="comment">//		jniLibs.srcDirs=[&#x27;./libs&#x27;]</span></span><br><span class="line">	    jniLibs.srcDirs=[<span class="string">&#x27;./libs/jniLibs&#x27;</span>]</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="其他配置"><a href="#其他配置" class="headerlink" title="其他配置"></a>其他配置</h2><ul>
-<li>下载源码及文档</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">idea &#123;</span><br><span class="line">    module &#123;</span><br><span class="line">        downloadSources = true</span><br><span class="line">        downloadJavadoc = false</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">eclipse &#123;</span><br><span class="line">    classpath &#123;</span><br><span class="line">        downloadSources = true</span><br><span class="line">        downloadJavadoc = false</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="完整build-gradle"><a href="#完整build-gradle" class="headerlink" title="完整build.gradle"></a>完整build.gradle</h2><figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">apply <span class="attr">plugin:</span> <span class="string">&#x27;com.android.application&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> releaseTime() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Date().format(<span class="string">&quot;yyyy-MM-dd&quot;</span>, TimeZone.getTimeZone(<span class="string">&quot;UTC&quot;</span>))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">android &#123;</span><br><span class="line">    compileSdkVersion <span class="number">22</span></span><br><span class="line">    buildToolsVersion <span class="string">&quot;23.0.1&quot;</span></span><br><span class="line"></span><br><span class="line">    signingConfigs &#123;</span><br><span class="line">        signConfig &#123;</span><br><span class="line">            storeFile file (<span class="string">&quot;../key.jks&quot;</span>)</span><br><span class="line">            storePassword  <span class="string">&quot;123456&quot;</span></span><br><span class="line">            keyAlias <span class="string">&quot;xdj&quot;</span></span><br><span class="line">            keyPassword <span class="string">&quot;123456&quot;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    defaultConfig &#123;</span><br><span class="line">        applicationId <span class="string">&quot;com.xdj.rxjavademo&quot;</span></span><br><span class="line">        minSdkVersion <span class="number">15</span></span><br><span class="line">        targetSdkVersion <span class="number">22</span></span><br><span class="line">        versionCode <span class="number">1</span></span><br><span class="line">        versionName <span class="string">&quot;1.0.0&quot;</span></span><br><span class="line"></span><br><span class="line">        manifestPlaceholders=[<span class="attr">UMENG_CHANNEL_VALUE:</span> <span class="string">&#x27;Umeng&#x27;</span>]</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    buildTypes &#123;</span><br><span class="line">        release &#123;</span><br><span class="line">            minifyEnabled <span class="literal">false</span></span><br><span class="line">            proguardFiles getDefaultProguardFile(<span class="string">&#x27;proguard-android.txt&#x27;</span>), <span class="string">&#x27;proguard-rules.pro&#x27;</span></span><br><span class="line">            signingConfig signingConfigs.signConfig</span><br><span class="line">            zipAlignEnabled <span class="literal">true</span></span><br><span class="line"><span class="comment">//            shrinkResources true // 清除无用的resource</span></span><br><span class="line">        &#125;</span><br><span class="line">        debug &#123;</span><br><span class="line">            buildConfigField <span class="string">&quot;boolean&quot;</span>, <span class="string">&quot;LOG_DEBUG&quot;</span>, <span class="string">&quot;false&quot;</span> <span class="comment">// 设置是否打印LOG，貌似没效果</span></span><br><span class="line">            signingConfig signingConfigs.signConfig</span><br><span class="line">        &#125;</span><br><span class="line">        applicationVariants.all &#123; variant -&gt;</span><br><span class="line">            variant.outputs.each &#123; output -&gt;</span><br><span class="line">                <span class="keyword">def</span> outputFile = output.outputFile</span><br><span class="line">                <span class="comment">// &amp;&amp; outputFile.name.indexOf(&#x27;debug&#x27;) == -1</span></span><br><span class="line">                <span class="keyword">if</span> (outputFile != <span class="literal">null</span> &amp;&amp; outputFile.name.endsWith(<span class="string">&#x27;.apk&#x27;</span>)</span><br><span class="line">                        &amp;&amp; outputFile.name.indexOf(<span class="string">&#x27;debug&#x27;</span>) == <span class="number">-1</span>) &#123; <span class="comment">// 不对Debug进行重命名</span></span><br><span class="line">                    <span class="comment">// 输出apk名称为app-googleplay-release-2015-12-16-v1.0-build1</span></span><br><span class="line">                    <span class="keyword">def</span> fileName = outputFile.name.replace(<span class="string">&quot;.apk&quot;</span>, <span class="string">&quot;-$&#123;releaseTime()&#125;&quot;</span> +</span><br><span class="line">                            <span class="string">&quot;-v$&#123;defaultConfig.versionName&#125;-build$&#123;defaultConfig.versionCode&#125;&quot;</span> +</span><br><span class="line">                            <span class="string">&quot;.apk&quot;</span>)</span><br><span class="line">                    output.outputFile = <span class="keyword">new</span> File(outputFile.parent, fileName)</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    productFlavors &#123;</span><br><span class="line">        googleplay &#123;</span><br><span class="line">            manifestPlaceholders = [<span class="attr">UMENG_CHANNEL_VALUE:</span> <span class="string">&quot;Google Play&quot;</span>]</span><br><span class="line">        &#125;</span><br><span class="line">        xiaomi &#123;</span><br><span class="line"><span class="comment">//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: &quot;Xiao Mi&quot;]</span></span><br><span class="line">        &#125;</span><br><span class="line">        _360 &#123;</span><br><span class="line"><span class="comment">//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: &quot;360&quot;]</span></span><br><span class="line"><span class="comment">//            minSdkVersion 19</span></span><br><span class="line"><span class="comment">//            applicationId &#x27;com.rx.demo&#x27;</span></span><br><span class="line"><span class="comment">//            targetSdkVersion 22</span></span><br><span class="line"><span class="comment">//            versionCode 360</span></span><br><span class="line"><span class="comment">//            versionName &#x27;1.1.1&#x27;</span></span><br><span class="line"><span class="comment">//            signingConfig signingConfig._360Config</span></span><br><span class="line">        &#125;</span><br><span class="line">        tencent &#123;</span><br><span class="line"><span class="comment">//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: &quot;Tencent&quot;]</span></span><br><span class="line">        &#125;</span><br><span class="line">        baidu &#123;</span><br><span class="line"><span class="comment">//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: &quot;Baidu&quot;]</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    sourceSets &#123;</span><br><span class="line">        main &#123;</span><br><span class="line">            jniLibs.srcDirs=[<span class="string">&#x27;./libs/jniLibs&#x27;</span>]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">dependencies &#123;</span><br><span class="line">    compile fileTree(<span class="attr">dir:</span> <span class="string">&#x27;libs&#x27;</span>, <span class="attr">include:</span> [<span class="string">&#x27;*.jar&#x27;</span>])</span><br><span class="line">    testCompile <span class="string">&#x27;junit:junit:4.12&#x27;</span></span><br><span class="line">    compile <span class="string">&#x27;com.android.support:appcompat-v7:22.2.1&#x27;</span></span><br><span class="line">    compile <span class="string">&#x27;com.android.support:design:22.2.1&#x27;</span></span><br><span class="line">    compile <span class="string">&#x27;io.reactivex:rxjava:1.1.0&#x27;</span></span><br><span class="line">    compile <span class="string">&#x27;io.reactivex:rxandroid:1.1.0&#x27;</span></span><br><span class="line">    <span class="comment">//    compile (&#x27;cn.trinea.android.view.autoscrollviewpager:android-auto-scroll-view-pager:1.1.2&#x27;) &#123;</span></span><br><span class="line">    <span class="comment">//        exclude module: &#x27;support-v4&#x27;</span></span><br><span class="line">    <span class="comment">//    &#125;</span></span><br><span class="line">    compile <span class="string">&#x27;com.android.support:recyclerview-v7:22.2.1&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="gradle-bin镜像地址"><a href="#gradle-bin镜像地址" class="headerlink" title="gradle bin镜像地址"></a>gradle bin镜像地址</h2><p><a href="https://mirrors.aliyun.com/macports/distfiles/gradle/">https://mirrors.aliyun.com/macports/distfiles/gradle/</a></p>
-]]></content>
-      <categories>
-        <category>Android</category>
-        <category>build-tool</category>
-      </categories>
-      <tags>
-        <tag>Gradle</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Guava BloomFilter</title>
-    <url>/2024/05/04/java/Guava%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8/</url>
-    <content><![CDATA[<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">expectedInsertions</span> <span class="operator">=</span> <span class="number">100_0000</span>; <span class="comment">// 预估数据量</span></span><br><span class="line"><span class="type">double</span> <span class="variable">fpp</span> <span class="operator">=</span> <span class="number">0.0001</span>; <span class="comment">// 期望的误差率 0.01%</span></span><br><span class="line">BloomFilter&lt;String&gt; bloomFilter = BloomFilter.create(Funnels.stringFunnel(Charset.forName(<span class="string">&quot;UTF-8&quot;</span>)), expectedInsertions, fpp);</span><br><span class="line"></span><br><span class="line">bloomFilter.put(<span class="string">&quot;hello world!&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 判断是否存在，false则表示一定不存在； true表示可能存在</span></span><br><span class="line"><span class="type">boolean</span> <span class="variable">ans</span> <span class="operator">=</span> bloomFilter.mightContain(<span class="string">&quot;hello world!&quot;</span>);</span><br><span class="line">System.out.println(ans);</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>资料<br><a href="https://blog.csdn.net/qq_51721904/article/details/125454821">十亿数据如何去重，红黑树到hash再到布隆过滤器</a><br><a href="https://www.cnblogs.com/weisenz/p/4347508.html">Google Guava 中布隆过滤器的介绍和使用 </a><br><a href="https://krisives.github.io/bloom-calculator/">Bloom Filter Calculator</a><br><a href="https://hur.st/bloomfilter/">Bloom Filter Calculator</a>  </p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>Guava</category>
-        <category>Bloom Filters</category>
-      </categories>
-      <tags>
-        <tag>Guava</tag>
-        <tag>Bloom Filters</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Java计算对象占用的内存大小</title>
-    <url>/2024/04/27/java/Java%E8%AE%A1%E7%AE%97%E5%AF%B9%E8%B1%A1%E5%8D%A0%E7%94%A8%E7%9A%84%E5%86%85%E5%AD%98%E5%A4%A7%E5%B0%8F/</url>
-    <content><![CDATA[<ol>
-<li>引入jar包<ul>
-<li><p>Gradle</p>
- <figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">implementation <span class="string">&quot;com.carrotsearch:java-sizeof:$&#123;javaSizeOf&#125;&quot;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Maven</p>
- <figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">&lt;!-- <span class="attr">https:</span><span class="comment">//mvnrepository.com/artifact/com.carrotsearch/java-sizeof --&gt;</span></span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.carrotsearch&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;java-sizeof&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;<span class="number">0.0</span><span class="number">.5</span>&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li>代码 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String[] arrays = <span class="keyword">new</span> <span class="title class_">String</span>[<span class="number">100_0000</span>];</span><br><span class="line">System.out.println(<span class="string">&quot;占用内存：&quot;</span> + RamUsageEstimator.humanSizeOf(arrays));</span><br></pre></td></tr></table></figure>
- 执行后输出结果 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">占用内存：3.8 MB</span><br></pre></td></tr></table></figure></li>
-</ol>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>GitPage自定义域名不安全</title>
     <url>/2024/04/20/git-page/GitPage%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E4%B8%8D%E5%AE%89%E5%85%A8/</url>
     <content><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>GitPage设置自定义域名后，浏览器会提示不安全</p>
@@ -371,6 +351,47 @@
         <tag>hexo</tag>
         <tag>node</tag>
         <tag>nvm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Guava BloomFilter</title>
+    <url>/2024/05/04/java/Guava%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8/</url>
+    <content><![CDATA[<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">expectedInsertions</span> <span class="operator">=</span> <span class="number">100_0000</span>; <span class="comment">// 预估数据量</span></span><br><span class="line"><span class="type">double</span> <span class="variable">fpp</span> <span class="operator">=</span> <span class="number">0.0001</span>; <span class="comment">// 期望的误差率 0.01%</span></span><br><span class="line">BloomFilter&lt;String&gt; bloomFilter = BloomFilter.create(Funnels.stringFunnel(Charset.forName(<span class="string">&quot;UTF-8&quot;</span>)), expectedInsertions, fpp);</span><br><span class="line"></span><br><span class="line">bloomFilter.put(<span class="string">&quot;hello world!&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 判断是否存在，false则表示一定不存在； true表示可能存在</span></span><br><span class="line"><span class="type">boolean</span> <span class="variable">ans</span> <span class="operator">=</span> bloomFilter.mightContain(<span class="string">&quot;hello world!&quot;</span>);</span><br><span class="line">System.out.println(ans);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>资料<br><a href="https://blog.csdn.net/qq_51721904/article/details/125454821">十亿数据如何去重，红黑树到hash再到布隆过滤器</a><br><a href="https://www.cnblogs.com/weisenz/p/4347508.html">Google Guava 中布隆过滤器的介绍和使用 </a><br><a href="https://krisives.github.io/bloom-calculator/">Bloom Filter Calculator</a><br><a href="https://hur.st/bloomfilter/">Bloom Filter Calculator</a>  </p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Guava</category>
+        <category>Bloom Filters</category>
+      </categories>
+      <tags>
+        <tag>Guava</tag>
+        <tag>Bloom Filters</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java计算对象占用的内存大小</title>
+    <url>/2024/04/27/java/Java%E8%AE%A1%E7%AE%97%E5%AF%B9%E8%B1%A1%E5%8D%A0%E7%94%A8%E7%9A%84%E5%86%85%E5%AD%98%E5%A4%A7%E5%B0%8F/</url>
+    <content><![CDATA[<ol>
+<li>引入jar包<ul>
+<li><p>Gradle</p>
+ <figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">implementation <span class="string">&quot;com.carrotsearch:java-sizeof:$&#123;javaSizeOf&#125;&quot;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Maven</p>
+ <figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">&lt;!-- <span class="attr">https:</span><span class="comment">//mvnrepository.com/artifact/com.carrotsearch/java-sizeof --&gt;</span></span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.carrotsearch&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;java-sizeof&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;<span class="number">0.0</span><span class="number">.5</span>&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>代码 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String[] arrays = <span class="keyword">new</span> <span class="title class_">String</span>[<span class="number">100_0000</span>];</span><br><span class="line">System.out.println(<span class="string">&quot;占用内存：&quot;</span> + RamUsageEstimator.humanSizeOf(arrays));</span><br></pre></td></tr></table></figure>
+ 执行后输出结果 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">占用内存：3.8 MB</span><br></pre></td></tr></table></figure></li>
+</ol>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
