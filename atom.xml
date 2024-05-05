@@ -91,6 +91,32 @@
   </entry>
   
   <entry>
+    <title>修改文件所属用户及用户组</title>
+    <link href="http://xudaojie.github.io/2020/07/09/terminal/%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E6%89%80%E5%B1%9E%E7%94%A8%E6%88%B7%E5%8F%8A%E7%94%A8%E6%88%B7%E7%BB%84/"/>
+    <id>http://xudaojie.github.io/2020/07/09/terminal/%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E6%89%80%E5%B1%9E%E7%94%A8%E6%88%B7%E5%8F%8A%E7%94%A8%E6%88%B7%E7%BB%84/</id>
+    <published>2020-07-09T03:50:30.000Z</published>
+    <updated>2020-07-09T03:50:30.000Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># chown 用户.用户组 文件名</span></span><br><span class="line"><span class="built_in">chown</span> hdfs.hdfs filename</span><br><span class="line"><span class="comment"># 递归</span></span><br><span class="line"><span class="built_in">chown</span> -R hdfs.hdfs filename</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=</summary>
+      
+    
+    
+    
+    <category term="Linux" scheme="http://xudaojie.github.io/categories/Linux/"/>
+    
+    
+    <category term="Linux" scheme="http://xudaojie.github.io/tags/Linux/"/>
+    
+    <category term="terminal" scheme="http://xudaojie.github.io/tags/terminal/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Linux压缩及解压命令</title>
     <link href="http://xudaojie.github.io/2019/12/10/terminal/%E5%8E%8B%E7%BC%A9%E5%8F%8A%E8%A7%A3%E5%8E%8B%E5%91%BD%E4%BB%A4/"/>
     <id>http://xudaojie.github.io/2019/12/10/terminal/%E5%8E%8B%E7%BC%A9%E5%8F%8A%E8%A7%A3%E5%8E%8B%E5%91%BD%E4%BB%A4/</id>
@@ -109,8 +135,10 @@
     
     <category term="Linux" scheme="http://xudaojie.github.io/categories/Linux/"/>
     
-    <category term="terminal" scheme="http://xudaojie.github.io/categories/Linux/terminal/"/>
     
+    <category term="Linux" scheme="http://xudaojie.github.io/tags/Linux/"/>
+    
+    <category term="terminal" scheme="http://xudaojie.github.io/tags/terminal/"/>
     
   </entry>
   
