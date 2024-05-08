@@ -271,7 +271,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>319</span>
+      <span>333</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -294,6 +294,10 @@
 <p>以上代码在mac中调试的时候，Excel中日期内容为 <code>2023/1/2 12:00:00</code>，另存为<code>csv</code>后日期可以正确转换成<code>2023/1/2 12:00:00</code>，但发布服务器后发现<code>csv</code>保存的日期字段字段为<code>1/2/2023 12:00:00</code>。</p>
 <p>原因是<code>Spire.xls</code>在保存时会检查当前机器的语言，服务器的默认语言一般是英文，所以 csv 的日期格式被默认转成了英文的日月年格式，将mac的语言调整成语后成功复现。<br>解决方法就是修改服务的默认语言为中文，加一行<code>Locale.setDefault(Locale.CHINA);</code></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">convertExcelToCsvSpire</span><span class="params">(String sourceFile, String csvFilePath)</span>&#123;</span><br><span class="line">    <span class="comment">// 服务器一般为英语，保存CSV的时候会将日期类型转换为 月日年</span></span><br><span class="line">    <span class="comment">// 设置为中国则默认为 年月日</span></span><br><span class="line">    Locale.setDefault(Locale.CHINA);</span><br><span class="line">    <span class="comment">//创建Workbook类的对象</span></span><br><span class="line">    com.spire.xls.<span class="type">Workbook</span> <span class="variable">workbook</span> <span class="operator">=</span> <span class="keyword">new</span>  <span class="title class_">com</span>.spire.xls.Workbook();</span><br><span class="line">    <span class="comment">//加载Excel</span></span><br><span class="line">    workbook.loadFromFile(sourceFile);</span><br><span class="line">    <span class="comment">//计算公式（如果存在）</span></span><br><span class="line">    workbook.calculateAllValue();</span><br><span class="line">    <span class="comment">//获取第一张工作表sheet</span></span><br><span class="line">    <span class="type">Worksheet</span> <span class="variable">sheet</span> <span class="operator">=</span> workbook.getWorksheets().get(<span class="number">0</span>);</span><br><span class="line">    <span class="comment">//保存为CSV</span></span><br><span class="line">    sheet.saveToFile(csvFilePath, <span class="string">&quot;,&quot;</span>, Charset.forName(<span class="string">&quot;UTF-8&quot;</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>资料<br><a target="_blank" rel="noopener" href="https://www.e-iceblue.com/forum/xls-pdf-t11181.html">xls 转换 pdf时，日期格式的问题。</a>  </p>
+</blockquote>
 
       
     </div>
