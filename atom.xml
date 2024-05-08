@@ -6,7 +6,7 @@
   <link href="http://xudaojie.github.io/atom.xml" rel="self"/>
   
   <link href="http://xudaojie.github.io/"/>
-  <updated>2024-05-04T14:37:12.000Z</updated>
+  <updated>2024-05-08T15:11:41.000Z</updated>
   <id>http://xudaojie.github.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用Spire.xls将Excel另存为csv时，日期类型被转成了月/日/年格式</title>
+    <link href="http://xudaojie.github.io/2024/05/08/java/office/%E4%BD%BF%E7%94%A8Spire.xls%E5%B0%86Excel%E5%8F%A6%E5%AD%98%E4%B8%BAcsv/"/>
+    <id>http://xudaojie.github.io/2024/05/08/java/office/%E4%BD%BF%E7%94%A8Spire.xls%E5%B0%86Excel%E5%8F%A6%E5%AD%98%E4%B8%BAcsv/</id>
+    <published>2024-05-08T15:11:41.000Z</published>
+    <updated>2024-05-08T15:11:41.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>spire.xls版本: 13.10.0</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">convertExcelToCsvSpire</span><span class="params">(String sourceFile, String csvFilePath)</span>&#123;</span><br><span class="line">    <span class="comment">//创建Workbook类的对象</span></span><br><span class="line">    com.spire.xls.<span class="type">Workbook</span> <span class="variable">workbook</span> <span class="operator">=</span> <span class="keyword">new</span>  <span class="title class_">com</span>.spire.xls.Workbook();</span><br><span class="line">    <span class="comment">//加载Excel</span></span><br><span class="line">    workbook.loadFromFile(sourceFile);</span><br><span class="line">    <span class="comment">//计算公式（如果存在）</span></span><br><span class="line">    workbook.calculateAllValue();</span><br><span class="line">    <span class="comment">//获取第一张工作表sheet</span></span><br><span class="line">    <span class="type">Worksheet</span> <span class="variable">sheet</span> <span class="operator">=</span> workbook.getWorksheets().get(<span class="number">0</span>);</span><br><span class="line">    <span class="comment">//保存为CSV</span></span><br><span class="line">    sheet.saveToFile(csvFilePath, <span class="string">&quot;,&quot;</span>, Charset.forName(<span class="string">&quot;UTF-8&quot;</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>以上代码在mac中调试的时候，Excel中日期内容为 <code>2023/1/2 12:00:00</code>，另存为<code>csv</code>后日期可以正确转换成<code>2023/1/2 12:00:00</code>，但发布服务器后发现<code>csv</code>保存的日期字段字段为<code>1/2/2023 12:00:00</code>。</p><p>原因是<code>Spire.xls</code>在保存时会检查当前机器的语言，服务器的默认语言一般是英文，所以 csv 的日期格式被默认转成了英文的日月年格式，将mac的语言调整成语后成功复现。<br>解决方法就是修改服务的默认语言为中文，加一行<code>Locale.setDefault(Locale.CHINA);</code></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">convertExcelToCsvSpire</span><span class="params">(String sourceFile, String csvFilePath)</span>&#123;</span><br><span class="line">    <span class="comment">// 服务器一般为英语，保存CSV的时候会将日期类型转换为 月日年</span></span><br><span class="line">    <span class="comment">// 设置为中国则默认为 年月日</span></span><br><span class="line">    Locale.setDefault(Locale.CHINA);</span><br><span class="line">    <span class="comment">//创建Workbook类的对象</span></span><br><span class="line">    com.spire.xls.<span class="type">Workbook</span> <span class="variable">workbook</span> <span class="operator">=</span> <span class="keyword">new</span>  <span class="title class_">com</span>.spire.xls.Workbook();</span><br><span class="line">    <span class="comment">//加载Excel</span></span><br><span class="line">    workbook.loadFromFile(sourceFile);</span><br><span class="line">    <span class="comment">//计算公式（如果存在）</span></span><br><span class="line">    workbook.calculateAllValue();</span><br><span class="line">    <span class="comment">//获取第一张工作表sheet</span></span><br><span class="line">    <span class="type">Worksheet</span> <span class="variable">sheet</span> <span class="operator">=</span> workbook.getWorksheets().get(<span class="number">0</span>);</span><br><span class="line">    <span class="comment">//保存为CSV</span></span><br><span class="line">    sheet.saveToFile(csvFilePath, <span class="string">&quot;,&quot;</span>, Charset.forName(<span class="string">&quot;UTF-8&quot;</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;spire.xls版本: 13.10.0&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;li</summary>
+      
+    
+    
+    
+    <category term="Java" scheme="http://xudaojie.github.io/categories/Java/"/>
+    
+    <category term="Office" scheme="http://xudaojie.github.io/categories/Java/Office/"/>
+    
+    
+    <category term="Java" scheme="http://xudaojie.github.io/tags/Java/"/>
+    
+    <category term="Office" scheme="http://xudaojie.github.io/tags/Office/"/>
+    
+    <category term="Spire.xls" scheme="http://xudaojie.github.io/tags/Spire-xls/"/>
+    
+  </entry>
   
   <entry>
     <title>Guava BloomFilter</title>
@@ -87,6 +118,12 @@
     
     
     
+    <category term="GitPage" scheme="http://xudaojie.github.io/categories/GitPage/"/>
+    
+    
+    <category term="GitPage" scheme="http://xudaojie.github.io/tags/GitPage/"/>
+    
+    <category term="DNS" scheme="http://xudaojie.github.io/tags/DNS/"/>
     
   </entry>
   
@@ -156,6 +193,8 @@
 &lt;h2 id=&quot;升级Hexo&quot;&gt;&lt;a href=&quot;#升级Hexo&quot; class=&quot;headerlink&quot; title=&quot;升级Hexo&quot;&gt;&lt;/a&gt;升级Hexo&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 安装hexo-cli命令行工具&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ npm install -g hexo-cli&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 安装npm-check &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ npm install -g npm-check&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 检查npm依赖包是否有更新&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ npm-check&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 安装npm包更新工具&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ npm install -g npm-upgrade&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 更新package.json、node-modules&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ npm-upgrade -g&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ npm-upgrade -save&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
     
     
+    
+    <category term="Hexo" scheme="http://xudaojie.github.io/categories/Hexo/"/>
     
     
     <category term="hexo" scheme="http://xudaojie.github.io/tags/hexo/"/>
@@ -296,6 +335,8 @@
     
     <category term="Android" scheme="http://xudaojie.github.io/categories/Android/"/>
     
+    
+    <category term="Android" scheme="http://xudaojie.github.io/tags/Android/"/>
     
   </entry>
   

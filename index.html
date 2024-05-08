@@ -156,18 +156,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -210,6 +210,107 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://xudaojie.github.io/2024/05/08/java/office/%E4%BD%BF%E7%94%A8Spire.xls%E5%B0%86Excel%E5%8F%A6%E5%AD%98%E4%B8%BAcsv/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avatar.png">
+      <meta itemprop="name" content="XuDaojie">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XuDaojie的博客">
+      <meta itemprop="description" content="呆呆的初行者">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | XuDaojie的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/05/08/java/office/%E4%BD%BF%E7%94%A8Spire.xls%E5%B0%86Excel%E5%8F%A6%E5%AD%98%E4%B8%BAcsv/" class="post-title-link" itemprop="url">使用Spire.xls将Excel另存为csv时，日期类型被转成了月/日/年格式</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2024-05-08 23:11:41" itemprop="dateCreated datePublished" datetime="2024-05-08T23:11:41+08:00">2024-05-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Java/Office/" itemprop="url" rel="index"><span itemprop="name">Office</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>319</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>spire.xls版本: 13.10.0</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">convertExcelToCsvSpire</span><span class="params">(String sourceFile, String csvFilePath)</span>&#123;</span><br><span class="line">    <span class="comment">//创建Workbook类的对象</span></span><br><span class="line">    com.spire.xls.<span class="type">Workbook</span> <span class="variable">workbook</span> <span class="operator">=</span> <span class="keyword">new</span>  <span class="title class_">com</span>.spire.xls.Workbook();</span><br><span class="line">    <span class="comment">//加载Excel</span></span><br><span class="line">    workbook.loadFromFile(sourceFile);</span><br><span class="line">    <span class="comment">//计算公式（如果存在）</span></span><br><span class="line">    workbook.calculateAllValue();</span><br><span class="line">    <span class="comment">//获取第一张工作表sheet</span></span><br><span class="line">    <span class="type">Worksheet</span> <span class="variable">sheet</span> <span class="operator">=</span> workbook.getWorksheets().get(<span class="number">0</span>);</span><br><span class="line">    <span class="comment">//保存为CSV</span></span><br><span class="line">    sheet.saveToFile(csvFilePath, <span class="string">&quot;,&quot;</span>, Charset.forName(<span class="string">&quot;UTF-8&quot;</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上代码在mac中调试的时候，Excel中日期内容为 <code>2023/1/2 12:00:00</code>，另存为<code>csv</code>后日期可以正确转换成<code>2023/1/2 12:00:00</code>，但发布服务器后发现<code>csv</code>保存的日期字段字段为<code>1/2/2023 12:00:00</code>。</p>
+<p>原因是<code>Spire.xls</code>在保存时会检查当前机器的语言，服务器的默认语言一般是英文，所以 csv 的日期格式被默认转成了英文的日月年格式，将mac的语言调整成语后成功复现。<br>解决方法就是修改服务的默认语言为中文，加一行<code>Locale.setDefault(Locale.CHINA);</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">convertExcelToCsvSpire</span><span class="params">(String sourceFile, String csvFilePath)</span>&#123;</span><br><span class="line">    <span class="comment">// 服务器一般为英语，保存CSV的时候会将日期类型转换为 月日年</span></span><br><span class="line">    <span class="comment">// 设置为中国则默认为 年月日</span></span><br><span class="line">    Locale.setDefault(Locale.CHINA);</span><br><span class="line">    <span class="comment">//创建Workbook类的对象</span></span><br><span class="line">    com.spire.xls.<span class="type">Workbook</span> <span class="variable">workbook</span> <span class="operator">=</span> <span class="keyword">new</span>  <span class="title class_">com</span>.spire.xls.Workbook();</span><br><span class="line">    <span class="comment">//加载Excel</span></span><br><span class="line">    workbook.loadFromFile(sourceFile);</span><br><span class="line">    <span class="comment">//计算公式（如果存在）</span></span><br><span class="line">    workbook.calculateAllValue();</span><br><span class="line">    <span class="comment">//获取第一张工作表sheet</span></span><br><span class="line">    <span class="type">Worksheet</span> <span class="variable">sheet</span> <span class="operator">=</span> workbook.getWorksheets().get(<span class="number">0</span>);</span><br><span class="line">    <span class="comment">//保存为CSV</span></span><br><span class="line">    sheet.saveToFile(csvFilePath, <span class="string">&quot;,&quot;</span>, Charset.forName(<span class="string">&quot;UTF-8&quot;</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -455,6 +556,15 @@
 
       <time title="创建时间：2024-04-20 23:19:05" itemprop="dateCreated datePublished" datetime="2024-04-20T23:19:05+08:00">2024-04-20</time>
     </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/GitPage/" itemprop="url" rel="index"><span itemprop="name">GitPage</span></a>
+        </span>
+    </span>
 
   
     <span class="post-meta-break"></span>
@@ -554,6 +664,15 @@
       </span>
       <span class="post-meta-item-text">更新于</span>
       <time title="修改时间：2024-04-18 00:46:49" itemprop="dateModified" datetime="2024-04-18T00:46:49+08:00">2024-04-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
+        </span>
     </span>
 
   
@@ -1139,114 +1258,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://xudaojie.github.io/2016/09/18/android/TextInputEditText%E6%A0%B7%E5%BC%8F%E8%AE%BE%E7%BD%AE/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/avatar.png">
-      <meta itemprop="name" content="XuDaojie">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XuDaojie的博客">
-      <meta itemprop="description" content="呆呆的初行者">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | XuDaojie的博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2016/09/18/android/TextInputEditText%E6%A0%B7%E5%BC%8F%E8%AE%BE%E7%BD%AE/" class="post-title-link" itemprop="url">TextInputEditText样式设置</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2016-09-18 22:19:20" itemprop="dateCreated datePublished" datetime="2016-09-18T22:19:20+08:00">2016-09-18</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2019-10-28 10:17:24" itemprop="dateModified" datetime="2019-10-28T10:17:24+08:00">2019-10-28</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>197</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="TextInputEditText样式设置"><a href="#TextInputEditText样式设置" class="headerlink" title="TextInputEditText样式设置"></a>TextInputEditText样式设置</h1><p><code>TextInputEditText</code>是在<strong>Design</strong>包中<strong>MD</strong>风格的<code>EditText</code>。</p>
-<h2 id="样式调整"><a href="#样式调整" class="headerlink" title="样式调整"></a>样式调整</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">&quot;InputStyle&quot;</span>&gt;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">   <span class="comment">&lt;!-- 底部线 默认颜色 --&gt;</span></span></span><br><span class="line"><span class="language-xml">   <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">&quot;colorControlNormal&quot;</span>&gt;</span>@android:color/white<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">   <span class="comment">&lt;!-- 底部线 EditText激活时颜色 --&gt;</span></span></span><br><span class="line"><span class="language-xml">   <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">&quot;colorControlActivated&quot;</span>&gt;</span>@android:color/white<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">   <span class="comment">&lt;!-- 设置光标 --&gt;</span></span></span><br><span class="line"><span class="language-xml">   <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">&quot;android:textCursorDrawable&quot;</span>&gt;</span>@drawable/line<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2016/09/18/android/TextInputEditText%E6%A0%B7%E5%BC%8F%E8%AE%BE%E7%BD%AE/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
@@ -1276,7 +1287,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">14 分钟</span>
+    <span title="站点阅读时长">15 分钟</span>
   </span>
 </div>
 <div class="busuanzi-count">
