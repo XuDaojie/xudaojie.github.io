@@ -408,6 +408,25 @@
       </tags>
   </entry>
   <entry>
+    <title>Nginx acces日志乱码</title>
+    <url>/2024/05/14/net/Nginx%20acces%E6%97%A5%E5%BF%97%E4%B9%B1%E7%A0%81/</url>
+    <content><![CDATA[<p>在<strong>logstash</strong>中将<strong>nginx</strong>的<strong>access log</strong>，转化成<code>json</code>时，发现抛异常。<br>原因接口的<code>request_body</code>传的事json，但打印日志的时候，json的<code>&quot;</code>转成<code>\x22</code>了，导致日志不是标准 json 格式了。<br>只需要在日志配置中新增<code>escape=json</code></p>
+<p>nginx.conf 配置</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">log_format aka_logs escape=json</span><br><span class="line">                    <span class="string">&#x27;&#123;&quot;@timestamp&quot;:&quot;$time_iso8601&quot;,&#x27;</span></span><br><span class="line">                    <span class="string">&#x27;&quot;host&quot;:&quot;$hostname&quot;,&#x27;</span></span><br><span class="line">                    <span class="string">&#x27;&quot;server_ip&quot;:&quot;$server_addr&quot;,&#x27;</span></span><br><span class="line">                    <span class="string">&#x27;&quot;client_ip&quot;:&quot;222.241.119.99&quot;,&#x27;</span></span><br><span class="line">                    <span class="comment"># &#x27;&quot;client_ip&quot;:&quot;$remote_addr&quot;,&#x27;</span></span><br><span class="line">                    <span class="string">&#x27;&quot;xff&quot;:&quot;$http_x_forwarded_for&quot;,&#x27;</span></span><br><span class="line">                    <span class="string">&#x27;&quot;domain&quot;:&quot;$host&quot;,&#x27;</span></span><br><span class="line">                    <span class="string">&#x27;&quot;url&quot;:&quot;$uri&quot;,&#x27;</span></span><br><span class="line">                    <span class="string">&#x27;&quot;referer&quot;:&quot;$http_referer&quot;,&#x27;</span></span><br><span class="line">                    <span class="string">&#x27;&quot;args&quot;:&quot;$args&quot;,&#x27;</span></span><br><span class="line">                    <span class="string">&#x27;&quot;upstreamtime&quot;:&quot;$upstream_response_time&quot;,&#x27;</span></span><br><span class="line">                    <span class="string">&#x27;&quot;responsetime&quot;:&quot;$request_time&quot;,&#x27;</span></span><br><span class="line">                    <span class="string">&#x27;&quot;request_method&quot;:&quot;$request_method&quot;,&#x27;</span></span><br><span class="line">                    <span class="string">&#x27;&quot;status&quot;:&quot;$status&quot;,&#x27;</span></span><br><span class="line">                    <span class="string">&#x27;&quot;size&quot;:&quot;$body_bytes_sent&quot;,&#x27;</span></span><br><span class="line">                    <span class="string">&#x27;&quot;request_body&quot;:&quot;$request_body&quot;,&#x27;</span></span><br><span class="line">                    <span class="string">&#x27;&quot;request_length&quot;:&quot;$request_length&quot;,&#x27;</span></span><br><span class="line">                    <span class="string">&#x27;&quot;protocol&quot;:&quot;$server_protocol&quot;,&#x27;</span></span><br><span class="line">                    <span class="string">&#x27;&quot;upstreamhost&quot;:&quot;$upstream_addr&quot;,&#x27;</span></span><br><span class="line">                    <span class="string">&#x27;&quot;file_dir&quot;:&quot;$request_filename&quot;,&#x27;</span></span><br><span class="line">                    <span class="string">&#x27;&quot;http_user_agent&quot;:&quot;$http_user_agent&quot;&#x27;</span></span><br><span class="line">                <span class="string">&#x27;&#125;&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>资料<br><a href="https://nginx.org/en/docs/http/ngx_http_log_module.html#log_format">Module ngx_http_log_module</a><br><a href="https://juejin.cn/post/6844903482097582094">nginx日志中$request_body 十六进制字符(\x22\x9B\x5C\x09\x08…)完美解决方案</a><br><a href="https://snailgary.org/fb4e9417eb88ee2788c49aaa2f005225">nginx access 日志字符编码问题 \x22</a>  </p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Nginx</category>
+      </categories>
+      <tags>
+        <tag>Nginx</tag>
+        <tag>Logstash</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>修改文件所属用户及用户组</title>
     <url>/2020/07/09/terminal/%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E6%89%80%E5%B1%9E%E7%94%A8%E6%88%B7%E5%8F%8A%E7%94%A8%E6%88%B7%E7%BB%84/</url>
     <content><![CDATA[<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># chown 用户.用户组 文件名</span></span><br><span class="line"><span class="built_in">chown</span> hdfs.hdfs filename</span><br><span class="line"><span class="comment"># 递归</span></span><br><span class="line"><span class="built_in">chown</span> -R hdfs.hdfs filename</span><br></pre></td></tr></table></figure>
